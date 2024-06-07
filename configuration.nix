@@ -30,7 +30,12 @@
   programs.nix-ld.enable = true;
 
   # Enable Fish
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      ls = "lsd";
+    };
+  };
 
   # Enable Starship
   programs.starship.enable = true;
@@ -57,7 +62,7 @@
     git
     lazygit
     gh
-    eza
+    lsd
   ];
 
   # Enable power management services
