@@ -11,12 +11,14 @@
     # Please replace my-nixos with your hostname
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = inputs;
       modules = [
         # Import the previous configuration.nix we used,
         # so the old configuration file still takes effect
         ./configuration.nix
 	./hardware-configuration.nix
 	./nvidia.nix
+	./path.nix
 	home-manager.nixosModules.home-manager
         {
 	  home-manager.useGlobalPkgs = true;
