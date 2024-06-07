@@ -13,6 +13,7 @@
   '';
 
   # Copy symlink for neovim
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink /nvim;
 
   programs = {
     git = {
@@ -39,6 +40,5 @@
       '';
     };
 
-   # starship.enable = true;
   };
 }

@@ -33,7 +33,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "lsd";
+      ls = "lsd --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
     };
   };
 
