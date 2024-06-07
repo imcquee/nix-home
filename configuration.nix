@@ -1,11 +1,6 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   virtualisation.docker.enable = true;
