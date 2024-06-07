@@ -5,6 +5,13 @@
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
 
+  # Allow unfree packages with nix-shell
+  home.file.".config/nixpkgs/config.nix".text = ''
+    {
+      allowUnfree = true;
+    }
+  '';
+
   programs = {
     git = {
       enable = true;

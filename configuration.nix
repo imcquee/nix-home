@@ -26,6 +26,14 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Enable nix ld
+  programs.nix-ld.enable = true;
+
+  # Sets up all the libraries to load
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc
+  ];
+
   users.users.imcquee = {
     isNormalUser = true;
     description = "Isaac McQueen";
