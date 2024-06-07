@@ -29,6 +29,9 @@
   # Enable nix ld
   programs.nix-ld.enable = true;
 
+  # Enable Fish
+  programs.fish.enable = true;
+
   # Sets up all the libraries to load
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc
@@ -38,7 +41,7 @@
     isNormalUser = true;
     description = "Isaac McQueen";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
     packages = with pkgs; [];
   };
 
