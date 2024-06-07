@@ -36,5 +36,18 @@
       bind -n M-d display-popup -d "#{pane_current_path}" -w 90% -h 90% -E 'lazydocker'
       '';
     };
+
+   nushell = {
+      enable = true;
+       # shellAliases = {
+       #   vi = "hx";
+       #   vim = "hx";
+       #   nano = "hx";
+       # };
+   };  
+   carapace.enable = true;
+   carapace.enableNushellIntegration = true;
+
+   starship.enable = true;
   };
 }

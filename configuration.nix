@@ -38,6 +38,7 @@
     isNormalUser = true;
     description = "Isaac McQueen";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
+    shell = pkgs.nushell;
     packages = with pkgs; [];
   };
 
