@@ -32,6 +32,9 @@
   # Enable Fish
   programs.fish.enable = true;
 
+  # Enable Starship
+  programs.starship.enable = true;
+
   # Sets up all the libraries to load
   programs.nix-ld.libraries = with pkgs; [
     stdenv.cc.cc

@@ -12,6 +12,8 @@
     }
   '';
 
+  # Copy symlink for neovim
+
   programs = {
     git = {
       enable = true;
@@ -37,6 +39,6 @@
       '';
     };
 
-   starship.enable = true;
+   # starship.enable = true;
   };
 }
