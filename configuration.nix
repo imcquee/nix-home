@@ -57,6 +57,7 @@
     git
     lazygit
     gh
+    eza
   ];
 
   # Enable power management services
