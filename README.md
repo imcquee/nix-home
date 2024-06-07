@@ -7,7 +7,7 @@ New machine setup
 
 ### TODO
 
--[ ] Migrate Darwin over
--[ ] Make public
--[x] Migrate TMUX
--[ ] Migrate Neovim
+- [ ] Migrate Darwin over
+- [ ] Make public
+- [x] Migrate TMUX
+- [ ] Migrate Neovim
