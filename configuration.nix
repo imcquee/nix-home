@@ -33,7 +33,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "lsd --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
+      ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
       rebuild = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
     };
   };
