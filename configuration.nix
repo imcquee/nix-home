@@ -34,7 +34,7 @@
     enable = true;
     shellAliases = {
       ls = "lsd --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
-      "sudo nixos-rebuild" = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
+      rebuild = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
     };
   };
 
@@ -67,6 +67,7 @@
     gcc
     wget
     unzip
+    nodejs_20
   ];
 
   # Enable power management services
