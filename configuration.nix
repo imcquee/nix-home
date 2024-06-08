@@ -34,6 +34,7 @@
     enable = true;
     shellAliases = {
       ls = "lsd --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
+      "sudo nixos-rebuild" = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
     };
   };
 
@@ -63,6 +64,9 @@
     lazygit
     gh
     lsd
+    gcc
+    wget
+    unzip
   ];
 
   # Enable power management services
