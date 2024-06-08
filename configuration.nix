@@ -8,7 +8,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; 
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/New_York";
@@ -26,6 +26,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Enable direnv
+  programs.direnv.enable = true;
+
   # Enable nix ld
   programs.nix-ld.enable = true;
 
@@ -34,7 +37,8 @@
     enable = true;
     shellAliases = {
       ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
-      rebuild = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
+      rebuild =
+        "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
     };
   };
 
@@ -42,16 +46,14 @@
   programs.starship.enable = true;
 
   # Sets up all the libraries to load
-  programs.nix-ld.libraries = with pkgs; [
-    stdenv.cc.cc
-  ];
+  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc ];
 
   users.users.imcquee = {
     isNormalUser = true;
     description = "Isaac McQueen";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.fish;
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -68,14 +70,16 @@
     wget
     unzip
     nodejs_20
+    cargo
+    nixfmt-rfc-style
   ];
 
   # Enable power management services
   powerManagement.powertop.enable = true;
-  
+
   # Enable CPU frequency scaling
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  
+
   # Enable ACPI and APM
   # powerManagement.cpuFreqGovernorOnAC = "ondemand";
   # powerManagement.cpuFreqGovernorOnBattery = "powersave";
