@@ -98,6 +98,7 @@
 
     # CL tools
     lsd
+    fzf
 
     # Formatters
     nixfmt-rfc-style
