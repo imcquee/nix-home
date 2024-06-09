@@ -1,7 +1,12 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   # Enable OpenGL
   hardware.opengl = {
@@ -41,9 +46,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
-       offload.enable = true;
-       nvidiaBusId = "PCI:1:0:0";
-       amdgpuBusId = "PCI:15:0:0";
+      offload.enable = true;
+      nvidiaBusId = "PCI:1:0:0";
+      amdgpuBusId = "PCI:15:0:0";
     };
   };
 }
