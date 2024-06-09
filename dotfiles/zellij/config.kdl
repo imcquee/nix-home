@@ -1,13 +1,1 @@
-keybinds {
-  normal {
-    "M-g" {
-      action = "open_popup"
-      action_data {
-        command = "lazygit"
-        cwd = ""
-        width = "90%"
-        height = "90%"
-      }
-    }
-  }
-}
+theme "nord"

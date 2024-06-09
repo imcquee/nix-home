@@ -18,6 +18,9 @@
   # Copy symlink for zellij
   home.file.".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/zellij";
 
+  # Copy symlink for fish 
+  # home.file.".config/fish".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/fish";
+
   programs = {
     git = {
       enable = true;
@@ -26,6 +29,11 @@
     };
 
     zellij.enable = true;
+
+    zoxide = {
+      enable = true;
+      enableFishIntegration = true;
+    };
 
     # tmux = {
     #   enable = true;
