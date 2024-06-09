@@ -1,12 +1,29 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   virtualisation.docker.enable = true;
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+      gfxmodeEfi = "800x600";
+      fontSize = 36;
+    };
+  };
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
@@ -37,8 +54,7 @@
     enable = true;
     shellAliases = {
       ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
-      rebuild =
-        "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
+      rebuild = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
     };
   };
 
@@ -51,7 +67,11 @@
   users.users.imcquee = {
     isNormalUser = true;
     description = "Isaac McQueen";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.fish;
     packages = with pkgs; [ ];
   };
@@ -89,4 +109,3 @@
 
   system.stateVersion = "24.05";
 }
-
