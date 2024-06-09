@@ -93,14 +93,11 @@
     unzip
 
     # Git
-    git
     lazygit
     gh
 
     # CL tools
     lsd
-    zellij
-    #tmux
 
     # Formatters
     nixfmt-rfc-style
