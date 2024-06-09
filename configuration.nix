@@ -56,6 +56,9 @@
       ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
       rebuild = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
     };
+    shellInit = ''
+      fish_vi_key_bindings
+    '';
   };
 
   # Enable Starship
@@ -79,18 +82,27 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    # Neovim/Mason
     neovim
-    tmux
-    nvidia-docker
+    fd
+    ripgrep
+    gcc
+    nodejs_20
+    cargo
+    wget
+    unzip
+
+    # Git
     git
     lazygit
     gh
+
+    # CL tools
     lsd
-    gcc
-    wget
-    unzip
-    nodejs_20
-    cargo
+    zellij
+    #tmux
+
+    # Formatters
     nixfmt-rfc-style
   ];
 

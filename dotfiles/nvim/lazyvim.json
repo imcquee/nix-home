@@ -2,6 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.coding.copilot",
     "lazyvim.plugins.extras.lang.elixir",
+    "lazyvim.plugins.extras.lang.gleam",
+    "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.tailwind"
   ],
   "news": {
