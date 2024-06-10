@@ -48,6 +48,7 @@
 
   # Enable nix ld
   programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc ];
 
   # Enable Fish
   programs.fish = {
@@ -65,9 +66,6 @@
 
   # Enable Starship
   programs.starship.enable = true;
-
-  # Sets up all the libraries to load
-  programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc ];
 
   users.users.imcquee = {
     isNormalUser = true;
