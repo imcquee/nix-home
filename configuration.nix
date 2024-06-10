@@ -55,6 +55,8 @@
     shellAliases = {
       ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
       rebuild = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
+      lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
+      zj = "zellij";
     };
     shellInit = ''
       fish_vi_key_bindings

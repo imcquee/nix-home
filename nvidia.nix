@@ -8,6 +8,8 @@
 {
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  virtualisation.docker.enableNvidia = true;
+
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
