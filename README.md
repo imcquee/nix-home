@@ -10,9 +10,7 @@ New machine setup
 ### TODO
 
 - [ ] Migrate Darwin over
-- [ ] Add WSL config 
+- [ ] Add WSL config
 - [ ] Add DE option
 - [x] Make public
-- [x] Migrate TMUX
 - [x] Migrate Neovim
-
