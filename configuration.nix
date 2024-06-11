@@ -6,13 +6,49 @@
 }:
 
 {
+  environment.systemPackages = with pkgs; [
+    # Neovim/Mason
+    neovim
+    fd
+    ripgrep
+    gcc
+    nodejs_20
+    cargo
+    wget
+    unzip
+
+    # Git
+    lazygit
+    gh
+
+    # Docker
+    docker
+    lazydocker
+
+    # CL tools
+    lsd
+    fzf
+
+    # Formatters
+    nixfmt-rfc-style
+  ];
+
+  # Allow Flakes
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
 
+  # Auto garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   virtualisation.docker.enable = true;
 
+  # Configure bootloader to be readable on high resolution displays
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -27,6 +63,9 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
+
+  # Enable Tailscale
+  services.tailscale.enable = true;
 
   time.timeZone = "America/New_York";
 
@@ -50,7 +89,7 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc ];
 
-  # Enable Fish
+  # Enable Fish in configuration rather than home so we can set the default login shell to fish in users.users.<user>.shell
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -79,47 +118,14 @@
     packages = with pkgs; [ ];
   };
 
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    # Neovim/Mason
-    neovim
-    fd
-    ripgrep
-    gcc
-    nodejs_20
-    cargo
-    wget
-    unzip
-
-    # Git
-    lazygit
-    gh
-
-    # Docker
-    docker
-    lazydocker
-
-    # CL tools
-    lsd
-    fzf
-
-    # Formatters
-    nixfmt-rfc-style
-  ];
 
   # Enable power management services
   powerManagement.powertop.enable = true;
 
   # Enable CPU frequency scaling
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-
-  # Enable ACPI and APM
-  # powerManagement.cpuFreqGovernorOnAC = "ondemand";
-  # powerManagement.cpuFreqGovernorOnBattery = "powersave";
-  # powerManagement.powerDownUnusedDisks = true;
-
-  services.tailscale.enable = true;
 
   system.stateVersion = "24.05";
 }
