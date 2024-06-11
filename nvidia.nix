@@ -29,7 +29,7 @@
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = true;
+    # powerManagement.finegrained = true;
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
@@ -47,13 +47,14 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-      nvidiaBusId = "PCI:1:0:0";
-      amdgpuBusId = "PCI:15:0:0";
-    };
+    # prime = {
+    #   # offload = {
+    #   #   enable = true;
+    #   #   enableOffloadCmd = true;
+    #   # };
+    #   sync.enable = true;
+    #   nvidiaBusId = "PCI:1:0:0";
+    #   amdgpuBusId = "PCI:15:0:0";
+    # };
   };
 }

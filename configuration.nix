@@ -96,6 +96,10 @@
     lazygit
     gh
 
+    # Docker
+    docker
+    lazydocker
+
     # CL tools
     lsd
     fzf
