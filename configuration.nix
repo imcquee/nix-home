@@ -29,7 +29,7 @@
     lsd
     fzf
     fastfetch
-    htop
+    bottom
 
     # Formatters
     nixfmt-rfc-style
