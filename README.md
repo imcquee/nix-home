@@ -9,8 +9,9 @@ New machine setup
 
 ### TODO
 
-- [ ] Migrate Darwin over
-- [ ] Add WSL config
-- [ ] Add DE option
 - [x] Make public
 - [x] Migrate Neovim
+- [ ] Fix copy paste in neovim
+- [ ] Add WSL config
+- [ ] Add DE option
+- [ ] Migrate Darwin over
