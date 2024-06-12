@@ -2,3 +2,4 @@
 require("config.lazy")
 -- testing update 2
 require("config.conform")
+require("mini.files")
