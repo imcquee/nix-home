@@ -25,13 +25,11 @@
     docker
     lazydocker
 
-    # livebook
-    livebook
-
     # CL tools
     lsd
     fzf
     fastfetch
+    htop
 
     # Formatters
     nixfmt-rfc-style
@@ -73,45 +71,6 @@
 
   # Enable vaultwarden
   services.vaultwarden.enable = true;
-
-  # Enable livebook
-  # services.livebook = {
-  #   enableUserService = true; # Enables the user service for Livebook
-  #   environment = {
-  #     # Set any necessary environment variables here
-  #     LIVEBOOK_IP = "0.0.0.0";
-  #     LIVEBOOK_PORT = "8080";
-  #   };
-  #   package = pkgs.livebook; # Specify the Livebook package to use
-  #   # enableUserService = true;
-  #   # environment = {
-  #   #   LIVEBOOK_SECRET_KEY = "secret";
-  #   #   LIVEBOOK_IP = "0.0.0.0";
-  #   #   LIVEBOOK_PORT = 8080;
-  #   # };
-  #   # package = pkgs.livebook;
-  # };
-
-  # Enable Livebook
-  # systemd.services.livebook = {
-  #   enable = true;
-  #   description = "livebook";
-  #   after = [
-  #     "network.target"
-  #     "network-online.target"
-  #   ];
-  #   wants = [ "network-online.target" ];
-  #   environment = {
-  #     LIVEBOOK_IP = "0.0.0.0";
-  #     LIVEBOOK_PORT = "8080";
-  #     LIVEBOOK_PASSWORD = "secretpassword";
-  #   };
-  #   serviceConfig = {
-  #     ExecStart = "${pkgs.livebook}/bin/livebook start";
-  #     Restart = "on-failure";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  # };
 
   time.timeZone = "America/New_York";
 
