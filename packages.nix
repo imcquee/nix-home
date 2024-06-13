@@ -25,7 +25,6 @@ with pkgs;
   fzf
   fastfetch
   bottom
-  xclip
 
   # Formatters
   nixfmt-rfc-style

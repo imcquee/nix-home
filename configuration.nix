@@ -3,6 +3,18 @@
 {
   environment.systemPackages = import ./packages.nix { inherit pkgs; };
 
+  # Default user
+  users.users.imcquee = {
+    isNormalUser = true;
+    description = "Isaac McQueen";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
+    shell = pkgs.fish;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -32,11 +44,18 @@
     };
   };
 
+  # Enable power management services
+  powerManagement.powertop.enable = true;
+
+  # Enable CPU frequency scaling
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+
+  # Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
 
+  # Timezone and locale
   time.timeZone = "America/New_York";
-
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -49,6 +68,9 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+  # Enable Docker
+  virtualisation.docker.enable = true;
 
   # Enable direnv
   programs.direnv.enable = true;
@@ -71,25 +93,8 @@
     '';
   };
 
-  # Enable Starship
+  # Enable Starship (needs to be set before home manager is enabled)
   programs.starship.enable = true;
-
-  users.users.imcquee = {
-    isNormalUser = true;
-    description = "Isaac McQueen";
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
-    shell = pkgs.fish;
-  };
-
-  # Enable power management services
-  powerManagement.powertop.enable = true;
-
-  # Enable CPU frequency scaling
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 
   system.stateVersion = "24.05";
 }
