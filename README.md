@@ -11,7 +11,7 @@ New machine setup
 
 - [x] Make public
 - [x] Migrate Neovim
-- [ ] Fix copy paste in neovim
+- [x] Fix copy paste in neovim
 - [ ] Add WSL config
 - [ ] Add DE option
 - [ ] Migrate Darwin over

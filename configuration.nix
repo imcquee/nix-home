@@ -30,6 +30,7 @@
     fzf
     fastfetch
     bottom
+    xclip
 
     # Formatters
     nixfmt-rfc-style
@@ -48,8 +49,6 @@
     options = "--delete-older-than 30d";
   };
 
-  virtualisation.docker.enable = true;
-
   # Configure bootloader to be readable on high resolution displays
   boot.loader = {
     efi.canTouchEfiVariables = true;
@@ -65,12 +64,6 @@
 
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-
-  # Enable Tailscale
-  services.tailscale.enable = true;
-
-  # Enable vaultwarden
-  services.vaultwarden.enable = true;
 
   time.timeZone = "America/New_York";
 
@@ -99,7 +92,6 @@
     enable = true;
     shellAliases = {
       ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
-      rebuild = "sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#nixos";
       lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
       zj = "zellij";
       ff = "fastfetch";
@@ -121,7 +113,6 @@
       "docker"
     ];
     shell = pkgs.fish;
-    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
