@@ -1,40 +1,10 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, lib, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    # Neovim/Mason
-    neovim
-    fd
-    ripgrep
-    gcc
-    nodejs_20
-    cargo
-    wget
-    unzip
+  environment.systemPackages = import ./packages.nix { inherit pkgs; };
 
-    # Git
-    lazygit
-    gh
-
-    # Docker
-    docker
-    lazydocker
-
-    # CL tools
-    lsd
-    fzf
-    fastfetch
-    bottom
-    xclip
-
-    # Formatters
-    nixfmt-rfc-style
-  ];
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # Allow Flakes
   nix.settings.experimental-features = [
@@ -114,9 +84,6 @@
     ];
     shell = pkgs.fish;
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # Enable power management services
   powerManagement.powertop.enable = true;
