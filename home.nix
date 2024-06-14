@@ -21,6 +21,9 @@
   # Copy symlink for fish 
   home.file.".config/fish".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/fish";
 
+  # Copy symlink for wezterm
+  home.file.".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/wezterm";
+
   programs = {
     git = {
       enable = true;
