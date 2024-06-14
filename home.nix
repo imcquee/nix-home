@@ -29,6 +29,10 @@
       enable = true;
       userName = "Isaac McQueen";
       userEmail = "imcqueen@truehomesusa.com";
+      ignores = [
+        ".envrc"
+        ".direnv/"
+      ];
     };
 
     zellij.enable = true;
