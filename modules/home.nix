@@ -24,6 +24,9 @@
   # Copy symlink for wezterm
   home.file.".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/wezterm";
 
+  # Copy symlink for lazygit
+  home.file.".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/lazygit";
+
   programs = {
     git = {
       enable = true;
