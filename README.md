@@ -15,6 +15,7 @@ New machine setup
 - [x] Make public
 - [x] Migrate Neovim
 - [x] Fix copy paste in neovim
+- [ ] Fix systemd services
 - [ ] Add WSL config
 - [ ] Build custom installer
 - [ ] Add DE option

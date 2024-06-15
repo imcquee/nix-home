@@ -19,16 +19,16 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./configuration.nix
-          ./hardware-configuration.nix
-          ./path.nix
-          ./nvidia.nix
-          ./services.nix
+          ./hosts/home-base/configuration.nix
+          ./hosts/home-base/hardware-configuration.nix
+          ./modules/path.nix
+          ./modules/nvidia.nix
+          ./modules/services.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.imcquee = import ./home.nix;
+            home-manager.users.imcquee = import ./modules/home.nix;
           }
         ];
       };
@@ -37,14 +37,14 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./configuration.nix
-          ./hardware-configuration.nix
-          ./path.nix
+          ./hosts/home-base/configuration.nix
+          ./hosts/home-base/hardware-configuration.nix
+          ./modules/path.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.imcquee = import ./home.nix;
+            home-manager.users.imcquee = import ./modules/home.nix;
           }
         ];
       };

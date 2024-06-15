@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  environment.systemPackages = import ./packages.nix { inherit pkgs; };
+  environment.systemPackages = import ../../modules/packages.nix { inherit pkgs; };
 
   # Default user
   users.users.imcquee = {
