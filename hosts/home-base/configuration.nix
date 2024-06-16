@@ -3,6 +3,8 @@
 {
   environment.systemPackages = import ../../modules/shared-packages.nix { inherit pkgs; };
 
+  environment.variables.EDITOR = "nvim";
+
   # Default user
   users.users.imcquee = {
     isNormalUser = true;

@@ -1,1 +1,9 @@
-theme "nord"
+keybinds {
+    normal {
+        bind "Alt g" { 
+            Run "zellij" "run" "-cf" "--width" "80%" "--height" "80%" "--x" "10%" "--y" "10%" "--" "lazygit" {
+                close_on_exit true
+            }
+        }
+    }
+}

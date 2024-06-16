@@ -25,6 +25,7 @@ with pkgs;
   fzf
   fastfetch
   bottom
+  yazi
 
   # Formatters
   nixfmt-rfc-style
