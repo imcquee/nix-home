@@ -24,8 +24,12 @@ with pkgs;
   lsd
   fzf
   fastfetch
-  bottom
+  zenith-nvidia
   yazi
+  jq
+
+  # AI/ML
+  oterm
 
   # Formatters
   nixfmt-rfc-style

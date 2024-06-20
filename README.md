@@ -10,6 +10,10 @@ New machine setup
 6. ```gh auth login```
 7. Setup copilot in neovim
 
+Upgrade
+
+1. nix flake update
+
 ### TODO
 
 - [x] Make public

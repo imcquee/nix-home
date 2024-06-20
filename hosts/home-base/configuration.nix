@@ -46,6 +46,9 @@
     };
   };
 
+  # Optimize storage
+  nix.settings.auto-optimise-store = true;
+
   # Enable power management services
   powerManagement.powertop.enable = true;
 
@@ -73,6 +76,19 @@
 
   # Enable Docker
   virtualisation.docker.enable = true;
+
+  # Enable Ollama
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
+
+  # Enable OpenWebUI
+  services.open-webui = {
+    enable = true;
+    host = "0.0.0.0";
+    port = 8080;
+  };
 
   # Enable direnv
   programs.direnv.enable = true;
