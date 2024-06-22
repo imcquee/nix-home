@@ -3,5 +3,6 @@ require("conform").setup({
     elixir = { "mix" },
     nix = { "nixfmt" },
     gleam = { "gleam" },
+    typescript = { "prettier" },
   },
 })
