@@ -97,6 +97,9 @@
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc ];
 
+  # Enable Envfs
+  services.envfs.enable = true;
+
   # Enable Fish in configuration rather than home so we can set the default login shell to fish in users.users.<user>.shell
   programs.fish = {
     enable = true;
