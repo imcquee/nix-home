@@ -4,5 +4,5 @@ function rebuild
         return 1
     end
     set config $argv[1]
-    sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#$config
+    sudo nixos-rebuild switch --flake /home/nixos/nix-home/#$config
 end

@@ -16,20 +16,11 @@ with pkgs;
   lazygit
   gh
 
-  # Docker
-  docker
-  lazydocker
-
   # CL tools
   lsd
   fzf
   fastfetch
-  zenith-nvidia
   yazi
-  jq
-
-  # AI/ML
-  oterm
 
   # Formatters
   nixfmt-rfc-style
