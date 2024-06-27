@@ -24,6 +24,7 @@
           ./modules/path.nix
           ./modules/nvidia.nix
           ./modules/services.nix
+          ./modules/shared-packages.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

@@ -1,36 +1,60 @@
-{ pkgs }:
+{ pkgs, ... }:
 
-with pkgs;
-[
-  # Neovim/Mason
-  neovim
-  fd
-  ripgrep
-  gcc
-  nodejs_20
-  cargo
-  wget
-  unzip
+{
+  # Unstable packages
+  environment.systemPackages = with pkgs; [
+    # Neovim/Mason
+    neovim
+    fd
+    ripgrep
+    gcc
+    nodejs_20
+    cargo
+    wget
+    unzip
 
-  # Git
-  lazygit
-  gh
+    # Git
+    lazygit
+    gh
 
-  # Docker
-  docker
-  lazydocker
+    # CL tools
+    lsd
+    fzf
+    fastfetch
+    zenith-nvidia
+    yazi
+    jq
 
-  # CL tools
-  lsd
-  fzf
-  fastfetch
-  zenith-nvidia
-  yazi
-  jq
+    # AI/ML
+    oterm
 
-  # AI/ML
-  oterm
+    # Formatters
+    nixfmt-rfc-style
+  ];
 
-  # Formatters
-  nixfmt-rfc-style
-]
+  # Enable direnv
+  programs.direnv.enable = true;
+
+  # Enable nix ld
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [ stdenv.cc.cc ];
+  };
+
+  # Enable Fish in configuration rather than home so we can set the default login shell to fish in users.users.<user>.shell
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
+      lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
+      zj = "zellij";
+      ff = "fastfetch";
+    };
+    shellInit = ''
+      fish_vi_key_bindings
+    '';
+  };
+
+  # Enable Starship (needs to be set before home manager is enabled)
+  programs.starship.enable = true;
+}
