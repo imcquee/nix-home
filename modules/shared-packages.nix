@@ -24,6 +24,7 @@
     zenith-nvidia
     yazi
     jq
+    bat
 
     # AI/ML
     oterm
@@ -46,6 +47,7 @@
     enable = true;
     shellAliases = {
       ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
+      cat = "bat";
       lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
       zj = "zellij";
       ff = "fastfetch";
