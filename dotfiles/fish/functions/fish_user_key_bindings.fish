@@ -3,6 +3,6 @@ function fish_user_key_bindings
     bind \ey -M insert 'yy; commandline -f execute'
     bind \ey 'yy; commandline -f execute'
 
-    bind \eg -M insert 'lg; commandline -f execute'
-    bind \eg 'lg; commandline -f execute'
+    bind \eg -M insert 'lazygit; commandline -f execute'
+    bind \eg 'lazygit; commandline -f execute'
 end
