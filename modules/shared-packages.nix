@@ -26,6 +26,9 @@
     jq
     bat
 
+    # Docker tools
+    lazydocker
+
     # AI/ML
     oterm
 

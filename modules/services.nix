@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  # Enable Docker
+  virtualisation.docker.enable = true;
+
   # Enable Tailscale
   services.tailscale.enable = true;
 
