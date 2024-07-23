@@ -25,6 +25,8 @@
     yazi
     jq
     bat
+    difftastic
+    gdu
 
     # Docker tools
     lazydocker
