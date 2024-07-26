@@ -34,6 +34,9 @@
     # AI/ML
     oterm
 
+    # Terminal
+    kitty
+
     # Formatters
     nixfmt-rfc-style
   ];
