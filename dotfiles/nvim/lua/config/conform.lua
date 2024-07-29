@@ -4,5 +4,6 @@ require("conform").setup({
     nix = { "nixfmt" },
     gleam = { "gleam" },
     typescript = { "prettier" },
+    python = { "black" },
   },
 })

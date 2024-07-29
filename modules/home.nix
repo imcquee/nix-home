@@ -27,6 +27,7 @@
   # Copy symlink for lazygit
   home.file.".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/lazygit";
 
+  # Home manager programs
   programs = {
     git = {
       enable = true;
@@ -38,6 +39,26 @@
       ];
     };
 
+    # fish = {
+    #   enable = true;
+    #   shellAliases = {
+    #     ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
+    #     cat = "bat -p";
+    #     lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
+    #     zj = "zellij";
+    #     ff = "fastfetch";
+    #   };
+    #   shellInit = ''
+    #     fish_vi_key_bindings
+    #   '';
+    # };
+
+    direnv = {
+      enable = true;
+      enableFishIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+
     zellij.enable = true;
 
     zoxide = {
@@ -45,4 +66,44 @@
       enableFishIntegration = true;
     };
   };
+
+  # Unstable packages
+  home.packages = with pkgs; [
+    # Neovim/Mason
+    neovim
+    fd
+    ripgrep
+    gcc
+    nodejs_20
+    cargo
+    wget
+
+    unzip
+    # Git
+    lazygit
+    gh
+
+    # CL tools
+    lsd
+    fzf
+    fastfetch
+    zenith-nvidia
+    yazi
+    jq
+    bat
+    difftastic
+    gdu
+
+    # Docker tools
+    lazydocker
+
+    # AI/ML
+    oterm
+
+    # Terminal
+    kitty
+
+    # Formatters
+    nixfmt-rfc-style
+  ];
 }

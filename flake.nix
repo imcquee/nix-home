@@ -24,7 +24,7 @@
           ./modules/path.nix
           ./modules/nvidia.nix
           ./modules/services.nix
-          ./modules/shared-packages.nix
+          ./modules/elevated-packages.nix
           ./modules/hyprland.nix
           home-manager.nixosModules.home-manager
           {
