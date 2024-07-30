@@ -39,31 +39,10 @@
       ];
     };
 
-    # fish = {
-    #   enable = true;
-    #   shellAliases = {
-    #     ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
-    #     cat = "bat -p";
-    #     lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
-    #     zj = "zellij";
-    #     ff = "fastfetch";
-    #   };
-    #   shellInit = ''
-    #     fish_vi_key_bindings
-    #   '';
-    # };
-
     direnv = {
       enable = true;
       enableFishIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
-    };
-
-    zellij.enable = true;
-
-    zoxide = {
-      enable = true;
-      enableFishIntegration = true;
     };
   };
 
@@ -77,8 +56,12 @@
     nodejs_20
     cargo
     wget
-
     unzip
+
+    # Fish (needed for home manager standalone)
+    fish
+    starship
+
     # Git
     lazygit
     gh
@@ -93,6 +76,8 @@
     bat
     difftastic
     gdu
+    zoxide
+    zellij
 
     # Docker tools
     lazydocker

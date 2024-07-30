@@ -19,6 +19,12 @@
     settings.auto-optimise-store = true;
   };
 
+  # Enable Fish in configuration rather than home so we can set the default login shell to fish in users.users.<user>.shell
+  programs.fish.enable = true;
+
+  # Needs to be called near fish
+  programs.starship.enable = true;
+
   # Default user
   users.users.imcquee = {
     isNormalUser = true;
