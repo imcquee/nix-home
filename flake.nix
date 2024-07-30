@@ -37,7 +37,7 @@
 
       homeConfigurations.home = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-          system = "aarch64-darwin";
+          system = "x86_64-linux";
           config = {
             allowUnfree = true;
           };

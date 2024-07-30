@@ -2,6 +2,7 @@
 
 {
   home.username = "imcquee";
+  home.homeDirectory = "/home/imcquee";
   home.stateVersion = "24.05";
   programs.home-manager.enable = true;
 
@@ -70,7 +71,8 @@
     lsd
     fzf
     fastfetch
-    zenith-nvidia
+
+    # zenith-nvidia
     yazi
     jq
     bat
