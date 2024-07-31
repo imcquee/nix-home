@@ -46,8 +46,6 @@ git clone https://github.com/imcquee/nix-home.git
 home-manager switch --flake /home/imcquee/nix-home#home
 ```
 
-```
-
 ### TODO
 
 - [x] Make public
