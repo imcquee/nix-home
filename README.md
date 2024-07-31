@@ -14,13 +14,47 @@ Upgrade
 
 1. nix flake update
 
+### Non-Nixos setup
+
+1. Install Nix
+
+```bash
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
+Or using Determinate Systems installer
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+2. Setup Home-Manger and Git (if not already installed)
+
+```bash
+nix-shell -p git home-manager
+```
+
+3. Clone repo
+
+```bash
+git clone https://github.com/imcquee/nix-home.git
+```
+
+4. Setup Home-Manager
+
+```bash
+home-manager switch --flake /home/imcquee/nix-home#home
+```
+
+```
+
 ### TODO
 
 - [x] Make public
 - [x] Migrate Neovim
 - [x] Fix copy paste in neovim
+- [x] Add DE option
+- [x] Add Non-Nixos + WSL setup
 - [ ] Fix systemd services
-- [ ] Add WSL config
 - [ ] Build custom installer
-- [ ] Add DE option
 - [ ] Migrate Darwin over
