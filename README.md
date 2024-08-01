@@ -7,8 +7,6 @@ New machine setup
 3. ```sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#<hostname>```
 4. On subsequent runs, just run `rebuild <hostname>`
 5. Get tailscale key from <https://login.tailscale.com/admin/settings/keys> and replace 'tskey-examplekeyhere' in tailscale.nix
-6. ```gh auth login```
-7. Setup copilot in neovim
 
 Upgrade
 
@@ -43,7 +41,13 @@ git clone https://github.com/imcquee/nix-home.git
 4. Setup Home-Manager
 
 ```bash
-home-manager switch --flake /home/imcquee/nix-home#home
+home-manager switch --flake /home/imcquee/nix-home#universal
+```
+
+5. Install tailscale
+
+```bash
+curl -fsSL https://tailscale.com/install.sh | sh
 ```
 
 ### TODO
@@ -53,6 +57,7 @@ home-manager switch --flake /home/imcquee/nix-home#home
 - [x] Fix copy paste in neovim
 - [x] Add DE option
 - [x] Add Non-Nixos + WSL setup
+- [] Build custom bootstrap script for Non-Nixos environments
 - [ ] Fix systemd services
 - [ ] Build custom installer
 - [ ] Migrate Darwin over
