@@ -64,7 +64,10 @@
             allowUnfree = true;
           };
         };
-        modules = ./modules/home.nix;
+        extraSpecialArgs = {
+          withGUI = false;
+        };
+        modules = [ ./modules/home.nix ];
       };
     };
 }
