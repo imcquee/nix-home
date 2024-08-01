@@ -1,9 +1,19 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  specialArgs,
+  ...
+}:
 
+let
+  packages = import ./packages.nix;
+  inherit (specialArgs) withGUI;
+in
 {
   home.username = "imcquee";
   home.homeDirectory = "/home/imcquee";
   home.stateVersion = "24.05";
+  home.packages = packages pkgs withGUI;
   programs.home-manager.enable = true;
 
   # Allow unfree packages with nix-shell
@@ -46,51 +56,4 @@
       nix-direnv.enable = true;
     };
   };
-
-  # Unstable packages
-  home.packages = with pkgs; [
-    # Neovim/Mason
-    neovim
-    fd
-    ripgrep
-    gcc
-    nodejs_20
-    cargo
-    wget
-    unzip
-
-    # Fish (needed for home manager standalone)
-    fish
-    starship
-
-    # Git
-    lazygit
-    gh
-
-    # CL tools
-    lsd
-    fzf
-    fastfetch
-
-    # zenith-nvidia
-    yazi
-    jq
-    bat
-    difftastic
-    gdu
-    zoxide
-    zellij
-
-    # Docker tools
-    lazydocker
-
-    # AI/ML
-    oterm
-
-    # Terminal
-    kitty
-
-    # Formatters
-    nixfmt-rfc-style
-  ];
 }
