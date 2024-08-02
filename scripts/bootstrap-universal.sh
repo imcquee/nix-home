@@ -22,6 +22,7 @@ print_success "Tailscale installed successfully."
 # Run Determinate Systems Installer (assuming a URL for installation)
 echo "Running Determinate Systems Installer..."
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --init none
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 check_success "Determinate Systems Installer failed."
 print_success "Determinate Systems Installer ran successfully."
 
