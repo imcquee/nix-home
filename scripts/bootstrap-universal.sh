@@ -22,11 +22,18 @@ print_success "Tailscale installed successfully."
 # Run Determinate Systems Installer (assuming a URL for installation)
 echo "Running Determinate Systems Installer..."
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --init none
-. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 check_success "Determinate Systems Installer failed."
-print_success "Determinate Systems Installer ran successfully."
 
-# Set up Home Manager and Git
+# Source Nix daemon script
+if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  print_success "Nix environment sourced successfully."
+else
+  echo -e "\e[31mError: Nix daemon script not found.\e[0m"
+  exit 1
+fi
+
+# Set up Home Manager
 echo "Setting up Home Manager..."
 nix-shell -p home-manager
 check_success "Home Manager setup failed."
