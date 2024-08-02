@@ -16,7 +16,7 @@ check_success() {
 # Install Tailscale
 echo "Installing Tailscale..."
 curl -fsSL https://tailscale.com/install.sh | sh
-taislcale up
+tailscale up
 check_success "Tailscale installation failed."
 print_success "Tailscale installed successfully."
 
