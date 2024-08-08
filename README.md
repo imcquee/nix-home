@@ -4,6 +4,8 @@ New machine setup
 
 Build ISO: `nix build .#nixosConfigurations.iso.config.system.build.isoImage`
 
+Installation guide: <https://nixos.org/manual/nixos/unstable/#sec-installation-manual>
+
 1. Clone repo
 
 ```bash
