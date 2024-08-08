@@ -2,6 +2,8 @@
 
 New machine setup
 
+Build ISO: `nix build .#nixosConfigurations.iso.config.system.build.isoImage`
+
 1. Clone repo
 
 ```bash
@@ -65,5 +67,5 @@ curl -fsSL https://tailscale.com/install.sh | sh
 - [x] Add Non-Nixos + WSL setup
 - [ ] Build custom bootstrap script for Non-Nixos environments
 - [ ] Fix systemd services
-- [ ] Build custom installer
+- [x] Build custom installer
 - [ ] Migrate Darwin over

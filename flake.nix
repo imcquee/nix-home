@@ -57,6 +57,10 @@
         ];
       };
 
+      nixosConfigurations.iso = nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/isoimage/configuration.nix ];
+      };
+
       homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
