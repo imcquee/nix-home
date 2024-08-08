@@ -44,4 +44,7 @@ with pkgs;
   # Formatters
   nixfmt-rfc-style
 ]
-++ pkgs.lib.optionals withGUI [ kitty ]
+++ pkgs.lib.optionals withGUI [
+  kitty
+  zenith-nvidia
+]
