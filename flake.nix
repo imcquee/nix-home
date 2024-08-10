@@ -15,6 +15,7 @@
       ...
     }@inputs:
     {
+      # NixOS configuration for a home server
       nixosConfigurations.lab = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
@@ -34,6 +35,7 @@
         ];
       };
 
+      # Configuration for my dev machine
       nixosConfigurations.dev = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
@@ -57,10 +59,7 @@
         ];
       };
 
-      nixosConfigurations.iso = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts/isoimage/configuration.nix ];
-      };
-
+      # Universal configuration for use in non-nix situations
       homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "x86_64-linux";
@@ -72,6 +71,11 @@
           withGUI = false;
         };
         modules = [ ./modules/home.nix ];
+      };
+
+      # Build ISO image
+      nixosConfigurations.iso = nixpkgs.lib.nixosSystem {
+        modules = [ ./hosts/isoimage/configuration.nix ];
       };
     };
 }
