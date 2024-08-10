@@ -15,33 +15,13 @@
       ...
     }@inputs:
     {
-      # NixOS configuration for a home server
-      nixosConfigurations.lab = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = inputs;
-        modules = [
-          ./hosts/home-base/configuration.nix
-          ./hosts/home-base/hardware-configuration.nix
-          ./modules/path.nix
-          ./modules/tailscale.nix
-          ./modules/services.nix
-          ./modules/elevated-packages.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.imcquee = import ./modules/home.nix;
-          }
-        ];
-      };
-
       # Configuration for my dev machine
       nixosConfigurations.dev = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./hosts/home-base/configuration.nix
-          ./hosts/home-base/hardware-configuration.nix
+          ./hosts/dev/configuration.nix
+          ./hosts/dev/hardware-configuration.nix
           ./modules/path.nix
           ./modules/nvidia.nix
           ./modules/services.nix
@@ -74,8 +54,6 @@
       };
 
       # Build ISO image
-      nixosConfigurations.iso = nixpkgs.lib.nixosSystem {
-        modules = [ ./hosts/isoimage/configuration.nix ];
-      };
+      nixosConfigurations.iso = nixpkgs.lib.nixosSystem { modules = [ ./hosts/iso/configuration.nix ]; };
     };
 }
