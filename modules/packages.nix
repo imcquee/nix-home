@@ -1,50 +1,54 @@
-pkgs: withGUI:
+{ pkgs, withGUI }:
+
 with pkgs;
-[
-  # these files are meant to be installed in all scenarios
 
-  # Neovim/Mason
-  neovim
-  fd
-  ripgrep
-  gcc
-  nodejs_20
-  cargo
-  wget
-  unzip
+let
+  basePackages = [
+    # these files are meant to be installed in all scenarios
 
-  # Fish (needed for home manager standalone)
-  fish
-  starship
+    # Neovim/Mason
+    neovim
+    fd
+    ripgrep
+    gcc
+    nodejs_20
+    cargo
+    wget
+    unzip
 
-  # Git
-  lazygit
-  gh
+    # Fish (needed for home manager standalone)
+    fish
+    starship
 
-  # CL tools
-  lsd
-  fzf
-  fastfetch
+    # Git
+    lazygit
+    gh
 
-  # zenith-nvidia
-  yazi
-  jq
-  bat
-  difftastic
-  gdu
-  zoxide
-  zellij
+    # CL tools
+    lsd
+    fzf
+    fastfetch
 
-  # Docker tools
-  lazydocker
+    # zenith-nvidia
+    yazi
+    jq
+    bat
+    difftastic
+    gdu
+    zoxide
+    zellij
 
-  # AI/ML
-  oterm
+    # Docker tools
+    lazydocker
 
-  # Formatters
-  nixfmt-rfc-style
-]
-++ pkgs.lib.optionals withGUI [
-  kitty
-  zenith-nvidia
-]
+    # AI/ML
+    oterm
+
+    # Formatters
+    nixfmt-rfc-style
+  ];
+in
+  basePackages ++ pkgs.lib.optionals withGUI [
+    kitty
+    zenith-nvidia
+  ]

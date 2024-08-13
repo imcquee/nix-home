@@ -6,14 +6,13 @@
 }:
 
 let
-  packages = import ./packages.nix;
   inherit (specialArgs) withGUI;
 in
 {
   home.username = "imcquee";
   home.homeDirectory = "/home/imcquee";
   home.stateVersion = "24.05";
-  home.packages = packages pkgs withGUI;
+  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI; };
   programs.home-manager.enable = true;
 
   # Allow unfree packages with nix-shell
