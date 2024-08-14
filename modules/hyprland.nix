@@ -3,9 +3,16 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    displayManager.gdm = {
-      enable = true;
-      wayland = true;
+    displayManager = {
+      gdm = {
+        enable = true;
+        wayland = true;
+        autoSuspend = false;
+      };
+      autoLogin = {
+        enable = true;
+        user = "imcquee";
+      };
     };
   };
 
