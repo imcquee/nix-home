@@ -15,6 +15,7 @@ let
     cargo
     wget
     unzip
+    nixd
 
     # Fish (needed for home manager standalone)
     fish
@@ -48,7 +49,8 @@ let
     nixfmt-rfc-style
   ];
 in
-  basePackages ++ pkgs.lib.optionals withGUI [
-    kitty
-    zenith-nvidia
-  ]
+basePackages
+++ pkgs.lib.optionals withGUI [
+  kitty
+  zenith-nvidia
+]
