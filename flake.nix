@@ -5,6 +5,23 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+    };
+    homebrew-bundle = {
+      url = "github:homebrew/homebrew-bundle";
+      flake = false;
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
   outputs =
@@ -12,6 +29,11 @@
       self,
       nixpkgs,
       home-manager,
+      nix-darwin,
+      nix-homebrew,
+      homebrew-bundle,
+      homebrew-core,
+      homebrew-cask,
       ...
     }@inputs:
     {
@@ -34,6 +56,43 @@
             home-manager.users.imcquee = import ./modules/home.nix;
             home-manager.extraSpecialArgs = {
               withGUI = true;
+            };
+          }
+        ];
+      };
+      
+      # Darwin
+      darwinConfigurations."Isaacs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        specialArgs = inputs;
+        modules = [
+          ./hosts/darwin/configuration.nix
+          ./modules/homebrew.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              user = "imcquee";
+              enable = true;
+              taps = {
+                "homebrew/homebrew-core" = homebrew-core;
+                "homebrew/homebrew-cask" = homebrew-cask;
+                "homebrew/homebrew-bundle" = homebrew-bundle;
+              };
+              mutableTaps = false;
+              autoMigrate = true;
+            };
+            # Use flake for nix_path https://nixos-and-flakes.thiscute.world/best-practices/nix-path-and-flake-registry
+            nix.registry.nixpkgs.flake = nixpkgs;
+            environment.etc."nix/inputs/nixpkgs".source = "${nixpkgs}";
+            nix.settings.nix-path = nixpkgs.lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
+          }          
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.imcquee = import ./modules/home.nix;
+            home-manager.extraSpecialArgs = {
+              withGUI = false;
             };
           }
         ];

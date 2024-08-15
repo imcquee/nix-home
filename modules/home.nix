@@ -7,10 +7,14 @@
 
 let
   inherit (specialArgs) withGUI;
+  homeDir = if pkgs.stdenv.isDarwin then "/Users/imcquee" else "/home/imcquee";
 in
 {
+  # import sub modules
+  imports = [ ./starship.nix ];
+
   home.username = "imcquee";
-  home.homeDirectory = "/home/imcquee";
+  home.homeDirectory = homeDir;
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI; };
   programs.home-manager.enable = true;
@@ -23,19 +27,19 @@ in
   '';
 
   # Copy symlink for neovim
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/nvim";
+  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/nvim";
 
   # Copy symlink for zellij
-  home.file.".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/zellij";
+  home.file.".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zellij";
 
   # Copy symlink for fish 
-  home.file.".config/fish".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/fish";
+  home.file.".config/fish".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/fish";
 
   # Copy symlink for wezterm
-  home.file.".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/wezterm";
+  home.file.".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/wezterm";
 
   # Copy symlink for lazygit
-  home.file.".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink "/home/imcquee/nix-home/dotfiles/lazygit";
+  home.file.".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazygit";
 
   # Home manager programs
   programs = {
@@ -51,7 +55,6 @@ in
 
     direnv = {
       enable = true;
-      enableFishIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
     };
   };
