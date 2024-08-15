@@ -11,7 +11,7 @@
       }
     else
       {
-        nix.channel.enable = false;
+        channel.enable = false;
         registry.nixpkgs.flake = nixpkgs;
         settings.nix-path = nixpkgs.lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       };

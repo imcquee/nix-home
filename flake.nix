@@ -1,5 +1,5 @@
 {
-  description = "Nix + Darwin configuration";
+  description = "Nix + Portable Linux + Darwin configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -36,10 +36,30 @@
       homebrew-cask,
       ...
     }@inputs:
+    let
+
+      # Common Configuration
+      linuxSystem = "x86_64-linux";
+      darwinSystem = "x86_64-darwin";
+
+      # Reusable Functions
+      configureHomeManager =
+        { withGUI, ... }:
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.imcquee = import ./modules/home.nix;
+          home-manager.extraSpecialArgs = {
+            inherit withGUI;
+          };
+        };
+
+    in
     {
+
       # Configuration for my dev machine
       nixosConfigurations.dev = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = linuxSystem;
         specialArgs = inputs;
         modules = [
           ./hosts/dev/configuration.nix
@@ -50,20 +70,13 @@
           ./modules/elevated-packages.nix
           ./modules/hyprland.nix
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.imcquee = import ./modules/home.nix;
-            home-manager.extraSpecialArgs = {
-              withGUI = true;
-            };
-          }
+          (configureHomeManager { withGUI = true; })
         ];
       };
 
-      # Darwin
+      # Darwin Configuration
       darwinConfigurations."Isaacs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
+        system = darwinSystem;
         specialArgs = inputs;
         modules = [
           ./hosts/darwin/configuration.nix
@@ -84,21 +97,14 @@
             };
           }
           home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.imcquee = import ./modules/home.nix;
-            home-manager.extraSpecialArgs = {
-              withGUI = false;
-            };
-          }
+          (configureHomeManager { withGUI = false; })
         ];
       };
 
       # Universal configuration for use in non-nix situations
       homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-          system = "x86_64-linux";
+          system = linuxSystem;
           config = {
             allowUnfree = true;
           };
