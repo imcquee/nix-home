@@ -17,10 +17,10 @@ git clone https://github.com/imcquee/nix-home.git
 3. Rebuild host
 
 ```bash
-sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#<hostname>
+sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#dev
 ```
   
-4. On subsequent runs, just run:`rebuild <hostname>`
+4. On subsequent runs, just run: `rebuild dev`
 
 5. Get tailscale [key](https://login.tailscale.com/admin/settings/keys) and replace 'tskey-examplekeyhere' in tailscale.nix
 
@@ -82,7 +82,7 @@ git clone https://github.com/imcquee/nix-home.git
 nix run nix-darwin -- switch --flake .#Isaacs-MacBook-Pro
 ```
 
-5. On subsequent runs, just run:`darwin-rebuild switch --flake .#Isaacs-MacBook-Pro`
+5. On subsequent runs, just run: `darwin-rebuild switch --flake .#Isaacs-MacBook-Pro`
 
 ### Useful tips
 
