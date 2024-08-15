@@ -11,3 +11,5 @@ alias cat "bat -p"
 alias lg "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit"
 alias zj zellij
 alias ff fastfetch
+
+starship init fish | source

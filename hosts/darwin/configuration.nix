@@ -37,7 +37,7 @@
   system.checks.verifyNixPath = false;
 
   # Enable Fish in configuration rather than home so we can set the default login shell to fish in users.users.<user>.shell
-  # programs.fish.enable = true;
+  programs.fish.enable = true;
   programs.zsh.enable = true;
 
   # Needs to be called near fish
