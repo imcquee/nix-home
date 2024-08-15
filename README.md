@@ -1,4 +1,4 @@
-### Nixos Config
+### NixOS Config
 
 New machine setup
 
@@ -16,17 +16,13 @@ git clone https://github.com/imcquee/nix-home.git
   
 3. Rebuild host
 
-  ```bash
-  sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#<hostname>
-  ```
+```bash
+sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#<hostname>
+```
   
 4. On subsequent runs, just run:`rebuild <hostname>`
 
 5. Get tailscale [key](https://login.tailscale.com/admin/settings/keys) and replace 'tskey-examplekeyhere' in tailscale.nix
-
-### Upgrade
-
-1. nix flake update
 
 ### Non-Nixos setup
 
@@ -60,6 +56,45 @@ home-manager switch --flake /home/imcquee/nix-home#universal
 curl -fsSL https://tailscale.com/install.sh | sh
 ```
 
+### Darwin setup
+
+1. Install Nix
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+```
+
+2. Setup Git (if not already installed)
+
+```bash
+nix-shell -p git
+```
+
+3. Clone repo
+
+```bash
+git clone https://github.com/imcquee/nix-home.git
+```
+
+4. Rebuild host
+
+```bash
+nix run nix-darwin -- switch --flake .#Isaacs-MacBook-Pro
+```
+
+5. On subsequent runs, just run:`darwin-rebuild switch --flake .#Isaacs-MacBook-Pro`
+
+### Useful tips
+
+#### Upgrading flake
+
+1. nix flake update
+
+#### Authenticating with GitHub
+
+1. `gh auth login`
+2. `gh auth setup-git`
+
 ### TODO
 
 - [x] Make public
@@ -67,7 +102,7 @@ curl -fsSL https://tailscale.com/install.sh | sh
 - [x] Fix copy paste in neovim
 - [x] Add DE option
 - [x] Add Non-Nixos + WSL setup
-- [ ] Build custom bootstrap script for Non-Nixos environments
-- [ ] Fix systemd services
 - [x] Build custom installer
 - [x] Migrate Darwin over
+- [ ] Build custom bootstrap script for Non-Nixos environments
+- [ ] Fix systemd services
