@@ -70,4 +70,4 @@ curl -fsSL https://tailscale.com/install.sh | sh
 - [ ] Build custom bootstrap script for Non-Nixos environments
 - [ ] Fix systemd services
 - [x] Build custom installer
-- [ ] Migrate Darwin over
+- [x] Migrate Darwin over
