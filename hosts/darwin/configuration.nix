@@ -36,18 +36,14 @@
   # Turn off NIX_PATH warnings now that we're using flakes
   system.checks.verifyNixPath = false;
 
-  # Enable Fish in configuration rather than home so we can set the default login shell to fish in users.users.<user>.shell
+  # Setup both fish and zsh to avoid issues when switching
   programs.fish.enable = true;
   programs.zsh.enable = true;
-
-  # Needs to be called near fish
-  # programs.starship.enable = true;
 
   # Default user
   users.users.imcquee = {
     name = "imcquee";
     home = "/Users/imcquee";
-    # shell = pkgs.fish;
   };
 
   # Allow unfree packages
