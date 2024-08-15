@@ -10,9 +10,6 @@ let
   homeDir = if pkgs.stdenv.isDarwin then "/Users/imcquee" else "/home/imcquee";
 in
 {
-  # import sub modules
-  imports = [ ./starship.nix ];
-
   home.username = "imcquee";
   home.homeDirectory = homeDir;
   home.stateVersion = "24.05";
