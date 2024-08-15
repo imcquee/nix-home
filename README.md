@@ -101,8 +101,9 @@ nix run nix-darwin -- switch --flake .#Isaacs-MacBook-Pro
 - [x] Migrate Neovim
 - [x] Fix copy paste in neovim
 - [x] Add DE option
-- [x] Add Non-Nixos + WSL setup
+- [x] Add Non-Nixos
 - [x] Build custom installer
 - [x] Migrate Darwin over
+- [ ] Add WSL setup
 - [ ] Build custom bootstrap script for Non-Nixos environments
 - [ ] Fix systemd services
