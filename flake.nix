@@ -60,7 +60,7 @@
           }
         ];
       };
-      
+
       # Darwin
       darwinConfigurations."Isaacs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         system = "x86_64-darwin";
@@ -68,6 +68,7 @@
         modules = [
           ./hosts/darwin/configuration.nix
           ./modules/homebrew.nix
+          ./modules/path.nix
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
@@ -81,11 +82,7 @@
               mutableTaps = false;
               autoMigrate = true;
             };
-            # Use flake for nix_path https://nixos-and-flakes.thiscute.world/best-practices/nix-path-and-flake-registry
-            nix.registry.nixpkgs.flake = nixpkgs;
-            environment.etc."nix/inputs/nixpkgs".source = "${nixpkgs}";
-            nix.settings.nix-path = nixpkgs.lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
-          }          
+          }
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
