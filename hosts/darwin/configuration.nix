@@ -44,6 +44,7 @@
   users.users.imcquee = {
     name = "imcquee";
     home = "/Users/imcquee";
+    shell = pkgs.fish;
   };
 
   # Allow unfree packages
