@@ -17,7 +17,7 @@ git clone https://github.com/imcquee/nix-home.git
 3. Rebuild host
 
 ```bash
-sudo nixos-rebuild switch --flake /home/imcquee/nix-home/#dev
+sudo nixos-rebuild switch --flake /home/$USER/nix-home/#dev
 ```
   
 4. On subsequent runs, just run: `rebuild dev`
@@ -47,7 +47,7 @@ git clone https://github.com/imcquee/nix-home.git
 4. Setup Home-Manager
 
 ```bash
-home-manager switch --flake /home/imcquee/nix-home#universal
+home-manager switch --flake /home/$USER/nix-home#universal
 ```
 
 5. Install tailscale
