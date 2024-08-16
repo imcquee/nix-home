@@ -1,3 +1,5 @@
+set -ga fish_user_paths $HOME/.nix-profile/bin
+set -ga fish_user_paths /nix/var/nix/profiles/default/bin
 if status is-interactive
     zoxide init --cmd cd fish | source
 end
