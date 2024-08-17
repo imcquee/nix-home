@@ -1,4 +1,19 @@
-### NixOS Config
+<div align="center"><img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-white.png" width="300px"></div>
+<h1 align="center">❄️ Nix Configurations</h1>
+
+<div align="center">
+![nixos](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
+</div>
+
+## Table of contents
+
+- [NixOS](#-NixoS-Config)
+- [Home-Manger](#-home-manger-setup)
+- [Darwin](#-darwin-setup)
+- [Tips](#-Useful-tips)
+- [TODO](#-TODO)
+
+### ❄️ NixOS Config
 
 New machine setup
 
@@ -20,11 +35,11 @@ git clone https://github.com/imcquee/nix-home.git
 sudo nixos-rebuild switch --flake /home/$USER/nix-home/#dev
 ```
   
-4. On subsequent runs, just run: `rebuild dev`
+4. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild dev`
 
 5. Get tailscale [key](https://login.tailscale.com/admin/settings/keys) and replace 'tskey-examplekeyhere' in tailscale.nix
 
-### Non-Nixos setup
+### 🏡 Home-Manger setup
 
 1. Install Nix
 
@@ -50,13 +65,15 @@ git clone https://github.com/imcquee/nix-home.git
 home-manager switch --flake /home/$USER/nix-home#universal
 ```
 
-5. Install tailscale
+5. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild universal`
+
+6. Install tailscale
 
 ```bash
 curl -fsSL https://tailscale.com/install.sh | sh
 ```
 
-### Darwin setup
+### 🍎 Darwin setup
 
 1. Install Nix
 
@@ -82,7 +99,7 @@ git clone https://github.com/imcquee/nix-home.git
 nix run nix-darwin -- switch --flake .#Isaacs-MacBook-Pro
 ```
 
-5. On subsequent runs, just run: `darwin-rebuild switch --flake .#Isaacs-MacBook-Pro`
+5. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild Isaacs-MacBook-Pro`
 
 ### Useful tips
 
