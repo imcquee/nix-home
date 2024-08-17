@@ -2,7 +2,7 @@
 <h1 align="center">❄️ Nix Configurations</h1>
 
 <div align="center">
-![nixos](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
+[nixos](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
 </div>
 
 ## Table of contents
