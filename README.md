@@ -1,9 +1,4 @@
 <div align="center"><img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-white.png" width="300px"></div>
-<h1 align="center">❄️ Nix Configurations</h1>
-
-<div align="center">
-![nixos](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
-</div>
 
 ## Table of contents
 
