@@ -30,6 +30,7 @@ let
     lsd
     fzf
     fastfetch
+    nerdfonts
 
     # zenith-nvidia
     yazi

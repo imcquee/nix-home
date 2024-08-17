@@ -41,6 +41,9 @@ in
   # Copy symlink for starship
   home.file.".config/starship".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/starship";
 
+  # Copy symlink for hyprland
+  home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/hypr";
+
   # Home manager programs
   programs = {
     git = {
