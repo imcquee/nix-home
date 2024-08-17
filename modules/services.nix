@@ -36,6 +36,18 @@
     acceptTerms = true;
     defaults.email = "foo@bar.com";
   };
+
   # Enable Envfs
   services.envfs.enable = true;
+
+  # Sound
+  # rtkit is optional but recommended
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 }
