@@ -5,10 +5,10 @@ function rebuild
     end
     set config $argv[1]
 
-    if test -e /etc/NIXOS
+    if command -v nixos-version >/dev/null
         sudo nixos-rebuild switch --flake /home/$USER/nix-home/#$config
     else if string match -q Darwin (uname)
-        darwin-rebuild switch --flake /home/$USER/nix-home#$config
+        darwin-rebuild switch --flake /Users/$USER/nix-home#$config
     else
         home-manager switch --flake /home/$USER/nix-home#$config
     end
