@@ -1,13 +1,5 @@
 <div align="center"><img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-white.png" width="300px"></div>
 
-## Table of contents
-
-- [NixOS](#-NixOS-Config)
-- [Home-Manger](#-home-manger-setup)
-- [Darwin](#-darwin-setup)
-- [Tips](#-Useful-tips)
-- [TODO](#-TODO)
-
 ### ❄️ NixOS Config
 
 New machine setup
