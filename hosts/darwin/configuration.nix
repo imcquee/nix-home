@@ -39,6 +39,10 @@
   # Setup both fish and zsh to avoid issues when switching
   programs.fish.enable = true;
   programs.zsh.enable = true;
+  programs.direnv = {
+    enable = true;
+    loadInNixShell = true;
+  };
 
   # Default user
   users.users.imcquee = {
@@ -49,6 +53,9 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Use Touch ID over sudo
+  security.pam.enableSudoTouchIdAuth = true;
 
   system = {
     stateVersion = 4;
@@ -62,6 +69,8 @@
         tilesize = 56;
         orientation = "left";
       };
+      finder.AppleShowAllExtensions = true;
+      screencapture.location = "~/Pictures/Screenshots";
     };
 
     keyboard = {
