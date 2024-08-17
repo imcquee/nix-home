@@ -53,6 +53,6 @@ let
 in
 basePackages
 ++ pkgs.lib.optionals withGUI [
-  kitty
+  wezterm
   zenith-nvidia
 ]

@@ -6,4 +6,5 @@ return {
 	macos_window_background_blur = 20,
 	font = wezterm.font("JetBrains Mono"),
 	font_size = 18.0,
+	enable_wayland = false,
 }
