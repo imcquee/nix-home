@@ -16,6 +16,7 @@ let
     wget
     unzip
     nixd
+    tree-sitter
 
     # Fish (needed for home manager standalone)
     fish

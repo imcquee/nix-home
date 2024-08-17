@@ -9,11 +9,13 @@
         wayland = true;
         autoSuspend = false;
       };
-      autoLogin = {
-        enable = true;
-        user = "imcquee";
-      };
     };
+  };
+
+  # Enable Auto-Login
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "imcquee";
   };
 
   # Enable Hyperland
