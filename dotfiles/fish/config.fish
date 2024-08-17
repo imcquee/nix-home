@@ -15,5 +15,6 @@ alias zj zellij
 alias ff fastfetch
 
 set -gx EDITOR nvim
+set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
 
 starship init fish | source

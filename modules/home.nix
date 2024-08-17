@@ -38,6 +38,9 @@ in
   # Copy symlink for lazygit
   home.file.".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazygit";
 
+  # Copy symlink for starship
+  home.file.".config/starship".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/starship";
+
   # Home manager programs
   programs = {
     git = {
