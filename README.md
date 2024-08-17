@@ -1,12 +1,12 @@
 <div align="center"><img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-white.png" width="300px"></div>
 
-### ❄️ NixOS Config
-
-New machine setup
+### 🖥️ New machine setup
 
 Build ISO: `nix build .#nixosConfigurations.iso.config.system.build.isoImage`
 
 Installation guide: <https://nixos.org/manual/nixos/unstable/#sec-installation-manual>
+
+### ❄️ NixOS Config
 
 1. Clone repo
 
