@@ -82,5 +82,9 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # K400 keyboard receiver
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
+
   system.stateVersion = "24.05";
 }
