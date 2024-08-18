@@ -53,6 +53,13 @@ let
 in
 basePackages
 ++ pkgs.lib.optionals withGUI [
+  # Hyperland
+  wofi
   wezterm
+
+  # Browsers
+  firefox
+
+  # Monitoring
   zenith-nvidia
 ]
