@@ -24,7 +24,6 @@ sudo nixos-rebuild switch --flake /home/$USER/nix-home/#dev
   
 4. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild dev`
 
-
 ### 🏡 Home-Manger setup
 
 1. Install Nix
@@ -97,6 +96,11 @@ nix run nix-darwin -- switch --flake .#Isaacs-MacBook-Pro
 
 1. `gh auth login`
 2. `gh auth setup-git`
+
+#### Cleanup storage
+
+Delete stale paths: `nix-collect-garbage`
+Delete stale paths and generations older than x days: `nix-collect-garbage --delete-older-than 30d`
 
 ### TODO
 
