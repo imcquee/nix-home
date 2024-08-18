@@ -40,8 +40,13 @@
   # Enable Envfs
   services.envfs.enable = true;
 
+  # Kanata keybindings
+  services.kanata = {
+    enable = true;
+    keyboards.K400.configFile = /home/imcquee/nix-home/dotfiles/kanata/k400.kbd;
+  };
+
   # Sound
-  # rtkit is optional but recommended
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

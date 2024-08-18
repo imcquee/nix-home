@@ -44,7 +44,9 @@ in
   # Copy symlink for hyprland
   home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/hypr";
 
-  # Home manager programs
+  # Copy symlink for hyprland
+  home.file.".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/kanata";
+
   programs = {
     git = {
       enable = true;
