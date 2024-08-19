@@ -98,20 +98,6 @@
           ./hosts/darwin/configuration.nix
           ./modules/homebrew.nix
           ./modules/path.nix
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              user = userInfo.userName;
-              enable = true;
-              taps = {
-                "homebrew/homebrew-core" = homebrew-core;
-                "homebrew/homebrew-cask" = homebrew-cask;
-                "homebrew/homebrew-bundle" = homebrew-bundle;
-              };
-              mutableTaps = false;
-              autoMigrate = true;
-            };
-          }
           home-manager.darwinModules.home-manager
           (configureHomeManager { homeDir = "/Users/${userInfo.userName}"; })
         ];
