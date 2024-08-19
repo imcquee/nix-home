@@ -26,14 +26,10 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       nix-darwin,
       nix-homebrew,
-      homebrew-bundle,
-      homebrew-core,
-      homebrew-cask,
       ...
     }@inputs:
     let
@@ -53,23 +49,6 @@
         withGUI = false;
         homeDir = "/home/${userInfo.userName}";
       };
-
-      # Reusable Functions
-      configureHomeManager =
-        {
-          withGUI ? defaults.withGUI,
-          homeDir ? defaults.homeDir,
-          user ? userInfo,
-          ...
-        }:
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${userInfo.userName} = import ./modules/home.nix;
-          home-manager.extraSpecialArgs = {
-            inherit withGUI homeDir user;
-          };
-        };
     in
     {
 
@@ -86,21 +65,27 @@
           ./modules/elevated-packages.nix
           ./modules/hyprland.nix
           home-manager.nixosModules.home-manager
-          (configureHomeManager { withGUI = true; })
+          ./modules/home-manager.nix
         ];
       };
 
       # Darwin Configuration
       darwinConfigurations."MBP2018" = nix-darwin.lib.darwinSystem {
         system = darwin_x86;
-        specialArgs = inputs // userInfo // { homeDir = "/Users/${userInfo.userName}"; };
+        specialArgs =
+          inputs
+          // userInfo
+          // {
+            withGUI = defaults.withGUI;
+            homeDir = "/Users/${userInfo.userName}";
+          };
         modules = [
           ./hosts/darwin/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           ./modules/homebrew.nix
           ./modules/path.nix
           home-manager.darwinModules.home-manager
-          (configureHomeManager { homeDir = "/Users/${userInfo.userName}"; })
+          ./modules/home-manager.nix
         ];
       };
 

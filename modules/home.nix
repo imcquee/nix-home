@@ -6,8 +6,13 @@
 }:
 
 let
-  inherit (specialArgs) withGUI homeDir;
-  inherit (specialArgs.user) userName userEmail fullName;
+  inherit (specialArgs)
+    withGUI
+    homeDir
+    userName
+    userEmail
+    fullName
+    ;
 in
 {
   home.username = userName;
