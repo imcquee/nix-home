@@ -96,6 +96,7 @@
         specialArgs = inputs // userInfo // { homeDir = "/Users/${userInfo.userName}"; };
         modules = [
           ./hosts/darwin/configuration.nix
+          nix-homebrew.darwinModules.nix-homebrew
           ./modules/homebrew.nix
           ./modules/path.nix
           home-manager.darwinModules.home-manager
