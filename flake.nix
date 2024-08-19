@@ -53,9 +53,7 @@
         {
           withGUI ? false,
           homeDir ? "/home/${userInfo.userName}",
-          userName ? userInfo.userName,
-          fullName ? userInfo.fullName,
-          userEmail ? userInfo.userEmail,
+          user ? userInfo,
           ...
         }:
         {
@@ -63,13 +61,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.${userInfo.userName} = import ./modules/home.nix;
           home-manager.extraSpecialArgs = {
-            inherit
-              withGUI
-              homeDir
-              userName
-              fullName
-              userEmail
-              ;
+            inherit withGUI homeDir user;
           };
         };
     in
@@ -130,7 +122,8 @@
         extraSpecialArgs = {
           withGUI = false;
           homeDir = "/home/${userInfo.userName}";
-        } // userInfo;
+          user = userInfo;
+        };
         modules = [ ./modules/home.nix ];
       };
 
