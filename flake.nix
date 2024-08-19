@@ -37,30 +37,40 @@
       ...
     }@inputs:
     let
+      # User Information
+      userInfo = {
+        userName = "imcquee";
+        fullName = "Isaac McQueen";
+        userEmail = "imcqueen@truehomesusa.com";
+      };
 
-      # Common Configuration
+      # Common Configurations
       linuxSystem = "x86_64-linux";
       darwinSystem = "x86_64-darwin";
 
       # Reusable Functions
       configureHomeManager =
-        { withGUI, ... }:
+        {
+          withGUI ? false,
+          homeDir ? "/home/${userInfo.userName}",
+          user ? userInfo,
+          ...
+        }:
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.imcquee = import ./modules/home.nix;
+          home-manager.users.${userInfo.userName} = import ./modules/home.nix;
           home-manager.extraSpecialArgs = {
-            inherit withGUI;
+            inherit withGUI homeDir user;
           };
         };
-
     in
     {
 
       # Configuration for my dev machine
       nixosConfigurations.dev = nixpkgs.lib.nixosSystem {
         system = linuxSystem;
-        specialArgs = inputs;
+        specialArgs = inputs // userInfo;
         modules = [
           ./hosts/dev/configuration.nix
           ./hosts/dev/hardware-configuration.nix
@@ -77,7 +87,7 @@
       # Darwin Configuration
       darwinConfigurations."Isaacs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
         system = darwinSystem;
-        specialArgs = inputs;
+        specialArgs = inputs // userInfo;
         modules = [
           ./hosts/darwin/configuration.nix
           ./modules/homebrew.nix
@@ -85,7 +95,7 @@
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
-              user = "imcquee";
+              user = userInfo.userName;
               enable = true;
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
@@ -97,7 +107,7 @@
             };
           }
           home-manager.darwinModules.home-manager
-          (configureHomeManager { withGUI = false; })
+          (configureHomeManager { homeDir = "/Users/${userInfo.userName}"; })
         ];
       };
 
@@ -111,7 +121,8 @@
         };
         extraSpecialArgs = {
           withGUI = false;
-        };
+          homeDir = "/home/${userInfo.userName}";
+        } // userInfo;
         modules = [ ./modules/home.nix ];
       };
 
