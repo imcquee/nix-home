@@ -47,6 +47,9 @@ in
   # Copy symlink for hyprland
   home.file.".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/kanata";
 
+  # Allow font configuration
+  fonts.fontconfig.enable = true;
+
   programs = {
     git = {
       enable = true;
