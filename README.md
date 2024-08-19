@@ -81,10 +81,10 @@ git clone https://github.com/imcquee/nix-home.git
 4. Rebuild host
 
 ```bash
-nix run nix-darwin -- switch --flake .#Isaacs-MacBook-Pro
+nix run nix-darwin -- switch --flake .#MBP2018
 ```
 
-5. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild Isaacs-MacBook-Pro`
+5. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild MBP2018`
 
 ### Useful tips
 
