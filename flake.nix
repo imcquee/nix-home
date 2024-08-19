@@ -42,17 +42,23 @@
         userName = "imcquee";
         fullName = "Isaac McQueen";
         userEmail = "imcqueen@truehomesusa.com";
-        homeDir = "/home/${userInfo.userName}";
       };
 
       # Common Configurations
-      linuxSystem = "x86_64-linux";
-      darwinSystem = "x86_64-darwin";
+      linux_x86 = "x86_64-linux";
+      darwin_x86 = "x86_64-darwin";
+
+      # Conditional defaults
+      defaults = {
+        withGUI = false;
+        homeDir = "/home/${userInfo.userName}";
+      };
 
       # Reusable Functions
       configureHomeManager =
         {
-          withGUI ? false,
+          withGUI ? defaults.withGUI,
+          homeDir ? defaults.homeDir,
           user ? userInfo,
           ...
         }:
@@ -61,7 +67,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.${userInfo.userName} = import ./modules/home.nix;
           home-manager.extraSpecialArgs = {
-            inherit withGUI user;
+            inherit withGUI homeDir user;
           };
         };
     in
@@ -69,8 +75,8 @@
 
       # Configuration for my dev machine
       nixosConfigurations.dev = nixpkgs.lib.nixosSystem {
-        system = linuxSystem;
-        specialArgs = inputs // userInfo;
+        system = linux_x86;
+        specialArgs = inputs // userInfo // { homeDir = defaults.homeDir; };
         modules = [
           ./hosts/dev/configuration.nix
           ./hosts/dev/hardware-configuration.nix
@@ -85,9 +91,9 @@
       };
 
       # Darwin Configuration
-      darwinConfigurations."Isaacs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-        system = darwinSystem;
-        specialArgs = inputs // userInfo;
+      darwinConfigurations."MBP2018" = nix-darwin.lib.darwinSystem {
+        system = darwin_x86;
+        specialArgs = inputs // userInfo // { homeDir = "/Users/${userInfo.userName}"; };
         modules = [
           ./hosts/darwin/configuration.nix
           ./modules/homebrew.nix
@@ -107,20 +113,21 @@
             };
           }
           home-manager.darwinModules.home-manager
-          (configureHomeManager { userInfo.homeDir = "/Users/${userInfo.userName}"; })
+          (configureHomeManager { homeDir = "/Users/${userInfo.userName}"; })
         ];
       };
 
       # Universal configuration for use in non-nix situations
       homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-          system = linuxSystem;
+          system = linux_x86;
           config = {
             allowUnfree = true;
           };
         };
         extraSpecialArgs = {
-          withGUI = false;
+          withGUI = defaults.withGUI;
+          homeDir = defaults.homeDir;
           user = userInfo;
         };
         modules = [ ./modules/home.nix ];

@@ -1,7 +1,7 @@
 {
   pkgs,
-  userName,
   homeDir,
+  userName,
   ...
 }:
 
@@ -50,7 +50,7 @@
   };
 
   # Default user
-  users.users.userName = {
+  users.users.${userName} = {
     name = userName;
     home = homeDir;
     shell = pkgs.fish;
