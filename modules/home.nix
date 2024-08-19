@@ -6,11 +6,11 @@
 }:
 
 let
-  inherit (specialArgs) withGUI;
-  homeDir = if pkgs.stdenv.isDarwin then "/Users/imcquee" else "/home/imcquee";
+  inherit (specialArgs) withGUI homeDir;
+  inherit (specialArgs.user) userName userEmail fullName;
 in
 {
-  home.username = "imcquee";
+  home.username = userName;
   home.homeDirectory = homeDir;
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI; };
@@ -47,11 +47,14 @@ in
   # Copy symlink for hyprland
   home.file.".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/kanata";
 
+  # Allow font configuration
+  fonts.fontconfig.enable = true;
+
   programs = {
     git = {
       enable = true;
-      userName = "Isaac McQueen";
-      userEmail = "imcqueen@truehomesusa.com";
+      userName = fullName;
+      userEmail = userEmail;
       ignores = [
         ".envrc"
         ".direnv/"

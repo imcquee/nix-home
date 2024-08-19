@@ -37,30 +37,46 @@
       ...
     }@inputs:
     let
+      # User Information
+      userInfo = {
+        userName = "imcquee";
+        fullName = "Isaac McQueen";
+        userEmail = "imcqueen@truehomesusa.com";
+      };
 
-      # Common Configuration
-      linuxSystem = "x86_64-linux";
-      darwinSystem = "x86_64-darwin";
+      # Common Configurations
+      linux_x86 = "x86_64-linux";
+      darwin_x86 = "x86_64-darwin";
+
+      # Conditional defaults
+      defaults = {
+        withGUI = false;
+        homeDir = "/home/${userInfo.userName}";
+      };
 
       # Reusable Functions
       configureHomeManager =
-        { withGUI, ... }:
+        {
+          withGUI ? defaults.withGUI,
+          homeDir ? defaults.homeDir,
+          user ? userInfo,
+          ...
+        }:
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.imcquee = import ./modules/home.nix;
+          home-manager.users.${userInfo.userName} = import ./modules/home.nix;
           home-manager.extraSpecialArgs = {
-            inherit withGUI;
+            inherit withGUI homeDir user;
           };
         };
-
     in
     {
 
       # Configuration for my dev machine
       nixosConfigurations.dev = nixpkgs.lib.nixosSystem {
-        system = linuxSystem;
-        specialArgs = inputs;
+        system = linux_x86;
+        specialArgs = inputs // userInfo // { homeDir = defaults.homeDir; };
         modules = [
           ./hosts/dev/configuration.nix
           ./hosts/dev/hardware-configuration.nix
@@ -75,9 +91,9 @@
       };
 
       # Darwin Configuration
-      darwinConfigurations."Isaacs-MacBook-Pro" = nix-darwin.lib.darwinSystem {
-        system = darwinSystem;
-        specialArgs = inputs;
+      darwinConfigurations."MBP2018" = nix-darwin.lib.darwinSystem {
+        system = darwin_x86;
+        specialArgs = inputs // userInfo // { homeDir = "/Users/${userInfo.userName}"; };
         modules = [
           ./hosts/darwin/configuration.nix
           ./modules/homebrew.nix
@@ -85,7 +101,7 @@
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
-              user = "imcquee";
+              user = userInfo.userName;
               enable = true;
               taps = {
                 "homebrew/homebrew-core" = homebrew-core;
@@ -97,20 +113,22 @@
             };
           }
           home-manager.darwinModules.home-manager
-          (configureHomeManager { withGUI = false; })
+          (configureHomeManager { homeDir = "/Users/${userInfo.userName}"; })
         ];
       };
 
       # Universal configuration for use in non-nix situations
       homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-          system = linuxSystem;
+          system = linux_x86;
           config = {
             allowUnfree = true;
           };
         };
         extraSpecialArgs = {
-          withGUI = false;
+          withGUI = defaults.withGUI;
+          homeDir = defaults.homeDir;
+          user = userInfo;
         };
         modules = [ ./modules/home.nix ];
       };

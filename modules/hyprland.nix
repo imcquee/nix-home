@@ -1,3 +1,5 @@
+{ userName, ... }:
+
 {
   # Enable DE
   services.xserver = {
@@ -15,7 +17,7 @@
   # Enable Auto-Login
   services.displayManager.autoLogin = {
     enable = true;
-    user = "imcquee";
+    user = userName;
   };
 
   # Enable Hyperland

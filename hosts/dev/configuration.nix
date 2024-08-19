@@ -1,4 +1,10 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  userName,
+  fullName,
+  ...
+}:
 
 {
   environment.variables.EDITOR = "nvim";
@@ -26,9 +32,9 @@
   programs.starship.enable = true;
 
   # Default user
-  users.users.imcquee = {
+  users.users.${userName} = {
     isNormalUser = true;
-    description = "Isaac McQueen";
+    description = fullName;
     extraGroups = [
       "networkmanager"
       "wheel"
