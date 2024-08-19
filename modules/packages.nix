@@ -56,6 +56,7 @@ basePackages
   # Hyperland
   wofi
   wezterm
+  wl-clipboard
 
   # Browsers
   firefox
