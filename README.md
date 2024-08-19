@@ -112,6 +112,7 @@ Delete stale paths and generations older than x days: `nix-collect-garbage --del
 - [x] Add Non-Nixos
 - [x] Build custom installer
 - [x] Migrate Darwin over
+- [ ] Add Stylix config
 - [ ] Add WSL setup
 - [ ] Build custom bootstrap script for Non-Nixos environments
 - [ ] Fix systemd services
