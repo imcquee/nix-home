@@ -106,8 +106,7 @@
         extraSpecialArgs = {
           withGUI = defaults.withGUI;
           homeDir = defaults.homeDir;
-          user = userInfo;
-        };
+        } // userInfo;
         modules = [ ./modules/home.nix ];
       };
 
