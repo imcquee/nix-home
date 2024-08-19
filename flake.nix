@@ -55,7 +55,13 @@
       # Configuration for my dev machine
       nixosConfigurations.dev = nixpkgs.lib.nixosSystem {
         system = linux_x86;
-        specialArgs = inputs // userInfo // { homeDir = defaults.homeDir; };
+        specialArgs =
+          inputs
+          // userInfo
+          // {
+            withGUI = true;
+            homeDir = defaults.homeDir;
+          };
         modules = [
           ./hosts/dev/configuration.nix
           ./hosts/dev/hardware-configuration.nix
