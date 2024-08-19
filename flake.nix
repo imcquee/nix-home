@@ -42,6 +42,7 @@
         userName = "imcquee";
         fullName = "Isaac McQueen";
         userEmail = "imcqueen@truehomesusa.com";
+        homeDir = "/home/${userInfo.userName}";
       };
 
       # Common Configurations
@@ -52,7 +53,6 @@
       configureHomeManager =
         {
           withGUI ? false,
-          homeDir ? "/home/${userInfo.userName}",
           user ? userInfo,
           ...
         }:
@@ -61,7 +61,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.${userInfo.userName} = import ./modules/home.nix;
           home-manager.extraSpecialArgs = {
-            inherit withGUI homeDir user;
+            inherit withGUI user;
           };
         };
     in
@@ -107,7 +107,7 @@
             };
           }
           home-manager.darwinModules.home-manager
-          (configureHomeManager { homeDir = "/Users/${userInfo.userName}"; })
+          (configureHomeManager { userInfo.homeDir = "/Users/${userInfo.userName}"; })
         ];
       };
 
@@ -121,7 +121,6 @@
         };
         extraSpecialArgs = {
           withGUI = false;
-          homeDir = "/home/${userInfo.userName}";
           user = userInfo;
         };
         modules = [ ./modules/home.nix ];

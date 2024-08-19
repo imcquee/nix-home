@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  userName,
+  homeDir,
+  ...
+}:
 
 {
   environment.variables.EDITOR = "nvim";
@@ -11,7 +16,7 @@
     package = pkgs.nix;
     settings.trusted-users = [
       "@admin"
-      "imcquee"
+      userName
     ];
     settings.extra-nix-path = "nixpkgs=flake:nixpkgs";
 
@@ -45,9 +50,9 @@
   };
 
   # Default user
-  users.users.imcquee = {
-    name = "imcquee";
-    home = "/Users/imcquee";
+  users.users.userName = {
+    name = userName;
+    home = homeDir;
     shell = pkgs.fish;
   };
 

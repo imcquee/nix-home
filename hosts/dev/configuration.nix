@@ -2,6 +2,7 @@
   pkgs,
   lib,
   userName,
+  fullName,
   ...
 }:
 
@@ -33,7 +34,7 @@
   # Default user
   users.users.${userName} = {
     isNormalUser = true;
-    description = "Isaac McQueen";
+    description = fullName;
     extraGroups = [
       "networkmanager"
       "wheel"
