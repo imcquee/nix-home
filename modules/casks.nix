@@ -9,6 +9,7 @@ _:
 
   # Text Editors
   "zed"
+  "visual-studio-code"
 
   # Productivity
   "raycast"

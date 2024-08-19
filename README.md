@@ -100,6 +100,7 @@ nix run nix-darwin -- switch --flake .#Isaacs-MacBook-Pro
 #### Cleanup storage
 
 Delete stale paths: `nix-collect-garbage`
+
 Delete stale paths and generations older than x days: `nix-collect-garbage --delete-older-than 30d`
 
 ### TODO
