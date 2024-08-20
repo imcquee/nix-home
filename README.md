@@ -112,10 +112,7 @@ Delete stale paths and generations older than x days: `nix-collect-garbage --del
 - [x] Add Non-Nixos
 - [x] Build custom installer
 - [x] Migrate Darwin over
-- [ ] Migrate to Nix managed Fish
-  - [ ] Enable Zoxide
-  - [ ] Enable Starship
-  - [ ] Enable plugins such as Rebuild
+- [x] Migrate to Nix managed Fish
 - [ ] Add Github actions integration with cachix
 - [ ] Add Stylix config
 - [ ] Add WSL setup
