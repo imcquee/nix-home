@@ -50,6 +50,7 @@ in
   home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/hypr";
 
   # Copy symlink for hyprland
+  # Copy symlink for kanata
   home.file.".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/kanata";
 
   # Allow font configuration
