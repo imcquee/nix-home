@@ -59,9 +59,7 @@ in
               original_cd -- "$cwd"
           end
           rm -f -- "$tmp"
-
         '';
-
       };
     };
 
