@@ -1,4 +1,4 @@
-{ specialArgs, ... }:
+{ pkgs, specialArgs, ... }:
 
 let
   inherit (specialArgs) fullName userEmail;
@@ -61,6 +61,12 @@ in
           rm -f -- "$tmp"
         '';
       };
+      plugins = with pkgs.fishPlugins; [
+        {
+          name = "fzf-fish";
+          src = fzf-fish.src;
+        }
+      ];
     };
 
     starship.enable = true;
