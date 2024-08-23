@@ -57,6 +57,7 @@ basePackages
   wofi
   wezterm
   wl-clipboard
+  foot
 
   # Browsers
   firefox
