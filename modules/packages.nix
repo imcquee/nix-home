@@ -54,10 +54,10 @@ in
 basePackages
 ++ pkgs.lib.optionals withGUI [
   # Hyperland
-  wofi
   wezterm
   wl-clipboard
   foot
+  rofi-wayland
 
   # Browsers
   firefox
