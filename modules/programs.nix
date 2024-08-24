@@ -1,7 +1,7 @@
-{ specialArgs, ... }:
+{ pkgs, specialArgs, ... }:
 
 let
-  inherit (specialArgs) fullName userEmail;
+  inherit (specialArgs) userName fullName userEmail;
 in
 {
   imports = [ ./fish.nix ];
@@ -15,6 +15,20 @@ in
         ".envrc"
         ".direnv/"
       ];
+    };
+
+    firefox = {
+      enable = true;
+      profiles.${userName} = {
+        isDefault = true;
+        name = userName;
+        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+          ublock-origin
+          bitwarden
+          darkreader
+          vimium-c
+        ];
+      };
     };
 
     starship.enable = true;

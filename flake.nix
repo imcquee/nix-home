@@ -22,6 +22,7 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs =
@@ -30,6 +31,7 @@
       home-manager,
       nix-darwin,
       nix-homebrew,
+      nur,
       ...
     }@inputs:
     let
@@ -70,6 +72,12 @@
           ./modules/services.nix
           ./modules/elevated-packages.nix
           ./modules/hyprland.nix
+          { nixpkgs.overlays = [ nur.overlay ]; }
+          home-manager.nixosModules.home-manager
+          ./modules/home-manager.nix
+        ];
+      };
+
           home-manager.nixosModules.home-manager
           ./modules/home-manager.nix
         ];

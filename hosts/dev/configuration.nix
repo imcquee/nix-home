@@ -43,6 +43,9 @@
     shell = pkgs.fish;
   };
 
+  # set up zram
+  zramSwap.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
