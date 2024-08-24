@@ -78,11 +78,6 @@
         ];
       };
 
-          home-manager.nixosModules.home-manager
-          ./modules/home-manager.nix
-        ];
-      };
-
       # Darwin Configuration
       darwinConfigurations."MBP2018" = nix-darwin.lib.darwinSystem {
         system = darwin_x86;
