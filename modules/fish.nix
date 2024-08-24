@@ -8,6 +8,7 @@
       lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
       zj = "zellij";
       ff = "fastfetch";
+      cd = "z";
     };
     functions = {
       rebuild = ''
