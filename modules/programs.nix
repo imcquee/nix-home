@@ -1,7 +1,12 @@
 { pkgs, specialArgs, ... }:
 
 let
-  inherit (specialArgs) userName fullName userEmail;
+  inherit (specialArgs)
+    userName
+    fullName
+    userEmail
+    withGUI
+    ;
 in
 {
   imports = [ ./fish.nix ];
@@ -17,19 +22,23 @@ in
       ];
     };
 
-    firefox = {
-      enable = true;
-      profiles.${userName} = {
-        isDefault = true;
-        name = userName;
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          ublock-origin
-          bitwarden
-          darkreader
-          vimium-c
-        ];
-      };
-    };
+    firefox =
+      if withGUI then
+        {
+          enable = true;
+          profiles.${userName} = {
+            isDefault = true;
+            name = userName;
+            extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+              ublock-origin
+              bitwarden
+              darkreader
+              vimium-c
+            ];
+          };
+        }
+      else
+        { enable = false; };
 
     starship.enable = true;
     zoxide.enable = true;

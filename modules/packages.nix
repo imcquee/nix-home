@@ -59,9 +59,6 @@ basePackages
   foot
   rofi-wayland
 
-  # Browsers
-  firefox
-
   # Monitoring
   zenith-nvidia
 ]
