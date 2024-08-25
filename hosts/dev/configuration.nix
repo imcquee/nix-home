@@ -95,5 +95,18 @@
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
 
+  # Add device specific packages
+  environment.systemPackages = with pkgs; [
+    # Terminal
+    wezterm
+
+    # Wayland
+    wl-clipboard
+    rofi-wayland
+
+    # Monitoring
+    zenith-nvidia
+  ];
+
   system.stateVersion = "24.05";
 }

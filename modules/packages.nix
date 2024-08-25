@@ -53,12 +53,5 @@ let
 in
 basePackages
 ++ pkgs.lib.optionals withGUI [
-  # Hyperland
-  wezterm
-  wl-clipboard
-  foot
-  rofi-wayland
-
-  # Monitoring
-  zenith-nvidia
+  # GUI packages
 ]
