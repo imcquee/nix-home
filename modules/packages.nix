@@ -53,5 +53,5 @@ let
 in
 basePackages
 ++ pkgs.lib.optionals withGUI [
-  # GUI packages
+  # GUI tools
 ]

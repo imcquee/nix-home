@@ -47,4 +47,6 @@ in
 
   # Allow font configuration
   fonts.fontconfig.enable = true;
+
+  services.swayosd.enable = if withGUI then true else false;
 }
