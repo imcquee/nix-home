@@ -99,19 +99,24 @@
       };
 
       # Universal configuration for use in non-nix situations
-      homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = linux_x86;
-          config = {
-            allowUnfree = true;
+      homeConfigurations.universal =
+        {
+          withGUI ? defaults.withGUI,
+          ...
+        }@args:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            system = linux_x86;
+            config = {
+              allowUnfree = true;
+            };
           };
+          extraSpecialArgs = {
+            withGUI = args.withGUI;
+            homeDir = defaults.homeDir;
+          } // userInfo;
+          modules = [ ./modules/home.nix ];
         };
-        extraSpecialArgs = {
-          withGUI = defaults.withGUI;
-          homeDir = defaults.homeDir;
-        } // userInfo;
-        modules = [ ./modules/home.nix ];
-      };
 
       # Build ISO image
       nixosConfigurations.iso = nixpkgs.lib.nixosSystem { modules = [ ./hosts/iso/configuration.nix ]; };
