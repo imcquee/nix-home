@@ -26,7 +26,12 @@
   };
 
   # Enable Fish in configuration rather than home so we can set the default login shell to fish in users.users.<user>.shell
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    shellAbbrs = {
+      bw = "sudo efibootmgr --bootnext 0000  && sudo reboot";
+    };
+  };
 
   # Needs to be called near fish
   programs.starship.enable = true;
@@ -99,6 +104,9 @@
   environment.systemPackages = with pkgs; [
     # Terminal
     wezterm
+
+    # EFI Boot Manager
+    efibootmgr
 
     # Wayland
     wl-clipboard
