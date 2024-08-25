@@ -58,9 +58,7 @@ basePackages
   wl-clipboard
   foot
   rofi-wayland
-
-  # Browsers
-  firefox
+  mangohud
 
   # Monitoring
   zenith-nvidia
