@@ -2,6 +2,9 @@
 {
   programs.fish = {
     enable = true;
+    shellInit = ''
+      set fzf_directory_opts --bind "ctrl-o:execute($EDITOR {} &> /dev/tty)"
+    '';
     shellAbbrs = {
       ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
       cat = "bat -p";
@@ -11,6 +14,26 @@
       cd = "z";
     };
     functions = {
+      irg = ''
+        set RELOAD "reload:rg --column --color=always --smart-case {q} || :"
+        set OPENER "
+            if test (count $FZF_SELECT) -eq 0
+                nvim {1} +{2}  # No selection. Open the current line in Vim.
+            else
+                nvim +cw -q (echo {+f})  # Build quickfix list for the selected items.
+            end
+        "
+
+        fzf --disabled --ansi --multi \
+            --bind "start:$RELOAD" --bind "change:$RELOAD" \
+            --bind "enter:become:$OPENER" \
+            --bind "ctrl-o:execute:$OPENER" \
+            --bind "alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview" \
+            --delimiter : \
+            --preview "bat --style=full --color=always --highlight-line {2} {1}" \
+            --preview-window "~4,+{2}+4/3,<80(up)" \
+            --query "$argv"
+      '';
       rebuild = ''
         if test (count $argv) -eq 0
             echo "Usage: rebuild <config>"
@@ -33,6 +56,9 @@
 
         bind \eg -M insert 'lazygit; commandline -f execute'
         bind \eg 'lazygit; commandline -f execute'
+
+        bind \e\c_ -M insert 'irg; commandline -f execute'
+        bind \e\c_ 'irg; commandline -f execute'
       '';
       original_cd = ''
         builtin cd $argv
