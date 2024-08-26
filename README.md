@@ -113,6 +113,7 @@ Delete stale paths and generations older than x days: `nix-collect-garbage --del
 - [x] Build custom installer
 - [x] Migrate Darwin over
 - [x] Migrate to Nix managed Fish
+- [ ] [Test oneshot tailscale implementation](https://tailscale.com/kb/1096/nixos-minecraft)
 - [ ] Add Github actions integration with cachix
 - [ ] Add Stylix config
 - [ ] Build custom bootstrap script for Non-Nixos environments
