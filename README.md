@@ -52,23 +52,6 @@ nix run nix-darwin -- switch --flake .#MBP2018
 
 5. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild MBP2018`
 
-### Useful tips
-
-#### Upgrading flake
-
-1. nix flake update
-
-#### Authenticating with GitHub
-
-1. `gh auth login`
-2. `gh auth setup-git`
-
-#### Cleanup storage
-
-Delete stale paths: `nix-collect-garbage`
-
-Delete stale paths and generations older than x days: `nix-collect-garbage --delete-older-than 30d`
-
 ### 🏡 Home-Manger setup
 
 1. Install Nix
@@ -102,6 +85,23 @@ home-manager switch --flake /home/$USER/nix-home#universal
 ```bash
 curl -fsSL https://tailscale.com/install.sh | sh
 ```
+
+### Useful tips
+
+#### Upgrading flake
+
+1. nix flake update
+
+#### Authenticating with GitHub
+
+1. `gh auth login`
+2. `gh auth setup-git`
+
+#### Cleanup storage
+
+Delete stale paths: `nix-collect-garbage`
+
+Delete stale paths and generations older than x days: `nix-collect-garbage --delete-older-than 30d`
 
 ### TODO
 
