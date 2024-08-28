@@ -89,7 +89,7 @@
             homeDir = "/Users/${userInfo.userName}";
           };
         modules = [
-          ./hosts/darwin/configuration.nix
+          ./hosts/MBP2018/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           ./modules/homebrew.nix
           ./modules/path.nix
