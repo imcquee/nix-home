@@ -73,6 +73,7 @@
         autohide = true;
         tilesize = 56;
         orientation = "left";
+        persistent-apps = [ "/System/Applications/Messages.app" ];
       };
       finder.AppleShowAllExtensions = true;
       screencapture.location = "~/Pictures/Screenshots";
