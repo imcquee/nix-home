@@ -31,6 +31,9 @@ let
     fzf
     fastfetch
     nerdfonts
+    font-awesome
+    roboto
+    source-sans-pro
 
     # zenith-nvidia
     yazi
