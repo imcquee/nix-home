@@ -44,6 +44,9 @@ let
     zoxide
     zellij
 
+    # Monitoring
+    mangohud
+
     # Docker tools
     lazydocker
 

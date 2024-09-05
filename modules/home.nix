@@ -45,6 +45,9 @@ in
   # Copy symlink for kanata
   home.file.".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/kanata";
 
+  # Copy symlink for MangoHud
+  home.file.".config/MangoHud".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/MangoHud";
+
   # Allow font configuration
   fonts.fontconfig.enable = true;
 

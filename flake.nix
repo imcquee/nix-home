@@ -78,6 +78,29 @@
         ];
       };
 
+      # Configuration for my gaming machine
+      nixosConfigurations.gaming = nixpkgs.lib.nixosSystem {
+        system = linux_x86;
+        specialArgs =
+          inputs
+          // userInfo
+          // {
+            withGUI = true;
+            homeDir = defaults.homeDir;
+          };
+        modules = [
+          ./hosts/dev/configuration.nix
+          ./hosts/dev/hardware-configuration.nix
+          ./modules/path.nix
+          ./modules/nvidia.nix
+          ./modules/elevated-packages.nix
+          ./modules/gaming.nix
+          { nixpkgs.overlays = [ nur.overlay ]; }
+          home-manager.nixosModules.home-manager
+          ./modules/home-manager.nix
+        ];
+      };
+
       # Darwin Configuration
       darwinConfigurations."MBP2018" = nix-darwin.lib.darwinSystem {
         system = darwin_x86;
