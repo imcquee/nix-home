@@ -103,6 +103,14 @@ Delete stale paths: `nix-collect-garbage`
 
 Delete stale paths and generations older than x days: `nix-collect-garbage --delete-older-than 30d`
 
+### Using Home Manager on Windows WSL
+
+After setting up tailscale, immediately run
+`sudo chattr +i /etc/resolv.conf`
+To prevent Windows from overwriting the dns config
+`sudo chattr -i /etc/resolv.conf`
+Reverses this
+
 ### TODO
 
 - [x] Make public
