@@ -3,6 +3,7 @@ _:
 [
   # Browsers
   "arc"
+  "zen-browser"
 
   # Shell
   "wezterm"

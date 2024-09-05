@@ -18,6 +18,7 @@
     enable = true;
     user = userName;
   };
+
   # Enable Steam
   programs.steam = {
     enable = true;
