@@ -13,6 +13,7 @@ let
     gcc
     nodejs_20
     cargo
+    rustc
     wget
     unzip
     nixd
@@ -29,6 +30,7 @@ let
     # CL tools
     lsd
     fzf
+    sd
     fastfetch
     nerdfonts
     font-awesome
