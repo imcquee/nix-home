@@ -3,6 +3,7 @@
   homebrew-core,
   homebrew-cask,
   homebrew-bundle,
+  zen-browser,
   userName,
   ...
 }:
@@ -26,6 +27,7 @@
       "homebrew/homebrew-core" = homebrew-core;
       "homebrew/homebrew-cask" = homebrew-cask;
       "homebrew/homebrew-bundle" = homebrew-bundle;
+      "zen-browser/homebrew-browser" = zen-browser;
     };
     mutableTaps = false;
     autoMigrate = true;

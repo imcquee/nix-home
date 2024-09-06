@@ -62,6 +62,12 @@
   # Use Touch ID over sudo
   security.pam.enableSudoTouchIdAuth = true;
 
+  # Add device specific packages
+  environment.systemPackages = with pkgs; [
+    # Tailscale CLI
+    tailscale
+  ];
+
   system = {
     stateVersion = 4;
 

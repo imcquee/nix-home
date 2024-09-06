@@ -22,6 +22,10 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    zen-browser = {
+      url = "github:zen-browser/desktop";
+      flake = false;
+    };
     nur.url = "github:nix-community/NUR";
   };
 

@@ -231,7 +231,8 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_3",
-        "nur": "nur"
+        "nur": "nur",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -246,6 +247,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1725569776,
+        "narHash": "sha256-dfXtaSog/UM4t0k9QbX+Jr/YZ9UbM0x15x86Nl5JHkY=",
+        "owner": "zen-browser",
+        "repo": "desktop",
+        "rev": "985133748e122c1b99df19fa8d8bbc357e46098e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zen-browser",
+        "repo": "desktop",
         "type": "github"
       }
     }

@@ -2,7 +2,6 @@ _:
 
 [
   # Browsers
-  "arc"
   "zen-browser"
 
   # Shell

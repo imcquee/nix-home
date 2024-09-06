@@ -108,6 +108,9 @@
     # EFI Boot Manager
     efibootmgr
 
+    # MangoHud
+    mangohud
+
     # Wayland
     wl-clipboard
     rofi-wayland
