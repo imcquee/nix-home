@@ -22,7 +22,7 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    zen-browser = {
+    homebrew-zen-browser = {
       url = "github:zen-browser/desktop";
       flake = false;
     };
