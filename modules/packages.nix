@@ -18,6 +18,7 @@ let
     unzip
     nixd
     tree-sitter
+    gnumake
 
     # Fish (needed for home manager standalone)
     fish
