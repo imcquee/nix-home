@@ -1,2 +1,5 @@
-background-opacity = 0.95
+background-opacity = 0.8
+theme = catppuccin-mocha
+background-blur-radius = 20
 fullscreen = true
+font-size = 17
