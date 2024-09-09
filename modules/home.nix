@@ -48,6 +48,9 @@ in
   # Copy symlink for MangoHud
   home.file.".config/MangoHud".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/MangoHud";
 
+  # Copy symlink for Ghostty
+  home.file.".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/ghostty";
+
   # Allow font configuration
   fonts.fontconfig.enable = true;
 
