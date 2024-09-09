@@ -3,6 +3,7 @@
   lib,
   userName,
   fullName,
+  ghostty,
   ...
 }:
 
