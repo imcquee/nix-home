@@ -51,11 +51,11 @@
       '';
       fish_user_key_bindings = ''
         fish_vi_key_bindings
-        bind \ey -M insert 'yy; commandline -f execute'
-        bind \ey 'yy; commandline -f execute'
+        bind \cy -M insert 'yy; commandline -f execute'
+        bind \cy 'yy; commandline -f execute'
 
-        bind \eg -M insert 'lazygit; commandline -f execute'
-        bind \eg 'lazygit; commandline -f execute'
+        bind \cg -M insert 'lazygit; commandline -f execute'
+        bind \cg 'lazygit; commandline -f execute'
 
         bind \e\c_ -M insert 'irg; commandline -f execute'
         bind \e\c_ 'irg; commandline -f execute'
