@@ -1,5 +1,8 @@
 background-opacity = 0.9
 theme = catppuccin-mocha
 background-blur-radius = 20
-fullscreen = true
 font-size = 17
+mouse-hide-while-typing = true
+window-decoration = false
+confirm-close-surface = false
+quit-after-last-window-closed = true
