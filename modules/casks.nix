@@ -4,9 +4,6 @@ _:
   # Browsers
   "zen-browser"
 
-  # Shell
-  "wezterm"
-
   # Text Editors
   "zed"
   "visual-studio-code"

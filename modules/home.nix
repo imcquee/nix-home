@@ -33,9 +33,6 @@ in
   # Copy symlink for zellij
   home.file.".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zellij";
 
-  # Copy symlink for wezterm
-  home.file.".config/wezterm".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/wezterm";
-
   # Copy symlink for lazygit
   home.file.".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazygit";
 

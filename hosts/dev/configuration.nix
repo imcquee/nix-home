@@ -104,10 +104,9 @@
   # Add device specific packages
   environment.systemPackages = with pkgs; [
     # Terminal
-    wezterm
     ghostty.packages.x86_64-linux.default
 
-    # EFI Boot Manager
+    # EFI Boot Manage
     efibootmgr
 
     # MangoHud
