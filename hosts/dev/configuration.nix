@@ -104,6 +104,7 @@
   environment.systemPackages = with pkgs; [
     # Terminal
     wezterm
+    ghostty.packages.x86_64-linux.default
 
     # EFI Boot Manager
     efibootmgr

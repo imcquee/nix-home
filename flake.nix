@@ -26,6 +26,9 @@
       url = "github:zen-browser/desktop";
       flake = false;
     };
+    ghostty = {
+      url = "git+ssh://git@github.com/ghostty-org/ghostty";
+    };
     nur.url = "github:nix-community/NUR";
   };
 
@@ -57,7 +60,6 @@
       };
     in
     {
-
       # Configuration for my dev machine
       nixosConfigurations.dev = nixpkgs.lib.nixosSystem {
         system = linux_x86;
