@@ -1,9 +1,21 @@
-background-opacity = 0.9
-theme = catppuccin-mocha
+# Window
+theme = tokyonight
+background-opacity = 0.7
 background-blur-radius = 20
+# window-decoration = false
+window-padding-x = 10
+window-padding-y = 0
+background = #080808
+
+# Font
 font-size = 17
+
+# Behavior
 mouse-hide-while-typing = true
-window-decoration = false
 confirm-close-surface = false
 quit-after-last-window-closed = true
+
+# Mac Specific
 macos-option-as-alt = true
+macos-non-native-fullscreen = true
+macos-window-shadow = false
