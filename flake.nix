@@ -26,6 +26,7 @@
       url = "github:zen-browser/desktop";
       flake = false;
     };
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
     ghostty = {
       url = "git+ssh://git@github.com/ghostty-org/ghostty";
     };

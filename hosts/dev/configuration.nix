@@ -4,6 +4,7 @@
   userName,
   fullName,
   ghostty,
+  zen-browser,
   ...
 }:
 
@@ -105,6 +106,9 @@
   environment.systemPackages = with pkgs; [
     # Terminal
     ghostty.packages.x86_64-linux.default
+
+    # Browser
+    zen-browser.packages.x86_64-linux.default
 
     # EFI Boot Manage
     efibootmgr
