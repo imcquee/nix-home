@@ -20,8 +20,3 @@ font-size = 17
 mouse-hide-while-typing = true
 confirm-close-surface = false
 quit-after-last-window-closed = true
-
-# Mac Specific
-macos-option-as-alt = true
-macos-non-native-fullscreen = true
-macos-window-shadow = false
