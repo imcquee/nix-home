@@ -46,7 +46,11 @@ in
   home.file.".config/MangoHud".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/MangoHud";
 
   # Copy symlink for Ghostty
-  home.file.".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/ghostty";
+  home.file.".config/ghostty".source =
+    if pkgs.stdenv.isDarwin then
+      config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/ghostty/darwin"
+    else
+      config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/ghostty/linux";
 
   # Allow font configuration
   fonts.fontconfig.enable = true;

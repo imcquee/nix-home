@@ -103,26 +103,7 @@
   hardware.logitech.wireless.enableGraphical = true;
 
   # Add device specific packages
-  environment.systemPackages = with pkgs; [
-    # Terminal
-    ghostty.packages.x86_64-linux.default
-
-    # Browser
-    zen-browser.packages.x86_64-linux.default
-
-    # EFI Boot Manage
-    efibootmgr
-
-    # MangoHud
-    mangohud
-
-    # Wayland
-    wl-clipboard
-    rofi-wayland
-
-    # Monitoring
-    zenith-nvidia
-  ];
+  environment.systemPackages = pkgs.callPackage ./packages.nix { inherit ghostty zen-browser; };
 
   system.stateVersion = "24.05";
 }

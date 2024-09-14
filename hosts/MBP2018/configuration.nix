@@ -63,10 +63,7 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   # Add device specific packages
-  environment.systemPackages = with pkgs; [
-    # Tailscale CLI
-    tailscale
-  ];
+  environment.systemPackages = pkgs.callPackage ./packages.nix { };
 
   system = {
     stateVersion = 4;
