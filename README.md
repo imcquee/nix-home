@@ -1,4 +1,4 @@
-<div align="center"><img src="https://raw.githubusercontent.com/NixOS/nixos-artwork/master/logo/nixos-white.png" width="300px"></div>
+<p align="center"><img src="https://i.imgur.com/X5zKxvp.png" width=300px></p>
 
 ### 🖥️ New machine setup
 
