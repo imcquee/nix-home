@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/X5zKxvp.png" width=300px></p>
+<p align="center"><img src="https://i.imgur.com/X5zKxvp.png" width=150px></p>
 
 ### 🖥️ New machine setup
 
