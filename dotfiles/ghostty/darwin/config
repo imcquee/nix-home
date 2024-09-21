@@ -8,7 +8,7 @@ window-padding-y = 0
 background = #080808
 
 # Font
-font-size = 17
+font-size = 20
 
 # Behavior
 mouse-hide-while-typing = true
