@@ -1,17 +1,12 @@
 # Window
 theme = tokyonight
 background-opacity = 0.85
-# background-blur-radius = 20
 
 # window-decoration = false
 window-padding-x = 10
 window-padding-y = 0
 window-decoration = false
 background = #000000
-
-# Custom Shader
-custom-shader = crt.glsl
-custom-shader = bloom.glsl
 
 # Font
 font-size = 15
