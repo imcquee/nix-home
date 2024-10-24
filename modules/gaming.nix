@@ -4,19 +4,8 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    displayManager = {
-      gdm = {
-        enable = true;
-        wayland = true;
-        autoSuspend = false;
-      };
-    };
-  };
-
-  # Enable Auto-Login
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = userName;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
   };
 
   # Enable Steam
@@ -27,22 +16,24 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     gamescopeSession = {
       enable = true;
-      env = {
-        # Enable MangoHud
-        MANGOHUD = "1";
-        DXVK_HDR = "1";
-        ENABLE_HDR_WSI = "1";
-      };
-      args = [
-        "-f"
-        "-w 3840"
-        "-h 2160"
-        "-r 120"
-        "--hdr-enabled"
-        "--adaptive-sync"
-        "--hdr-itm-enable"
-      ];
     };
+    # gamescopeSession = {
+    #   enable = true;
+    #   env = {
+    #     # Enable MangoHud
+    #     MANGOHUD = "1";
+    #     DXVK_HDR = "1";
+    #     ENABLE_HDR_WSI = "1";
+    #   };
+    #   args = [
+    #     "-f"
+    #     "-w 3840"
+    #     "-h 2160"
+    #     "-r 120"
+    #     "--hdr-enabled"
+    #     "--adaptive-sync"
+    #   ];
+    # };
   };
 
   # Kanata keybindings
