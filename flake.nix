@@ -53,6 +53,7 @@
       # Common Configurations
       linux_x86 = "x86_64-linux";
       darwin_x86 = "x86_64-darwin";
+      darwin_ARM = "aarch64-darwin";
 
       # Conditional defaults
       defaults = {
@@ -120,6 +121,26 @@
           };
         modules = [
           ./hosts/MBP2018/configuration.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          ./modules/homebrew.nix
+          ./modules/path.nix
+          home-manager.darwinModules.home-manager
+          ./modules/home-manager.nix
+        ];
+      };
+
+      # Darwin Configuration
+      darwinConfigurations."mini" = nix-darwin.lib.darwinSystem {
+        system = darwin_ARM;
+        specialArgs =
+          inputs
+          // userInfo
+          // {
+            withGUI = defaults.withGUI;
+            homeDir = "/Users/${userInfo.userName}";
+          };
+        modules = [
+          ./hosts/mini/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           ./modules/homebrew.nix
           ./modules/path.nix
