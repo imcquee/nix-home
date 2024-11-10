@@ -24,6 +24,8 @@ with pkgs;
   # Wayland
   wl-clipboard
   rofi-wayland
+  waypaper
+  swaybg
 
   # Monitoring
   zenith-nvidia

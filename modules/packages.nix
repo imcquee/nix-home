@@ -55,9 +55,6 @@ let
 
     # Formatters
     nixfmt-rfc-style
-
-    waypaper
-    swaybg
   ];
 in
 basePackages
