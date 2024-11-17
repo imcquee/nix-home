@@ -59,6 +59,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Add device specific packages
+  environment.systemPackages = pkgs.callPackage ./packages.nix { };
+
   system = {
     stateVersion = 4;
 
