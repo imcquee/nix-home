@@ -10,14 +10,9 @@ api.mapkey('L', 'Go forward in history', function() {
     window.history.forward();
 });
 
-api.mapkey('J', 'Go one tab left', function() {
-    RUNTIME('previousTab');
-});
-
-api.mapkey('K', 'Go one tab right', function() {
-    RUNTIME('nextTab');
-});
-
+// Remap tab navigation
+api.map('J', 'E');
+api.map('K', 'R');
 
 
 const hintsCss =
