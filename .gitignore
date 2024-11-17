@@ -1,2 +1,5 @@
 modules/.webui_secret_key
 result
+dotfiles/.DS_Store
+hosts/.DS_Store
+.DS_Store
