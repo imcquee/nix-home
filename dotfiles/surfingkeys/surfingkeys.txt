@@ -1,0 +1,2 @@
+api.map('H', 'E');
+api.map('L', 'R');
