@@ -1,14 +1,9 @@
 // Theme credit: thuanowa
 // upstream: https://github.com/rose-pine/surfingkeys/blob/main/dist/rose-pine.conf
 
-// Custom Binds
-api.mapkey('H', 'Go back in history', function() {
-    window.history.back();
-});
-
-api.mapkey('L', 'Go forward in history', function() {
-    window.history.forward();
-});
+// Remap history navigation
+api.map('H', 'S');
+api.map('L', 'D');
 
 // Remap tab navigation
 api.map('J', 'E');
