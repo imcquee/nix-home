@@ -102,6 +102,9 @@
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
 
+  # Add qmk support
+  hardware.qmk.enable = true;
+
   # Add device specific packages
   environment.systemPackages = pkgs.callPackage ./packages.nix { inherit ghostty zen-browser; };
 
