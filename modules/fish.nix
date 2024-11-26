@@ -43,7 +43,7 @@
         set config $argv[1]
 
         if command -v nixos-version >/dev/null
-            sudo -E nixos-rebuild switch --flake /home/$USER/nix-home/#$config
+            sudo nixos-rebuild switch --flake /home/$USER/nix-home/#$config
         else if string match -q Darwin (uname)
             darwin-rebuild switch --flake /Users/$USER/nix-home#$config
         else
