@@ -1,4 +1,9 @@
-{ pkgs, userName, ... }:
+{
+  pkgs,
+  userName,
+  homeDir,
+  ...
+}:
 
 {
   # Enable Docker
@@ -43,7 +48,7 @@
   # Kanata keybindings
   services.kanata = {
     enable = true;
-    keyboards.K400.configFile = /home/${userName}/nix-home/dotfiles/kanata/k400.kbd;
+    keyboards.K400.configFile = ../dotfiles/kanata/k400.kbd;
   };
 
   # Sound
