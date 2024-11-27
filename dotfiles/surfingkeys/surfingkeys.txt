@@ -1,6 +1,9 @@
 // Theme credit: thuanowa
 // upstream: https://github.com/rose-pine/surfingkeys/blob/main/dist/rose-pine.conf
 
+// Tab Threshold
+settings.tabsThreshold = 9;
+
 // Remap history navigation
 api.map('H', 'S');
 api.map('L', 'D');
