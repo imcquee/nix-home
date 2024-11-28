@@ -75,7 +75,11 @@
         orientation = "left";
         persistent-apps = [ "/System/Applications/Messages.app" ];
       };
-      finder.AppleShowAllExtensions = true;
+      finder = {
+        AppleShowAllExtensions = true;
+        NewWindowTarget = "Home";
+        ShowPathbar = true;
+      };
       screencapture.location = "~/Pictures/Screenshots";
     };
 

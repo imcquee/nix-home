@@ -21,7 +21,7 @@
     settings.extra-nix-path = "nixpkgs=flake:nixpkgs";
 
     # Allow Flakes
-    settings.experimental-features = "nix-command flakes repl-flake";
+    settings.experimental-features = "nix-command flakes";
 
     # Auto garbage collection
     gc = {
@@ -34,8 +34,9 @@
       };
       options = "--delete-older-than 30d";
     };
+
     # Optimize storage
-    settings.auto-optimise-store = true;
+    optimise.automatic = true;
   };
 
   # Turn off NIX_PATH warnings now that we're using flakes
@@ -78,7 +79,11 @@
         orientation = "left";
         persistent-apps = [ "/System/Applications/Messages.app" ];
       };
-      finder.AppleShowAllExtensions = true;
+      finder = {
+        AppleShowAllExtensions = true;
+        NewWindowTarget = "Home";
+        ShowPathbar = true;
+      };
       screencapture.location = "~/Pictures/Screenshots";
     };
 
