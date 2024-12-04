@@ -124,7 +124,7 @@
         modules = [
           ./hosts/MBP2018/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
-          ./modules/homebrew.nix
+          ./hosts/MBP2018/homebrew.nix
           ./modules/path.nix
           home-manager.darwinModules.home-manager
           ./modules/home-manager.nix
@@ -144,7 +144,7 @@
         modules = [
           ./hosts/mini/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
-          ./modules/homebrew.nix
+          ./hosts/mini/homebrew.nix
           ./modules/path.nix
           home-manager.darwinModules.home-manager
           ./modules/home-manager.nix
