@@ -22,6 +22,8 @@ _:
   # Logitune -> open "/opt/homebrew/Caskroom/logitune/$(brew list --cask --versions logitune | awk '{print $2}')/LogiTuneInstaller.app"
   "logitune"
 
+  "discord"
+
   # Work
   "teamviewer"
   "microsoft-teams"
