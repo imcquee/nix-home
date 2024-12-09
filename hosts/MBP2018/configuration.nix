@@ -100,6 +100,7 @@ in
 
     keyboard = {
       enableKeyMapping = true;
+      # remapCapsLockToEscape = true;
     };
   };
 }
