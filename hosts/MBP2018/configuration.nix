@@ -73,7 +73,7 @@ in
   # Use Touch ID over sudo
   security.pam.enableSudoTouchIdAuth = true;
 
-  # Pull in your existing packages and the pinned kanata
+  # Add unstable packages + pinned packages
   # Kanata version requires https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/blob/main/dist/Karabiner-DriverKit-VirtualHIDDevice-3.1.0.pkg
   environment.systemPackages = pkgs.callPackage ./packages.nix { } ++ [ pinnedPkgs.kanata ];
 
