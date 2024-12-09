@@ -5,6 +5,17 @@
   ...
 }:
 
+let
+  pinnedNixpkgs = builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/e89cf1c932006531f454de7d652163a9a5c86668.tar.gz";
+    sha256 = "09cbqscrvsd6p0q8rswwxy7pz1p1qbcc8cdkr6p6q8sx0la9r12c";
+  };
+
+  pinnedPkgs = import pinnedNixpkgs {
+    system = pkgs.system;
+    config = { };
+  };
+in
 {
   environment.variables.EDITOR = "nvim";
 
@@ -19,7 +30,6 @@
       userName
     ];
     settings.extra-nix-path = "nixpkgs=flake:nixpkgs";
-
     # Allow Flakes
     settings.experimental-features = "nix-command flakes";
 
@@ -63,8 +73,9 @@
   # Use Touch ID over sudo
   security.pam.enableSudoTouchIdAuth = true;
 
-  # Add device specific packages
-  environment.systemPackages = pkgs.callPackage ./packages.nix { };
+  # Pull in your existing packages and the pinned kanata
+  # Kanata version requires https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/blob/main/dist/Karabiner-DriverKit-VirtualHIDDevice-3.1.0.pkg
+  environment.systemPackages = pkgs.callPackage ./packages.nix { } ++ [ pinnedPkgs.kanata ];
 
   system = {
     stateVersion = 4;
@@ -89,7 +100,6 @@
 
     keyboard = {
       enableKeyMapping = true;
-      remapCapsLockToEscape = true;
     };
   };
 }
