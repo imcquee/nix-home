@@ -70,8 +70,30 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Use Touch ID over sudo
-  security.pam.enableSudoTouchIdAuth = true;
+  # Use Touch ID over sudo + sudo
+  security = {
+    pam.enableSudoTouchIdAuth = true;
+    sudo.extraConfig = ''
+      ${userName} ALL=(ALL) NOPASSWD: ${pinnedPkgs.kanata}/bin/kanata
+    '';
+  };
+
+  # Daemons
+  launchd.user.agents.kanata = {
+    command = "/usr/bin/sudo ${pinnedPkgs.kanata}/bin/kanata -c ${homeDir}/nix-home/dotfiles/kanata/macbook.kbd";
+    serviceConfig = {
+      UserName = userName;
+      RunAtLoad = true;
+      KeepAlive = {
+        SuccessfulExit = false;
+        Crashed = true;
+      };
+      StandardErrorPath = "/Users/${userName}/.logs/kanata.err.log";
+      StandardOutPath = "/Users/${userName}/.logs/kanata.out.log";
+      ProcessType = "Interactive";
+      Nice = -30;
+    };
+  };
 
   # Add unstable packages + pinned packages
   # Kanata version requires https://github.com/pqrs-org/Karabiner-DriverKit-VirtualHIDDevice/blob/main/dist/Karabiner-DriverKit-VirtualHIDDevice-3.1.0.pkg
