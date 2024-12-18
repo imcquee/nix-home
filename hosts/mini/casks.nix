@@ -7,6 +7,7 @@ _:
   # Text Editors
   "zed"
   "visual-studio-code"
+  "rider"
 
   # Productivity
   "raycast"
