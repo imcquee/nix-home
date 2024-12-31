@@ -22,4 +22,11 @@ _:
   # Work
   "teamviewer"
   "microsoft-teams"
+  "postman"
+
+  # Communication
+  "discord"
+
+  # Design
+  "inkscape"
 ]
