@@ -29,4 +29,5 @@ _:
   "teamviewer"
   "microsoft-teams"
   "zoom"
+  "postman"
 ]
