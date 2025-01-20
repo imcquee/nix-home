@@ -12,6 +12,7 @@
       zj = "zellij";
       ff = "fastfetch";
       cd = "z";
+      yx = "nu -c \"zellij -l welcome --config-dir ~/.config/yazelix/zellij options --layout-dir ~/.config/yazelix/zellij/layouts\"";
       ghostty = "$GHOSTTY_BIN_DIR/ghostty";
     };
     functions = {

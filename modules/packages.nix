@@ -17,8 +17,12 @@ let
     wget
     unzip
     nixd
+    nil
     tree-sitter
     gnumake
+    tailwindcss
+    typescript-language-server
+    tailwindcss-language-server
 
     # Fish (needed for home manager standalone)
     fish
@@ -37,6 +41,7 @@ let
     font-awesome
     roboto
     source-sans-pro
+    degit
 
     # zenith-nvidia
     yazi
@@ -55,6 +60,11 @@ let
 
     # Formatters
     nixfmt-rfc-style
+    nixpkgs-fmt
+
+    # Helix
+    helix
+    nushell
   ];
 in
 basePackages

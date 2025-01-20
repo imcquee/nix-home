@@ -45,6 +45,12 @@ in
   # Copy symlink for MangoHud
   home.file.".config/MangoHud".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/MangoHud";
 
+  # Copy symlink for Helix
+  home.file.".config/helix".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/helix";
+
+  # Copy symlink for yazelix
+  home.file.".config/yazelix".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/yazelix";
+
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
     if pkgs.stdenv.isDarwin then

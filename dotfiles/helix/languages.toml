@@ -1,0 +1,19 @@
+[language-server.tailwindcss-ls]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+config = { userLanguages = { gleam = "html", "*.gleam" = "html" }, tailwindCSS = { experimental = { classRegex = [ [ "class\\([\"']([^\"']*)[\"']\\)" ] ] } } }
+
+[[language]]
+name = "nix"
+language-servers = [ "nixd", "nil" ]
+formatter = { command = "nixpkgs-fmt" }
+auto-format = true
+
+[[language]]
+name = "gleam"
+language-servers = [ "gleam", "tailwindcss-ls" ]
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
