@@ -1,3 +1,1 @@
-os:
-  editPreset: 'nvim'
 promptToReturnFromSubprocess: false
