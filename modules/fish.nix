@@ -20,9 +20,9 @@
         set RELOAD "reload:rg --column --color=always --smart-case {q} || :"
         set OPENER "
             if test (count $FZF_SELECT) -eq 0
-                nvim {1} +{2}  # No selection. Open the current line in Vim.
+                $EDITOR {1} +{2}  # No selection. Open the current line in Vim.
             else
-                nvim +cw -q (echo {+f})  # Build quickfix list for the selected items.
+                $EDITOR +cw -q (echo {+f})  # Build quickfix list for the selected items.
             end
         "
 
@@ -56,8 +56,8 @@
         bind \ey -M insert 'yy; commandline -f execute'
         bind \ey 'yy; commandline -f execute'
 
-        bind \eg -M insert 'lazygit; commandline -f execute'
-        bind \eg 'lazygit; commandline -f execute'
+        bind \eg -M insert 'commandline -r lazygit; commandline -f execute'
+        bind \eg 'commandline -r lazygit; commandline -f execute'
 
         bind \e\c_ -M insert 'irg; commandline -f execute'
         bind \e\c_ 'irg; commandline -f execute'
