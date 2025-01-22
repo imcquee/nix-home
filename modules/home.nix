@@ -12,6 +12,7 @@ in
   imports = [ ./programs.nix ];
   home.username = userName;
   home.homeDirectory = homeDir;
+  xdg.enable = true;
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI; };
   home.sessionVariables = {
@@ -34,7 +35,7 @@ in
   home.file.".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zellij";
 
   # Copy symlink for lazygit
-  home.file.".config/lazygit".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazygit";
+  home.file."${config.xdg.configHome}/lazygit".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazygit";
 
   # Copy symlink for hyprland
   home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/hypr";
