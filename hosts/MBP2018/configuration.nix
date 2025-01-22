@@ -17,8 +17,6 @@ let
   };
 in
 {
-  environment.variables.EDITOR = "nvim";
-
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
