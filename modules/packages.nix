@@ -16,13 +16,15 @@ let
     rustc
     wget
     unzip
-    nixd
-    nil
     tree-sitter
     gnumake
     tailwindcss
+
+    # Language Servers
     typescript-language-server
     tailwindcss-language-server
+    nixd
+    nil
 
     # Fish (needed for home manager standalone)
     fish
@@ -37,7 +39,6 @@ let
     fzf
     sd
     fastfetch
-    nerdfonts
     font-awesome
     roboto
     source-sans-pro

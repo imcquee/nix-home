@@ -1,13 +1,12 @@
 {
   pkgs,
-  ghostty,
   zen-browser,
   ...
 }:
 with pkgs;
 [
   # Terminal
-  ghostty.packages.x86_64-linux.default
+  ghostty
 
   # VM
   nixos-shell
@@ -29,4 +28,7 @@ with pkgs;
 
   # Monitoring
   zenith-nvidia
+
+  # Spotify
+  spotify
 ]

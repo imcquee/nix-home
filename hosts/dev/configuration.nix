@@ -3,7 +3,6 @@
   lib,
   userName,
   fullName,
-  ghostty,
   zen-browser,
   ...
 }:
@@ -98,6 +97,11 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  # Nerd fonts
+  fonts.packages =
+    [ ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+
   # K400 keyboard receiver
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
@@ -106,7 +110,7 @@
   hardware.keyboard.qmk.enable = true;
 
   # Add device specific packages
-  environment.systemPackages = pkgs.callPackage ./packages.nix { inherit ghostty zen-browser; };
+  environment.systemPackages = pkgs.callPackage ./packages.nix { inherit zen-browser; };
 
   system.stateVersion = "24.05";
 }
