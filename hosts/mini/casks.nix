@@ -8,6 +8,7 @@ _:
   "zed"
   "visual-studio-code"
   "rider"
+  "ghostty"
 
   # Productivity
   "raycast"
