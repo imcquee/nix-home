@@ -16,9 +16,21 @@ in
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI; };
   home.sessionVariables = {
-    EDITOR = "nvim";
-    # Set this to avoid issues when login shell is set to non bash
-    PATH = "${config.home.homeDirectory}/.nix-profile/bin:/nix/var/nix/profiles/default/bin:$PATH";
+    EDITOR = "hx";
+    PATH = builtins.concatStringsSep ":" [
+      # Default Nix profile binaries
+      "${config.home.homeDirectory}/.nix-profile/bin"
+
+      # System-wide Nix profile binaries
+      "/nix/var/nix/profiles/default/bin"
+
+      # Custom binaries for Zide
+      "${config.home.homeDirectory}/.config/zide/bin"
+
+      # Include existing PATH
+      "$PATH"
+    ];
+    ZIDE_USE_YAZI_CONFIG = "${config.home.homeDirectory}/nix-home/dotfiles/yazi-custom";
   };
 
   # Allow unfree packages with nix-shell
@@ -29,28 +41,36 @@ in
   '';
 
   # Copy symlink for neovim
-  home.file.".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/nvim";
+  home.file.".config/nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/nvim";
 
   # Copy symlink for zellij
-  home.file.".config/zellij".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zellij";
+  home.file.".config/zellij".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zellij";
 
   # Copy symlink for lazygit
-  home.file."${config.xdg.configHome}/lazygit".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazygit";
+  home.file."${config.xdg.configHome}/lazygit".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazygit";
 
   # Copy symlink for hyprland
-  home.file.".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/hypr";
+  home.file.".config/hypr".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/hypr";
 
   # Copy symlink for kanata
-  home.file.".config/kanata".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/kanata";
+  home.file.".config/kanata".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/kanata";
 
   # Copy symlink for MangoHud
-  home.file.".config/MangoHud".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/MangoHud";
+  home.file.".config/MangoHud".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/MangoHud";
 
   # Copy symlink for Helix
-  home.file.".config/helix".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/helix";
+  home.file.".config/helix".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/helix";
 
-  # Copy symlink for yazelix
-  home.file.".config/yazelix".source = config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/yazelix";
+  # Copy symlink for zide
+  home.file.".config/zide".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zide";
 
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
