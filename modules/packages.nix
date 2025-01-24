@@ -20,8 +20,6 @@ let
     gnumake
 
     # Language Servers
-    typescript-language-server
-    tailwindcss-language-server
     nixd
     nil
 
@@ -40,7 +38,6 @@ let
     font-awesome
     roboto
     source-sans-pro
-    degit
 
     # zenith-nvidia
     yazi

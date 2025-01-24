@@ -9,10 +9,13 @@
       ls = "nu -c 'ls'";
       cat = "bat -p";
       lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
-      zj = "zellij";
+      zj = "zellij -l welcome";
       ff = "fastfetch";
       cd = "z";
-      yx = "nu -c \"zellij -l welcome --config-dir ~/.config/yazelix/zellij options --layout-dir ~/.config/yazelix/zellij/layouts\"";
+      nuc = {
+        expansion = "nu -c '%'";
+        setCursor = "%";
+      };
       ghostty = "$GHOSTTY_BIN_DIR/ghostty";
     };
     functions = {
