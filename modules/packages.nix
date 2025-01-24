@@ -18,7 +18,6 @@ let
     unzip
     tree-sitter
     gnumake
-    tailwindcss
 
     # Language Servers
     typescript-language-server
