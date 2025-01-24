@@ -35,7 +35,6 @@ let
     gh
 
     # CL tools
-    lsd
     fzf
     sd
     fastfetch

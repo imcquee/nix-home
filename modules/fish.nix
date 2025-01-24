@@ -6,7 +6,7 @@
       set fzf_directory_opts --bind "ctrl-o:execute($EDITOR {} &> /dev/tty)"
     '';
     shellAbbrs = {
-      ls = "lsd -t --blocks git,name,size,date --date '+%b %-d, %Y %I:%M%P'";
+      ls = "nu -c 'ls'";
       cat = "bat -p";
       lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
       zj = "zellij";
