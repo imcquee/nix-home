@@ -1,4 +1,4 @@
-{ pkgs, withGUI }:
+{ pkgs, withGUI, helix }:
 
 with pkgs;
 
@@ -58,8 +58,8 @@ let
     nixfmt-rfc-style
     nixpkgs-fmt
 
-    # Helix
-    helix
+    # Use Helix from the flake input instead of pkgs.helix
+    helix.packages.${pkgs.system}.default
     nushell
   ];
 in

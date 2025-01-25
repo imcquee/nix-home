@@ -1,12 +1,11 @@
-{
-  pkgs,
-  config,
-  specialArgs,
-  ...
+{ pkgs
+, config
+, specialArgs
+, ...
 }:
 
 let
-  inherit (specialArgs) withGUI homeDir userName;
+  inherit (specialArgs) withGUI homeDir userName helix;
 in
 {
   imports = [ ./programs.nix ];
@@ -14,7 +13,7 @@ in
   home.homeDirectory = homeDir;
   xdg.enable = true;
   home.stateVersion = "24.05";
-  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI; };
+  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix; };
   home.sessionVariables = {
     EDITOR = "hx";
     PATH = builtins.concatStringsSep ":" [
