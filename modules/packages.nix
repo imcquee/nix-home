@@ -38,6 +38,7 @@ let
     font-awesome
     roboto
     source-sans-pro
+    nix-your-shell
 
     # zenith-nvidia
     yazi

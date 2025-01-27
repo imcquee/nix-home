@@ -3,6 +3,8 @@
   programs.fish = {
     enable = true;
     shellInit = ''
+      nix-your-shell fish | source
+      set fish_greeting
       set fzf_directory_opts --bind "ctrl-o:execute($EDITOR {} &> /dev/tty)"
     '';
     shellAbbrs = {
