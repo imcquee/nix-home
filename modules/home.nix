@@ -16,6 +16,7 @@ in
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix; };
   home.sessionVariables = {
     EDITOR = "hx";
+    DIRENV_WARN_TIMEOUT = "0";
     PATH = builtins.concatStringsSep ":" [
       # Default Nix profile binaries
       "${config.home.homeDirectory}/.nix-profile/bin"
