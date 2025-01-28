@@ -48,6 +48,8 @@ git clone https://github.com/imcquee/nix-home.git
 
 ```bash
 nix run nix-darwin -- switch --flake .#MBP2018
+<!-- or -->
+nix run nix-darwin -- switch --flake .#mini
 ```
 
 5. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild MBP2018`
