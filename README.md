@@ -48,7 +48,7 @@ git clone https://github.com/imcquee/nix-home.git
 
 ```bash
 nix run nix-darwin -- switch --flake .#MBP2018
-<!-- or -->
+# or
 nix run nix-darwin -- switch --flake .#mini
 ```
 
