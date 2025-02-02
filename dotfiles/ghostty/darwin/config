@@ -6,6 +6,7 @@ background-blur-radius = 20
 window-padding-x = 10
 window-padding-y = 0
 background = #080808
+macos-titlebar-style = hidden
 
 # Font
 font-size = 20
