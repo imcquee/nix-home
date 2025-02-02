@@ -1,8 +1,7 @@
-{
-  pkgs,
-  homeDir,
-  userName,
-  ...
+{ pkgs
+, homeDir
+, userName
+, ...
 }:
 
 let
@@ -78,7 +77,7 @@ in
 
   # Daemons
   launchd.user.agents.kanata = {
-    command = "/usr/bin/sudo ${pinnedPkgs.kanata}/bin/kanata -c ${homeDir}/nix-home/dotfiles/kanata/macbook.kbd";
+    command = "/usr/bin/sudo ${pinnedPkgs.kanata}/bin/kanata -c ${homeDir}/nix-home/dotfiles/kanata/laptop.kbd";
     serviceConfig = {
       UserName = userName;
       RunAtLoad = true;
