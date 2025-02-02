@@ -40,7 +40,12 @@ in
       else
         { enable = false; };
 
-    starship.enable = true;
+    starship = {
+      enable = true;
+      settings = {
+        add_newline = false;
+      };
+    };
     zoxide.enable = true;
 
     direnv = {
