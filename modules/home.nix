@@ -40,10 +40,6 @@ in
     }
   '';
 
-  # Copy symlink for neovim
-  home.file.".config/nvim".source =
-    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/nvim";
-
   # Copy symlink for zellij
   home.file.".config/zellij".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zellij";
@@ -67,10 +63,6 @@ in
   # Copy symlink for Helix
   home.file.".config/helix".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/helix";
-
-  # Copy symlink for zide
-  home.file.".config/zide".source =
-    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zide";
 
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
