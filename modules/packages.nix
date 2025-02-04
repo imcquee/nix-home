@@ -28,6 +28,7 @@ let
     source-sans-pro
     nix-your-shell
     nushell
+    aider-chat
 
     # zenith-nvidia
     yazi
