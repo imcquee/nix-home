@@ -14,6 +14,7 @@ _:
   "raycast"
   "obsidian"
   "devtoys"
+  "screen-studio"
 
   # VM
   "utm"
