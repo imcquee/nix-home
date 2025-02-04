@@ -1,10 +1,10 @@
-{
-  userName,
-  userEmail,
-  fullName,
-  withGUI,
-  homeDir,
-  ...
+{ userName
+, userEmail
+, fullName
+, withGUI
+, helix
+, homeDir
+, ...
 }:
 {
   home-manager.useGlobalPkgs = true;
@@ -16,6 +16,7 @@
       userEmail
       fullName
       withGUI
+      helix
       homeDir
       ;
   };

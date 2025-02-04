@@ -1,12 +1,11 @@
-{
-  pkgs,
-  config,
-  specialArgs,
-  ...
+{ pkgs
+, config
+, specialArgs
+, ...
 }:
 
 let
-  inherit (specialArgs) withGUI homeDir userName;
+  inherit (specialArgs) withGUI homeDir userName helix;
 in
 {
   imports = [ ./programs.nix ];
@@ -14,7 +13,7 @@ in
   home.homeDirectory = homeDir;
   xdg.enable = true;
   home.stateVersion = "24.05";
-  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI; };
+  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix; };
   home.sessionVariables = {
     EDITOR = "hx";
     DIRENV_WARN_TIMEOUT = "0";
@@ -41,10 +40,6 @@ in
     }
   '';
 
-  # Copy symlink for neovim
-  home.file.".config/nvim".source =
-    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/nvim";
-
   # Copy symlink for zellij
   home.file.".config/zellij".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zellij";
@@ -68,10 +63,6 @@ in
   # Copy symlink for Helix
   home.file.".config/helix".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/helix";
-
-  # Copy symlink for zide
-  home.file.".config/zide".source =
-    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/zide";
 
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =

@@ -6,6 +6,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:LnL7/nix-darwin";
+    helix.url = "github:helix-editor/helix/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
@@ -31,13 +32,13 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      nix-darwin,
-      nix-homebrew,
-      nur,
-      ...
+    { nixpkgs
+    , home-manager
+    , nix-darwin
+    , nix-homebrew
+    , nur
+    , helix
+    , ...
     }@inputs:
     let
       # User Information
@@ -77,7 +78,7 @@
           ./modules/services.nix
           ./modules/elevated-packages.nix
           ./modules/hyprland.nix
-          { nixpkgs.overlays = [ nur.overlay ]; }
+          { nixpkgs.overlays = [ nur.overlays.default ]; }
           home-manager.nixosModules.home-manager
           ./modules/home-manager.nix
         ];
@@ -100,7 +101,7 @@
           ./modules/nvidia.nix
           ./modules/elevated-packages.nix
           ./modules/gaming.nix
-          { nixpkgs.overlays = [ nur.overlay ]; }
+          { nixpkgs.overlays = [ nur.overlays.default ]; }
           home-manager.nixosModules.home-manager
           ./modules/home-manager.nix
         ];
@@ -157,6 +158,7 @@
         extraSpecialArgs = {
           withGUI = defaults.withGUI;
           homeDir = defaults.homeDir;
+          helix = inputs.helix;
         } // userInfo;
         modules = [ ./modules/home.nix ];
       };
