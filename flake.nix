@@ -50,6 +50,7 @@
 
       # Common Configurations
       linux_x86 = "x86_64-linux";
+      linux_ARM = "aarch64-linux";
       darwin_x86 = "x86_64-darwin";
       darwin_ARM = "aarch64-darwin";
 
