@@ -29,12 +29,11 @@ let
     nix-your-shell
     nushell
     aider-chat
-
-    # zenith-nvidia
     yazi
     bat
     zoxide
     zellij
+    # zenith-nvidia
 
     # Docker tools
     lazydocker
