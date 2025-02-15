@@ -1,5 +1,5 @@
 {
-  description = "Nix + Portable Linux + Darwin configuration";
+  description = "NixOS + Portable Linux + Darwin configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -150,7 +150,7 @@
       # Universal configuration for use in non-nix situations
       homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-          system = linux_x86;
+          system = builtins.currentSystem;
           config = {
             allowUnfree = true;
           };
