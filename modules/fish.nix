@@ -79,11 +79,6 @@
         end
         rm -f -- "$tmp"
       '';
-      curl = ''
-        function curl
-            command curl $argv | jq
-        end
-      '';
     };
     plugins = with pkgs.fishPlugins; [
       {
