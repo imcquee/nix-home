@@ -24,13 +24,9 @@ in
       # System-wide Nix profile binaries
       "/nix/var/nix/profiles/default/bin"
 
-      # Custom binaries for Zide
-      "${config.home.homeDirectory}/.config/zide/bin"
-
       # Include existing PATH
       "$PATH"
     ];
-    ZIDE_USE_YAZI_CONFIG = "${config.home.homeDirectory}/nix-home/dotfiles/yazi-custom";
   };
 
   # Allow unfree packages with nix-shell
