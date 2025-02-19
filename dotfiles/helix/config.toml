@@ -8,7 +8,6 @@ select = "underline"
 [keys.normal]
 A-g = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- lazygit"
 A-r = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/serpl-replace.sh"
-"A-/" = ":sh zellij action toggle-floating-panes"
 
 [keys.normal.A-y]
 y = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
