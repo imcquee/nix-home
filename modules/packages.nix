@@ -33,6 +33,7 @@ let
     bat
     zoxide
     zellij
+    serpl
     # zenith-nvidia
 
     # Docker tools
