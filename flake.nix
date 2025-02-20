@@ -6,8 +6,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:LnL7/nix-darwin";
-    helix.url = "github:helix-editor/helix/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    helix.url = "github:helix-editor/helix/master";
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
