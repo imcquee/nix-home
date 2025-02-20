@@ -151,7 +151,7 @@
       # Universal configuration for use in non-nix situations
       homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
-          system = builtins.currentSystem;
+          system = linux_x86;
           config = {
             allowUnfree = true;
           };
