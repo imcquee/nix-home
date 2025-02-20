@@ -22,3 +22,4 @@ auto-format = true
 [[language]]
 name = "tsx"
 language-servers = [ "typescript-language-server", "tailwindcss-ls" ]
+auto-format = true

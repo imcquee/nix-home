@@ -1,3 +1,5 @@
+pane_frames false
+default_shell "fish"
 theme "kanagawa"
 themes {
     kanagawa {
@@ -13,4 +15,9 @@ themes {
         cyan "#7aa89f"
         orange "#FFA066"
       }
+}
+keybinds {
+  shared {
+    bind "Alt f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+  }
 }

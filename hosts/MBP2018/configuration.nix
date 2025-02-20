@@ -16,9 +16,6 @@ let
   };
 in
 {
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-
   nix = {
     #Add trusted users
     package = pkgs.nix;
@@ -32,7 +29,6 @@ in
 
     # Auto garbage collection
     gc = {
-      user = "root";
       automatic = true;
       interval = {
         Weekday = 0;
