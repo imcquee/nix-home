@@ -30,6 +30,7 @@ _:
   # Work
   "teamviewer"
   "microsoft-teams"
+  "microsoft-auto-update"
   "zoom"
   "postman"
 ]
