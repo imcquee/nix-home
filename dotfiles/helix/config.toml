@@ -1,5 +1,8 @@
 theme = "kanagawa"
 
+[editor]
+end-of-line-diagnostics = "hint"
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -13,3 +16,9 @@ A-r = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.co
 y = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh open"
 v = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh vsplit"
 h = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/yazi-picker.sh hsplit"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
