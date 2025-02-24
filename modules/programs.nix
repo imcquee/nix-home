@@ -53,5 +53,7 @@ in
       nix-direnv.enable = true;
       silent = true;
     };
+
+    nushell.enable = true;
   };
 }

@@ -27,7 +27,6 @@ let
     roboto
     source-sans-pro
     nix-your-shell
-    nushell
     aider-chat
     yazi
     bat
