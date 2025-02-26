@@ -1,14 +1,10 @@
-{
-  pkgs,
-  homeDir,
-  userName,
-  ...
+{ pkgs
+, homeDir
+, userName
+, ...
 }:
 
 {
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-
   nix = {
     #Add trusted users
     package = pkgs.nix;
@@ -20,10 +16,8 @@
 
     # Allow Flakes
     settings.experimental-features = "nix-command flakes";
-
     # Auto garbage collection
     gc = {
-      user = "root";
       automatic = true;
       interval = {
         Weekday = 0;
@@ -48,10 +42,14 @@
   };
 
   # Default user
-  users.users.${userName} = {
-    name = userName;
-    home = homeDir;
-    shell = pkgs.fish;
+  users = {
+    knownUsers = [ userName ];
+    users.${userName} = {
+      uid = 501;
+      name = userName;
+      home = homeDir;
+      shell = pkgs.fish;
+    };
   };
 
   # Allow unfree packages
@@ -61,7 +59,7 @@
   environment.systemPackages = pkgs.callPackage ./packages.nix { };
 
   system = {
-    stateVersion = 4;
+    stateVersion = 5;
 
     defaults = {
       NSGlobalDomain = {
@@ -87,3 +85,4 @@
     };
   };
 }
+
