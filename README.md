@@ -102,6 +102,12 @@ curl -fsSL https://tailscale.com/install.sh | sh
 1. `gh auth login`
 2. `gh auth setup-git`
 
+### Failed to start Home Manager for <User>
+
+The real error is most likely hidden in the logs (Most likely a config file that you are trying to overwrite)
+
+journalctl -xe --unit home-manager-<user>
+
 #### Cleanup storage
 
 Delete stale paths: `nix-collect-garbage`
