@@ -32,6 +32,9 @@ sudo nixos-rebuild switch --flake /home/$USER/nix-home/#dev
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
+> [!WARNING]  
+> If you hit enter through the default installer det sys will control you nix install. We don't want this with nix-darwin. So answer 'N' to the first question in the installer
+
 2. Setup Git (if not already installed)
 
 ```bash
@@ -47,9 +50,9 @@ git clone https://github.com/imcquee/nix-home.git
 4. Rebuild host
 
 ```bash
-nix run nix-darwin -- switch --flake .#MBP2018
+nix run nix-darwin/master#darwin-rebuild -- switch --flake nix-home/.#MBP2018
 # or
-nix run nix-darwin -- switch --flake .#mini
+nix run nix-darwin/master#darwin-rebuild -- switch --flake nix-home/.#mini
 ```
 
 5. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild MBP2018`
