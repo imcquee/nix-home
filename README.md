@@ -33,7 +33,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 ```
 
 > [!WARNING]  
-> If you hit enter through the default installer det sys will control you nix install. We don't want this with nix-darwin. So answer 'N' to the first question in the installer
+> If you hit choose the default options in the installer, determinate will take control of your nix install. We don't want this with nix-darwin. So answer 'N' to the first question in the installer
 
 2. Setup Git (if not already installed)
 
