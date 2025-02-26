@@ -54,10 +54,14 @@ in
   };
 
   # Default user
-  users.users.${userName} = {
-    name = userName;
-    home = homeDir;
-    shell = pkgs.fish;
+  users = {
+    knownUsers = [ userName ];
+    users.${userName} = {
+      uid = 501;
+      name = userName;
+      home = homeDir;
+      shell = pkgs.fish;
+    };
   };
 
   # Allow unfree packages
