@@ -176,10 +176,8 @@
           };
         modules = [
           (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
-          ./hosts/dev/configuration.nix
-          ./hosts/dev/hardware-configuration.nix
+          ./hosts/iso/configuration.nix
           ./modules/path.nix
-          ./modules/nvidia.nix
           ./modules/services.nix
           ./modules/elevated-packages.nix
           ./modules/hyprland.nix
