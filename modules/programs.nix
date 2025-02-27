@@ -44,8 +44,11 @@ in
       enable = true;
       settings = {
         add_newline = false;
+        # command_timeout = 10000;
+        # scan_timeout = 30;
       };
     };
+
     zoxide.enable = true;
 
     direnv = {
