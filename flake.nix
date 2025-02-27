@@ -164,7 +164,29 @@
         modules = [ ./modules/home.nix ];
       };
 
-      # Build ISO image
-      nixosConfigurations.iso = nixpkgs.lib.nixosSystem { modules = [ ./hosts/iso/configuration.nix ]; };
+      # Build ISO image for dev
+      nixosConfigurations.iso = nixpkgs.lib.nixosSystem {
+        system = linux_x86;
+        specialArgs =
+          inputs
+          // userInfo
+          // {
+            withGUI = true;
+            homeDir = defaults.homeDir;
+          };
+        modules = [
+          (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix")
+          ./hosts/dev/configuration.nix
+          ./hosts/dev/hardware-configuration.nix
+          ./modules/path.nix
+          ./modules/nvidia.nix
+          ./modules/services.nix
+          ./modules/elevated-packages.nix
+          ./modules/hyprland.nix
+          { nixpkgs.overlays = [ nur.overlays.default ]; }
+          home-manager.nixosModules.home-manager
+          ./modules/home-manager.nix
+        ];
+      };
     };
 }
