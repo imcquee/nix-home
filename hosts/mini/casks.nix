@@ -3,6 +3,7 @@ _:
 [
   # Browsers
   "zen-browser"
+  "arc"
 
   # Text Editors
   "zed"
