@@ -26,6 +26,7 @@ _:
   "microsoft-teams"
   "microsoft-auto-update"
   "postman"
+  "orbstack"
 
   # Communication
   "discord"

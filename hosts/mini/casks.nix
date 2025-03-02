@@ -34,4 +34,5 @@ _:
   "microsoft-auto-update"
   "zoom"
   "postman"
+  "orbstack"
 ]
