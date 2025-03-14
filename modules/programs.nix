@@ -58,5 +58,21 @@ in
     };
 
     nushell.enable = true;
+
+    nixvim = {
+      enable = true;
+      colorschemes.kanagawa.enable = true;
+      plugins.lualine.enable = true;
+      plugins.yazi = {
+        enable = true;
+        lazyLoad = {
+          settings = {
+            cmd = [
+              "yazi"
+            ];
+          };
+        };
+      };
+    };
   };
 }

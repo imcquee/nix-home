@@ -1,4 +1,4 @@
-{ pkgs, withGUI, helix }:
+{ pkgs, withGUI, helix, yazi }:
 
 with pkgs;
 
@@ -44,6 +44,9 @@ let
 
     # Use Helix from the flake input instead of pkgs.helix
     helix.packages.${pkgs.system}.default
+
+    # Use Yazi from the flake input instead of pkgs.yazi
+    yazi.packages.${pkgs.system}.default
   ];
 in
 basePackages

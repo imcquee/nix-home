@@ -8,6 +8,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     helix.url = "github:helix-editor/helix/master";
+    yazi.url = "github:sxyazi/yazi/main";
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
@@ -29,6 +30,10 @@
     };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nur.url = "github:nix-community/NUR";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -38,6 +43,8 @@
     , nix-homebrew
     , nur
     , helix
+    , yazi
+    , nixvim
     , ...
     }@inputs:
     let
@@ -160,8 +167,9 @@
           withGUI = defaults.withGUI;
           homeDir = defaults.homeDir;
           helix = inputs.helix;
+          yazi = inputs.yazi;
         } // userInfo;
-        modules = [ ./modules/home.nix ];
+        modules = [ ./modules/home.nix nixvim.homeManagerModules.nixvim ];
       };
 
       # Build ISO image

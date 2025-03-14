@@ -5,7 +5,7 @@
 }:
 
 let
-  inherit (specialArgs) withGUI homeDir userName helix;
+  inherit (specialArgs) withGUI homeDir userName helix yazi;
 in
 {
   imports = [ ./programs.nix ];
@@ -13,7 +13,7 @@ in
   home.homeDirectory = homeDir;
   xdg.enable = true;
   home.stateVersion = "24.05";
-  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix; };
+  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix yazi; };
   home.sessionVariables = {
     EDITOR = "hx";
     DIRENV_WARN_TIMEOUT = "0";
