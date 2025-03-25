@@ -1,11 +1,10 @@
-{
-  pkgs,
-  homebrew-core,
-  homebrew-cask,
-  homebrew-bundle,
-  homebrew-zen-browser,
-  userName,
-  ...
+{ pkgs
+, homebrew-core
+, homebrew-cask
+, homebrew-bundle
+, homebrew-zen-browser
+, userName
+, ...
 }:
 {
   homebrew = {

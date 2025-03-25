@@ -42,8 +42,9 @@ let
     nixfmt-rfc-style
     nixpkgs-fmt
 
-    # Use Helix from the flake input instead of pkgs.helix
+    # Editors
     helix.packages.${pkgs.system}.default
+    neovim
   ];
 in
 basePackages

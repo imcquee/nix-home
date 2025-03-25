@@ -35,4 +35,8 @@ _:
   "zoom"
   "postman"
   "orbstack"
+  "slack"
+
+  # Gaming
+  "steam"
 ]
