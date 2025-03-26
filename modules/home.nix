@@ -26,6 +26,9 @@ in
 
       # Include existing PATH
       "$PATH"
+
+      # Orbstack
+      "~/.orbstack/bin"
     ];
   };
 

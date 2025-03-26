@@ -148,6 +148,26 @@
         ];
       };
 
+      # Darwin Configuration
+      darwinConfigurations."MBA2025" = nix-darwin.lib.darwinSystem {
+        system = darwin_ARM;
+        specialArgs =
+          inputs
+          // userInfo
+          // {
+            withGUI = defaults.withGUI;
+            homeDir = "/Users/${userInfo.userName}";
+          };
+        modules = [
+          ./hosts/MBA2025/configuration.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          ./hosts/MBA2025/homebrew.nix
+          ./modules/path.nix
+          home-manager.darwinModules.home-manager
+          ./modules/home-manager.nix
+        ];
+      };
+
       # Universal configuration for use in non-nix situations
       homeConfigurations.universal = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {

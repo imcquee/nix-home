@@ -24,9 +24,9 @@ in
       userName
     ];
     settings.extra-nix-path = "nixpkgs=flake:nixpkgs";
+
     # Allow Flakes
     settings.experimental-features = "nix-command flakes";
-
     # Auto garbage collection
     gc = {
       automatic = true;
@@ -37,7 +37,6 @@ in
       };
       options = "--delete-older-than 30d";
     };
-
     # Optimize storage
     optimise.automatic = true;
   };
@@ -69,7 +68,7 @@ in
 
   # Use Touch ID over sudo + sudo
   security = {
-    pam.enableSudoTouchIdAuth = true;
+    pam.services.sudo_local.touchIdAuth = true;
     sudo.extraConfig = ''
       ${userName} ALL=(ALL) NOPASSWD: ${pinnedPkgs.kanata}/bin/kanata
     '';
@@ -97,8 +96,9 @@ in
   # After installation run `/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate`
   environment.systemPackages = pkgs.callPackage ./packages.nix { } ++ [ pinnedPkgs.kanata ];
 
+
   system = {
-    stateVersion = 4;
+    stateVersion = 5;
 
     defaults = {
       NSGlobalDomain = {
@@ -124,3 +124,4 @@ in
     };
   };
 }
+
