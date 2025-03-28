@@ -1,3 +1,6 @@
+// Static link:
+// https://raw.githubusercontent.com/imcquee/nix-home/refs/heads/main/dotfiles/surfingkeys/surfingkeys.txt
+
 // Theme credit: thuanowa
 // upstream: https://github.com/rose-pine/surfingkeys/blob/main/dist/rose-pine.conf
 
