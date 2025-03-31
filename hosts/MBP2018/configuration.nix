@@ -77,7 +77,7 @@ in
 
   # Daemons
   launchd.user.agents.kanata = {
-    command = "/usr/bin/sudo ${pinnedPkgs.kanata}/bin/kanata -c ${homeDir}/nix-home/dotfiles/kanata/laptop.kbd";
+    command = "/usr/bin/sudo ${pinnedPkgs.kanata}/bin/kanata -c ${homeDir}/nix-home/dotfiles/kanata/MBP.kbd";
     serviceConfig = {
       UserName = userName;
       RunAtLoad = true;
