@@ -18,23 +18,23 @@ git clone https://github.com/imcquee/nix-home.git
   
 3. Rebuild host
 
-If you are building on a new machine, generate a new hardware-configuration.nix using:
+    If you are building on a new machine, generate a new hardware-configuration.nix using:
 
-```bash
-sudo nixos-generate-config
-```
+    ```bash
+    sudo nixos-generate-config
+    ```
 
-Then replace the config in hosts/dev with the new configuration (from the home dir run):
+    Then replace the config in hosts/dev with the new configuration (from the home dir run):
 
-```bash
-cp /etc/nixos/hardware-configuration.nix nix-home/hosts/dev/
-```
+    ```bash
+    cp /etc/nixos/hardware-configuration.nix nix-home/hosts/dev/
+    ```
 
-Build from flake:
+    Build from flake:
 
-```bash
-sudo nixos-rebuild switch --flake /home/$USER/nix-home/#dev
-```
+    ```bash
+    sudo nixos-rebuild switch --flake /home/$USER/nix-home/#dev
+    ```
   
 4. On subsequent runs, just run rebuild <hostname> e.g. : `rebuild dev`
 
