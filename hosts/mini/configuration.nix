@@ -58,6 +58,18 @@
   # Add device specific packages
   environment.systemPackages = pkgs.callPackage ./packages.nix { };
 
+  # Daemons
+  launchd.user.agents.XcodeClean = {
+    serviceConfig = {
+      ProgramArguments = [
+        ''${pkgs.writeShellScript "clean-xcode" ''
+          rm -rf ~/Library/Developer/Xcode/DerivedData
+        ''}''
+      ];
+      StartInterval = 43200;
+    };
+  };
+
   system = {
     stateVersion = 5;
 
