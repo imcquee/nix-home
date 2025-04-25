@@ -66,7 +66,7 @@
           rm -rf ~/Library/Developer/Xcode/DerivedData
         ''}''
       ];
-      StartInterval = 43200;
+      StartInterval = 21600;
     };
   };
 
