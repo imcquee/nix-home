@@ -1,0 +1,61 @@
+{
+    "githubLocalActions.dockerDesktopPath": "/Applications/Docker.app",
+    "redhat.telemetry.enabled": true,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1,
+          "jasew.vscode-helix-emulation": 1
+    },
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.sideBar.location": "right",
+    "editor.tabSize": 2,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "sql": false
+    },
+    "editor.accessibilitySupport": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "dbcode.connections": [
+        {
+            "connectionId": "x4kUnPWyY3ssactf73EY3",
+            "name": "Swarm PG",
+            "driver": "postgres",
+            "connectionType": "host",
+            "host": "157.180.64.243",
+            "port": 32768,
+            "ssl": false,
+            "username": "admin",
+            "password": "",
+            "savePassword": "secretStorage",
+            "readOnly": false,
+            "connectionTimeout": 30
+        },
+        {
+            "connectionId": "mF6UMx_GBMFGElCqC1LQs",
+            "name": "Postgres",
+            "driver": "postgres",
+            "connectionType": "host",
+            "host": "157.180.64.243",
+            "port": 5432,
+            "ssl": false,
+            "username": "admin",
+            "password": "",
+            "savePassword": "secretStorage",
+            "readOnly": false,
+            "connectionTimeout": 30
+        }
+    ],
+    "dbcode.resultLocation": "panel",
+    "githubPullRequests.fileListLayout": "tree",
+    "security.workspace.trust.untrustedFiles": "open"
+}
