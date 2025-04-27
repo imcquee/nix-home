@@ -7,6 +7,5 @@ with pkgs;
   nodejs_22
   fastlane
   eas-cli
-  neovim
   sentry-cli
 ]
