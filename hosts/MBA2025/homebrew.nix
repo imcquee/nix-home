@@ -15,9 +15,6 @@
       cleanup = "uninstall";
     };
     casks = pkgs.callPackage ./casks.nix { };
-    masApps = {
-      "tailscale" = 1475387142;
-    };
   };
 
   nix-homebrew = {
