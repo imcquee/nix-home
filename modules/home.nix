@@ -63,6 +63,10 @@ in
   home.file.".config/helix".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/helix";
 
+  # Copy symlink for Neovim
+  home.file.".config/nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/nvim";
+
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
     if pkgs.stdenv.isDarwin then
