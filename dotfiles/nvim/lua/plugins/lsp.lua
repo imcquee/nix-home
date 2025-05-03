@@ -10,6 +10,9 @@ return {
         nixd = {
           mason = false,
         },
+        ts_ls = {
+          mason = false,
+        },
       },
     },
   },
