@@ -13,6 +13,7 @@ return {
         ts_ls = {
           mason = false,
         },
+        prismals = {},
       },
     },
   },
@@ -24,8 +25,17 @@ return {
         elixir = { "mix" },
         nix = { "nixfmt" },
         gleam = { "gleam" },
-        typescript = { "prettier" },
+        typescript = { "prettierd", "prettier", stop_after_first = true },
+        graphql = { "prettierd", "prettier", stop_after_first = true },
         python = { "black" },
+        prisma = { "prisma" },
+      },
+      formatters = {
+        prisma = {
+          command = "bunx",
+          args = { "prisma", "format", "--schema", "$FILENAME" },
+          stdin = false,
+        },
       },
     },
   },
