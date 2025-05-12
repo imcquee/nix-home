@@ -20,3 +20,7 @@ quit-after-last-window-closed = true
 macos-option-as-alt = true
 macos-non-native-fullscreen = true
 macos-window-shadow = false
+
+# OSC52
+clipboard-read = allow
+clipboard-write = allow
