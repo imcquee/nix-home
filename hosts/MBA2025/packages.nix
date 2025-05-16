@@ -1,6 +1,7 @@
 { pkgs, ... }:
 with pkgs;
 [
+  which
   act
   cocoapods
   bun

@@ -1,13 +1,14 @@
-{ pkgs
-, lib
-, userName
-, fullName
-, zen-browser
-, ...
+{
+  pkgs,
+  lib,
+  userName,
+  fullName,
+  zen-browser,
+  ...
 }:
 
 {
-  environment.variables.EDITOR = "hx";
+  environment.variables.EDITOR = "nvim";
 
   nix = {
     # Allow Flakes

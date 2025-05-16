@@ -1,11 +1,17 @@
-{ pkgs
-, config
-, specialArgs
-, ...
+{
+  pkgs,
+  config,
+  specialArgs,
+  ...
 }:
 
 let
-  inherit (specialArgs) withGUI homeDir userName helix;
+  inherit (specialArgs)
+    withGUI
+    homeDir
+    userName
+    helix
+    ;
 in
 {
   imports = [ ./programs.nix ];
@@ -15,7 +21,7 @@ in
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix; };
   home.sessionVariables = {
-    EDITOR = "hx";
+    EDITOR = "nvim";
     DIRENV_WARN_TIMEOUT = "0";
     PATH = builtins.concatStringsSep ":" [
       # Default Nix profile binaries
