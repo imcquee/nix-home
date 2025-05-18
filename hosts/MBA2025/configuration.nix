@@ -1,7 +1,8 @@
-{ pkgs
-, homeDir
-, userName
-, ...
+{
+  pkgs,
+  homeDir,
+  userName,
+  ...
 }:
 
 let
@@ -96,6 +97,13 @@ in
   # After installation run `/Applications/.Karabiner-VirtualHIDDevice-Manager.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Manager activate`
   environment.systemPackages = pkgs.callPackage ./packages.nix { } ++ [ pinnedPkgs.kanata ];
 
+  # https://stackoverflow.com/questions/79371917/direnv-printing-environment-diff-even-with-hide-env-diff-true
+  environment.etc."direnv/direnv.toml".text = ''
+    [global]
+    hide_env_diff = true
+    warn_timeout = 0
+    log_filter="^$"
+  '';
 
   system = {
     stateVersion = 5;
@@ -124,4 +132,3 @@ in
     };
   };
 }
-

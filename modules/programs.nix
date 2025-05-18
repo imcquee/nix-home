@@ -42,11 +42,7 @@ in
 
     starship = {
       enable = true;
-      settings = {
-        add_newline = false;
-        # command_timeout = 10000;
-        # scan_timeout = 30;
-      };
+      settings = pkgs.lib.importTOML ../dotfiles/starship/starship.toml;
     };
 
     zoxide.enable = true;
@@ -54,7 +50,6 @@ in
     direnv = {
       enable = true;
       nix-direnv.enable = true;
-      silent = true;
     };
 
     nushell.enable = true;
