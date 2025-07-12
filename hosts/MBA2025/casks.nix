@@ -13,13 +13,23 @@ _:
   # Productivity
   "raycast"
   "obsidian"
+  "scroll-reverser"
 
   # Music
   "spotify"
 
   # Work
   "slack"
-  "expo-orbit"
+  "figma"
+  "postman"
+
+  # Games
+  "epic-games"
+  "hstracker"
+
+  "android-studio"
+  "zulu@17"
+  "utm"
   "orbstack"
-  "displaylink"
+
 ]

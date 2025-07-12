@@ -1,11 +1,17 @@
-{ pkgs
-, config
-, specialArgs
-, ...
+{
+  pkgs,
+  config,
+  specialArgs,
+  ...
 }:
 
 let
-  inherit (specialArgs) withGUI homeDir userName helix;
+  inherit (specialArgs)
+    withGUI
+    homeDir
+    userName
+    helix
+    ;
 in
 {
   imports = [ ./programs.nix ];
@@ -15,8 +21,7 @@ in
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix; };
   home.sessionVariables = {
-    EDITOR = "hx";
-    DIRENV_WARN_TIMEOUT = "0";
+    EDITOR = "nvim";
     PATH = builtins.concatStringsSep ":" [
       # Default Nix profile binaries
       "${config.home.homeDirectory}/.nix-profile/bin"
@@ -62,6 +67,10 @@ in
   # Copy symlink for Helix
   home.file.".config/helix".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/helix";
+
+  # Copy symlink for Neovim
+  home.file.".config/nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/nvim";
 
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =

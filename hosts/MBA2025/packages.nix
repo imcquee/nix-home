@@ -1,12 +1,11 @@
 { pkgs, ... }:
 with pkgs;
 [
-  act
-  cocoapods
-  bun
-  nodejs_22
-  fastlane
-  eas-cli
-  neovim
-  sentry-cli
+  which
+  watchman
+  android-tools
+  zed-editor
+  prettierd
+  firebase-tools
+  google-cloud-sdk
 ]

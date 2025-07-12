@@ -1,0 +1,15 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.ai.copilot",
+    "lazyvim.plugins.extras.ai.copilot-chat",
+    "lazyvim.plugins.extras.coding.mini-surround",
+    "lazyvim.plugins.extras.formatting.prettier",
+    "lazyvim.plugins.extras.lang.prisma",
+    "lazyvim.plugins.extras.util.octo"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "10960"
+  },
+  "version": 8
+}
