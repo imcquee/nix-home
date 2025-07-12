@@ -105,17 +105,20 @@ in
     log_filter="^$"
   '';
 
+  environment.variables.ANDROID_HOME = "/Users/imcquee/Library/Android/sdk";
+
   system = {
     stateVersion = 5;
 
     defaults = {
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
       };
       dock = {
         autohide = true;
         tilesize = 56;
-        orientation = "left";
+        orientation = "bottom";
         persistent-apps = [ "/System/Applications/Messages.app" ];
       };
       finder = {
