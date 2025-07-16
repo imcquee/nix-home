@@ -13,11 +13,11 @@ return {
         ts_ls = {
           mason = false,
         },
-        graphqls = {
+        graphql = {
           mason = false,
         },
         prismals = {
-          mason = true,
+          mason = false,
         },
       },
     },
