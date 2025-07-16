@@ -23,22 +23,19 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    homebrew-zen-browser = {
-      url = "github:zen-browser/desktop";
-      flake = false;
-    };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nur.url = "github:nix-community/NUR";
   };
 
   outputs =
-    { nixpkgs
-    , home-manager
-    , nix-darwin
-    , nix-homebrew
-    , nur
-    , helix
-    , ...
+    {
+      nixpkgs,
+      home-manager,
+      nix-darwin,
+      nix-homebrew,
+      nur,
+      helix,
+      ...
     }@inputs:
     let
       # User Information

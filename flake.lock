@@ -145,22 +145,6 @@
         "type": "github"
       }
     },
-    "homebrew-zen-browser": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1745063554,
-        "narHash": "sha256-VDHPHZxLq7bnZr7J8KZVeAxPktiug5u4oIsDaZg7Fxk=",
-        "owner": "zen-browser",
-        "repo": "desktop",
-        "rev": "004b9467166151708eb057beaf5fd635267ba9ce",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zen-browser",
-        "repo": "desktop",
-        "type": "github"
-      }
-    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -339,7 +323,6 @@
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
-        "homebrew-zen-browser": "homebrew-zen-browser",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_4",

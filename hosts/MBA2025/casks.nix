@@ -3,6 +3,7 @@ _:
 [
   # Browsers
   "arc"
+  "zen-browser"
 
   # Text Editors
   "visual-studio-code"
