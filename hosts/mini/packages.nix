@@ -11,4 +11,6 @@ with pkgs;
   nodejs_22
   fastlane
   eas-cli
+
+  android-tools
 ]

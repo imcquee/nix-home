@@ -58,6 +58,13 @@
   # Add device specific packages
   environment.systemPackages = pkgs.callPackage ./packages.nix { };
 
+  # Services
+  services = {
+    tailscale = {
+      enable = true;
+    };
+  };
+
   # Daemons
   launchd.user.agents.XcodeClean = {
     serviceConfig = {

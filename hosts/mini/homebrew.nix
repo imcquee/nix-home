@@ -1,10 +1,9 @@
-{
-  pkgs,
-  homebrew-core,
-  homebrew-cask,
-  homebrew-bundle,
-  userName,
-  ...
+{ pkgs
+, homebrew-core
+, homebrew-cask
+, homebrew-bundle
+, userName
+, ...
 }:
 {
   homebrew = {
@@ -14,9 +13,6 @@
       cleanup = "uninstall";
     };
     casks = pkgs.callPackage ./casks.nix { };
-    masApps = {
-      "tailscale" = 1475387142;
-    };
   };
 
   nix-homebrew = {
