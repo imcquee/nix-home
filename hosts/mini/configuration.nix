@@ -79,7 +79,7 @@
 
   system = {
     stateVersion = 5;
-
+    primaryUser = "imcquee";
     defaults = {
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
