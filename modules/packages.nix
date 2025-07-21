@@ -35,13 +35,13 @@ let
     # CL tools
     fzf
     fd
+    ncdu
     ripgrep
     fastfetch
     font-awesome
     roboto
     source-sans-pro
     nix-your-shell
-    aider-chat
     yazi
     bat
     zoxide
