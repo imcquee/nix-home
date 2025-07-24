@@ -3,6 +3,10 @@ command = "tailwindcss-language-server"
 args = ["--stdio"]
 config = { userLanguages = { gleam = "html", "*.gleam" = "html" }, tailwindCSS = { experimental = { classRegex = [ [ "class\\([\"']([^\"']*)[\"']\\)" ] ] } } }
 
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
 [[language]]
 name = "nix"
 language-servers = [ "nixd", "nil" ]
@@ -21,8 +25,8 @@ auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server", "tailwindcss-ls", "vscode-eslint-language-server" ]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+language-servers = [ "typescript-language-server", "tailwindcss-ls", "vscode-eslint-language-server", "harper-ls" ]
+formatter = { command = 'bunx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
 [[language]]
@@ -30,22 +34,27 @@ name = "typescript"
 language-servers = [
   "typescript-language-server",
   "vscode-eslint-language-server",
+  "harper-ls"
 ]
-formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+formatter = { command = 'bunx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
 [[language]]
 name = "html"
-formatter = { command = 'prettier', args = ["--parser", "html"] }
+formatter = { command = 'bunx', args = ["prettier", "--parser", "html"] }
 auto-format = true
 
 [[language]]
 name = "css"
-formatter = { command = 'prettier', args = ["--parser", "css"] }
+formatter = { command = 'bunx', args = ["prettier", "--parser", "css"] }
 auto-format = true
 
 
 [[language]]
 name = "json"
-formatter = { command = 'prettier', args = ["--parser", "json"] }
+formatter = { command = 'bunx', args = ["prettier", "--parser", "json"] }
 auto-format = true
+
+[[language]]
+name = "markdown"
+language-servers = [ "harper-ls" ]
