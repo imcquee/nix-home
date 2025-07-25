@@ -7,6 +7,9 @@ config = { userLanguages = { gleam = "html", "*.gleam" = "html" }, tailwindCSS =
 command = "harper-ls"
 args = ["--stdio"]
 
+[language-server.typos]
+command = "typos-lsp"
+
 [[language]]
 name = "nix"
 language-servers = [ "nixd", "nil" ]
@@ -25,7 +28,7 @@ auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server", "tailwindcss-ls", "vscode-eslint-language-server", "harper-ls" ]
+language-servers = [ "typescript-language-server", "tailwindcss-ls", "vscode-eslint-language-server", "harper-ls", "typos" ]
 formatter = { command = 'bunx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
@@ -34,7 +37,8 @@ name = "typescript"
 language-servers = [
   "typescript-language-server",
   "vscode-eslint-language-server",
-  "harper-ls"
+  "harper-ls",
+  "typos"
 ]
 formatter = { command = 'bunx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
