@@ -8,4 +8,5 @@ with pkgs;
   prettierd
   firebase-tools
   google-cloud-sdk
+  macpm
 ]
