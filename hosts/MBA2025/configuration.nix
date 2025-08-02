@@ -1,8 +1,7 @@
-{
-  pkgs,
-  homeDir,
-  userName,
-  ...
+{ pkgs
+, homeDir
+, userName
+, ...
 }:
 
 let
@@ -109,7 +108,7 @@ in
 
   system = {
     stateVersion = 5;
-
+    primaryUser = "imcquee";
     defaults = {
       NSGlobalDomain = {
         AppleShowAllExtensions = true;

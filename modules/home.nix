@@ -1,8 +1,7 @@
-{
-  pkgs,
-  config,
-  specialArgs,
-  ...
+{ pkgs
+, config
+, specialArgs
+, ...
 }:
 
 let
@@ -21,7 +20,7 @@ in
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix; };
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "hx";
     PATH = builtins.concatStringsSep ":" [
       # Default Nix profile binaries
       "${config.home.homeDirectory}/.nix-profile/bin"
