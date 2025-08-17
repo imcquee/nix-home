@@ -4,6 +4,7 @@ _:
   # Browsers
   "arc"
   "zen-browser"
+  "google-chrome"
 
   # Text Editors
   "visual-studio-code"
@@ -23,6 +24,7 @@ _:
   "slack"
   "figma"
   "postman"
+  "tower"
 
   # Games
   "epic-games"

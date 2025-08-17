@@ -19,6 +19,9 @@ return {
         prismals = {
           mason = false,
         },
+        gleam = {
+          mason = false,
+        },
       },
     },
   },

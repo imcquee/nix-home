@@ -10,6 +10,10 @@ args = ["--stdio"]
 [language-server.typos]
 command = "typos-lsp"
 
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
 [[language]]
 name = "nix"
 language-servers = [ "nixd", "nil" ]
@@ -18,7 +22,7 @@ auto-format = true
 
 [[language]]
 name = "gleam"
-language-servers = [ "gleam", "tailwindcss-ls" ]
+language-servers = [ "gleam", "tailwindcss-ls", "codebook" ]
 auto-format = true
 
 [[language]]
