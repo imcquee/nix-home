@@ -2,9 +2,11 @@
 
 {
   # Enable DE
-  services.xserver = {
-    enable = true;
-    videoDrivers = [ "nvidia" ];
+  services = {
+    xserver = {
+      enable = true;
+      videoDrivers = [ "nvidia" ];
+    };
     displayManager = {
       gdm = {
         enable = true;
