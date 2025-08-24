@@ -28,11 +28,8 @@ _:
 
   # Games
   "epic-games"
-  "hstracker"
 
   "android-studio"
   "zulu@17"
   "utm"
-  "orbstack"
-
 ]

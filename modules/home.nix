@@ -71,6 +71,10 @@ in
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/nvim";
 
+  # Copy symlink for Codebook
+  home.file.".config/codebook".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/codebook";
+
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
     if pkgs.stdenv.isDarwin then

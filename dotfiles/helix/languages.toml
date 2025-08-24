@@ -15,6 +15,10 @@ command = "codebook-lsp"
 args = ["serve"]
 
 [[language]]
+name = "djot"
+language-servers = [ "codebook", "tailwindcss-ls" ]
+
+[[language]]
 name = "nix"
 language-servers = [ "nixd", "nil" ]
 formatter = { command = "nixpkgs-fmt" }
