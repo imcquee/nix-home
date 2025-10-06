@@ -52,6 +52,11 @@ in
       nix-direnv.enable = true;
     };
 
+    atuin = {
+      enable = true;
+      enableFishIntegration = true;
+    };
+
     nushell.enable = true;
   };
 }

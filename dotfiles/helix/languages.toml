@@ -1,14 +1,7 @@
 [language-server.tailwindcss-ls]
 command = "tailwindcss-language-server"
 args = ["--stdio"]
-config = { userLanguages = { gleam = "html", "*.gleam" = "html" }, tailwindCSS = { experimental = { classRegex = [ [ "class\\([\"']([^\"']*)[\"']\\)" ] ] } } }
-
-[language-server.harper-ls]
-command = "harper-ls"
-args = ["--stdio"]
-
-[language-server.typos]
-command = "typos-lsp"
+config = { userLanguages = { gleam = "html", "*.gleam" = "html" }, tailwindCSS = { experimental = { classRegex = [ [ "class\\([\"']([^\"']*)[\"']\\)" ], [ "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]+)[\"'`]" ] ] } } }
 
 [language-server.codebook]
 command = "codebook-lsp"
@@ -36,7 +29,7 @@ auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server", "tailwindcss-ls", "vscode-eslint-language-server", "harper-ls", "typos" ]
+language-servers = [ "typescript-language-server", "tailwindcss-ls", "vscode-eslint-language-server", "codebook" ]
 formatter = { command = 'bunx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
@@ -45,8 +38,19 @@ name = "typescript"
 language-servers = [
   "typescript-language-server",
   "vscode-eslint-language-server",
-  "harper-ls",
-  "typos"
+  "tailwindcss-ls",
+  "codebook"
+]
+formatter = { command = 'bunx', args = ["prettier", "--parser", "typescript"] }
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [
+  "typescript-language-server",
+  "vscode-eslint-language-server",
+  "tailwindcss-ls",
+  "codebook"
 ]
 formatter = { command = 'bunx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
@@ -69,4 +73,4 @@ auto-format = true
 
 [[language]]
 name = "markdown"
-language-servers = [ "harper-ls" ]
+language-servers = [ "codebook" ]

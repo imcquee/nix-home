@@ -22,3 +22,6 @@ display-inlay-hints = true
 
 [editor.inline-diagnostics]
 cursor-line = "warning"
+
+[keys.normal.Z]
+"Z" = ":x"

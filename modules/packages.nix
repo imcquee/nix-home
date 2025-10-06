@@ -1,7 +1,7 @@
-{
-  pkgs,
-  withGUI,
-  helix,
+{ pkgs
+, withGUI
+, helix
+,
 }:
 
 with pkgs;
@@ -47,6 +47,8 @@ let
     zoxide
     zellij
     serpl
+    ffmpeg
+    pandoc
     # zenith-nvidia
 
     # Docker tools

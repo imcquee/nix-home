@@ -28,14 +28,13 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      nix-darwin,
-      nix-homebrew,
-      nur,
-      helix,
-      ...
+    { nixpkgs
+    , home-manager
+    , nix-darwin
+    , nix-homebrew
+    , nur
+    , helix
+    , ...
     }@inputs:
     let
       # User Information

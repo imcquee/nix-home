@@ -17,6 +17,9 @@ _:
   "obsidian"
   "scroll-reverser"
 
+  # Graphic
+  "gimp"
+
   # Music
   "spotify"
 
@@ -25,6 +28,7 @@ _:
   "figma"
   "postman"
   "tower"
+  "beekeeper-studio"
 
   # Games
   "epic-games"
