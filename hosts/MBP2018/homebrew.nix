@@ -1,10 +1,10 @@
-{
-  pkgs,
-  homebrew-core,
-  homebrew-cask,
-  homebrew-bundle,
-  userName,
-  ...
+{ pkgs
+, homebrew-core
+, homebrew-cask
+, homebrew-bundle
+, userName
+, config
+, ...
 }:
 {
   homebrew = {
@@ -13,6 +13,7 @@
       upgrade = true;
       cleanup = "uninstall";
     };
+    taps = builtins.attrNames config.nix-homebrew.taps;
     casks = pkgs.callPackage ./casks.nix { };
     masApps = {
       "tailscale" = 1475387142;

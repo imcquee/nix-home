@@ -3,6 +3,7 @@
 , homebrew-cask
 , homebrew-bundle
 , userName
+, config
 , ...
 }:
 {
@@ -12,6 +13,7 @@
       upgrade = true;
       cleanup = "uninstall";
     };
+    taps = builtins.attrNames config.nix-homebrew.taps;
     casks = pkgs.callPackage ./casks.nix { };
   };
 

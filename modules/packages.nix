@@ -31,6 +31,7 @@ let
     # Git
     lazygit
     gh
+    jujutsu
 
     # CL tools
     fzf

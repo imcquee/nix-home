@@ -3,7 +3,6 @@ _:
 [
   # Browsers
   "arc"
-  "zen-browser"
   "google-chrome"
 
   # Text Editors
