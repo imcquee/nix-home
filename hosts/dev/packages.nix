@@ -1,7 +1,6 @@
-{
-  pkgs,
-  zen-browser,
-  ...
+{ pkgs
+, zen-browser
+, ...
 }:
 with pkgs;
 [
@@ -22,7 +21,7 @@ with pkgs;
 
   # Wayland
   wl-clipboard
-  rofi-wayland
+  rofi
   waypaper
   swaybg
 
