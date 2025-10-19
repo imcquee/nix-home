@@ -59,9 +59,6 @@ let
     nixfmt-rfc-style
     nixpkgs-fmt
 
-    # Niri
-    fuzzel
-
     # Use Helix from the flake input instead of pkgs.helix
     helix.packages.${pkgs.system}.default
 

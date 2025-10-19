@@ -28,6 +28,9 @@ with pkgs;
   # Monitoring
   zenith-nvidia
 
+  # Niri
+  fuzzel
+
   # Spotify
   spotify
 ]
