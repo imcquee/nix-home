@@ -75,6 +75,10 @@ in
   home.file.".config/codebook".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/codebook";
 
+  # Copy symlink for Codebook
+  home.file.".config/niri".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/niri";
+
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
     if pkgs.stdenv.isDarwin then

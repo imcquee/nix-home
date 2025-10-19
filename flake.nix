@@ -74,7 +74,7 @@
           ./modules/nvidia.nix
           ./modules/services.nix
           ./modules/elevated-packages.nix
-          ./modules/hyprland.nix
+          ./modules/niri.nix
           { nixpkgs.overlays = [ nur.overlays.default ]; }
           home-manager.nixosModules.home-manager
           ./modules/home-manager.nix
