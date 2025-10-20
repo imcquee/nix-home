@@ -59,14 +59,11 @@
       '';
       fish_user_key_bindings = ''
         fish_vi_key_bindings
-        bind \ey -M insert 'yy; commandline -f execute'
-        bind \ey 'yy; commandline -f execute'
+        bind "alt-y" -M insert 'yy; commandline -f execute'
+        bind "alt-y" 'yy; commandline -f execute'
 
-        bind \eg -M insert 'commandline -r lazygit; commandline -f execute'
-        bind \eg 'commandline -r lazygit; commandline -f execute'
-
-        bind \e\c_ -M insert 'irg; commandline -f execute'
-        bind \e\c_ 'irg; commandline -f execute'
+        bind "alt-g" -M insert 'commandline -r lazygit; commandline -f execute'
+        bind "alt-g" 'commandline -r lazygit; commandline -f execute'
       '';
       original_cd = ''
         builtin cd $argv
