@@ -51,10 +51,6 @@ in
   home.file."${config.xdg.configHome}/lazygit".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazygit";
 
-  # Copy symlink for hyprland
-  home.file.".config/hypr".source =
-    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/hypr";
-
   # Copy symlink for kanata
   home.file.".config/kanata".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/kanata";
