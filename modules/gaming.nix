@@ -4,19 +4,19 @@
   services.xserver = {
     enable = true;
     videoDrivers = [ "nvidia" ];
-    displayManager = {
-      gdm = {
-        enable = true;
-        wayland = true;
-        autoSuspend = false;
-      };
-    };
   };
 
   # Enable Auto-Login
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = userName;
+  services.displayManager = {
+    gdm = {
+      enable = true;
+      wayland = true;
+      autoSuspend = true;
+    };
+    autoLogin = {
+      enable = true;
+      user = userName;
+    };
   };
 
   # Enable Steam
@@ -38,9 +38,7 @@
         "-w 3840"
         "-h 2160"
         "-r 120"
-        "--hdr-enabled"
         "--adaptive-sync"
-        "--hdr-itm-enable"
       ];
     };
   };

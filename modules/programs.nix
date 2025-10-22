@@ -13,9 +13,13 @@ in
   programs = {
     home-manager.enable = true;
     git = {
+      settings = {
+        user = {
+          name = fullName;
+          email = userEmail;
+        };
+      };
       enable = true;
-      userName = fullName;
-      userEmail = userEmail;
       ignores = [
         ".envrc"
         ".direnv/"
