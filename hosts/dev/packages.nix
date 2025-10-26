@@ -7,6 +7,9 @@ with pkgs;
   # Terminal
   ghostty
 
+  # Wayland
+  xwayland-satellite
+
   # VM
   nixos-shell
 
@@ -18,6 +21,9 @@ with pkgs;
 
   # MangoHud
   mangohud
+
+  # Proton
+  protonup
 
   # Wayland
   wl-clipboard
