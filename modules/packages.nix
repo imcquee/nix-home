@@ -21,6 +21,9 @@ let
     tree-sitter
     nodejs_20
 
+    # Nerd Fonts
+    nerd-fonts.jetbrains-mono
+
     # Language Servers for nix (where else would I put these?)
     nixd
     nil

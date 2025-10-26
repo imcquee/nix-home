@@ -10,6 +10,7 @@ macos-titlebar-style = hidden
 fullscreen = true
 
 # Font
+font-family = "JetBrainsMono Nerd Font Mono"
 font-size = 20
 
 # Behavior

@@ -20,6 +20,10 @@
       "rev": "2847986",
       "src": "https://github.com/nvim-mini/mini.icons.git"
     },
+    "nvim-lspconfig": {
+      "rev": "a9b2fb5",
+      "src": "https://github.com/neovim/nvim-lspconfig.git"
+    },
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim.git"

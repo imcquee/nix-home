@@ -14,6 +14,11 @@ vim.keymap.set("n", "<leader>f", function()
 end, {
   desc = "Open File in cwd"
 })
+vim.keymap.set("n", "<leader>/", function()
+  require("fzf-lua").live_grep()
+end, {
+  desc = "Open File in cwd"
+})
 
 -- Flash
 vim.keymap.set({"n", "x", "o"}, "s", function() 

@@ -9,5 +9,5 @@
 - [x] Add fzf-lua
 - [x] Add line numbers
 - [x] Add lazygit
-- [ ]      
+- [x] Add diagnositics
 - [ ] Setup typescript (prettier, eslint)

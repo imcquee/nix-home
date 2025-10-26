@@ -97,9 +97,9 @@
   };
 
   # Nerd fonts
-  fonts.packages =
-    [ ]
-    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  # fonts.packages =
+  #   [ ]
+  #   ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   # K400 keyboard receiver
   hardware.logitech.wireless.enable = true;
