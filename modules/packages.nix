@@ -1,6 +1,7 @@
 { pkgs
 , withGUI
 , helix
+, neovim-nightly-overlay
 ,
 }:
 
@@ -62,8 +63,8 @@ let
     # Use Helix from the flake input instead of pkgs.helix
     helix.packages.${pkgs.system}.default
 
-    # Neovim
-    neovim
+    # Neovim nightly
+    neovim-nightly-overlay.packages.${pkgs.system}.default
   ];
 in
 basePackages

@@ -1,0 +1,40 @@
+{
+  "plugins": {
+    "flash.nvim": {
+      "rev": "3be9bf7",
+      "src": "https://github.com/folke/flash.nvim.git"
+    },
+    "fzf-lua": {
+      "rev": "49ba118",
+      "src": "https://github.com/ibhagwan/fzf-lua.git"
+    },
+    "kanagawa": {
+      "rev": "aef7f5c",
+      "src": "https://github.com/rebelot/kanagawa.nvim.git"
+    },
+    "lazygit.nvim": {
+      "rev": "2305dee",
+      "src": "https://github.com/kdheepak/lazygit.nvim.git"
+    },
+    "mini.icons": {
+      "rev": "2847986",
+      "src": "https://github.com/nvim-mini/mini.icons.git"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd522",
+      "src": "https://github.com/nvim-lua/plenary.nvim.git"
+    },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "47a5052",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim.git"
+    },
+    "which-key.nvim": {
+      "rev": "b4177e3",
+      "src": "https://github.com/folke/which-key.nvim.git"
+    },
+    "yazi.nvim": {
+      "rev": "dd90db1",
+      "src": "https://github.com/mikavilpas/yazi.nvim.git"
+    }
+  }
+}

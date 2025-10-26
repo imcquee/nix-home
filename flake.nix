@@ -8,6 +8,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     helix.url = "github:helix-editor/helix/master";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
@@ -34,6 +35,7 @@
     , nix-homebrew
     , nur
     , helix
+    , neovim-nightly-overlay
     , ...
     }@inputs:
     let
@@ -176,6 +178,7 @@
           withGUI = defaults.withGUI;
           homeDir = defaults.homeDir;
           helix = inputs.helix;
+          neovim-nightly-overlay = inputs.neovim-nightly-overlay;
         } // userInfo;
         modules = [ ./modules/home.nix ];
       };

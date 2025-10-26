@@ -1,4 +1,13 @@
-# 💤 LazyVim
+# My minimal neovim config
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+## TODO
+- [x] Add colorscheme
+- [x] Add which-key
+- [x] Add flash.nvim
+- [x] Add plenary.nvim
+- [x] Add yazi
+- [x] Add fzf-lua
+- [x] Add line numbers
+- [x] Add lazygit
+- [ ]      
+- [ ] Setup typescript (prettier, eslint)

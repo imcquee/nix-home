@@ -3,6 +3,37 @@ command = "tailwindcss-language-server"
 args = ["--stdio"]
 config = { userLanguages = { gleam = "html", "*.gleam" = "html" }, tailwindCSS = { experimental = { classRegex = [ [ "class\\([\"']([^\"']*)[\"']\\)" ], [ "cn\\(([^)]*)\\)", "[\"'`]([^\"'`]+)[\"'`]" ] ] } } }
 
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+[language-server.eslint.config]
+# format = true # optional
+nodePath = ""
+# onIgnoredFiles = "off" # optional
+# packageManager = "yarn" # optional
+quiet = false
+rulesCustomizations = []
+run = "onType"
+# useESLintClass = false # optional
+validate = "on"
+codeAction = { disableRuleComment = { enable = true, location = "separateLine" }, showDocumentation = { enable = true } }
+# codeActionsOnSave = { mode = "all" } # optional
+codeActionsOnSave = { mode = "all", "source.fixAll.eslint" = true }
+experimental = { useFlatConfig = true } ### NEEDED FOR FLAT CONFIG 
+problems = { shortenToSingleLine = false }
+# workingDirectory = { mode = "auto" } # optional
+
+[language-server.vscode-json-language-server.config]
+json = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
+
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
+
 [language-server.codebook]
 command = "codebook-lsp"
 args = ["serve"]
@@ -29,7 +60,7 @@ auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = [ "typescript-language-server", "tailwindcss-ls", "vscode-eslint-language-server", "codebook" ]
+language-servers = [ "typescript-language-server", "tailwindcss-ls", "eslint", "codebook" ]
 formatter = { command = 'bunx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
@@ -37,7 +68,7 @@ auto-format = true
 name = "typescript"
 language-servers = [
   "typescript-language-server",
-  "vscode-eslint-language-server",
+  "eslint",
   "tailwindcss-ls",
   "codebook"
 ]
@@ -48,7 +79,7 @@ auto-format = true
 name = "javascript"
 language-servers = [
   "typescript-language-server",
-  "vscode-eslint-language-server",
+  "eslint",
   "tailwindcss-ls",
   "codebook"
 ]

@@ -3,6 +3,7 @@
 , fullName
 , withGUI
 , helix
+, neovim-nightly-overlay
 , homeDir
 , ...
 }:
@@ -17,6 +18,7 @@
       fullName
       withGUI
       helix
+      neovim-nightly-overlay
       homeDir
       ;
   };

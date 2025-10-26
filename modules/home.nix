@@ -10,6 +10,7 @@ let
     homeDir
     userName
     helix
+    neovim-nightly-overlay
     ;
 in
 {
@@ -18,7 +19,7 @@ in
   home.homeDirectory = homeDir;
   xdg.enable = true;
   home.stateVersion = "24.05";
-  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix; };
+  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix neovim-nightly-overlay; };
   home.sessionVariables = {
     EDITOR = "hx";
     PATH = builtins.concatStringsSep ":" [
