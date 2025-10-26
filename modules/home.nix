@@ -21,7 +21,7 @@ in
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix neovim-nightly-overlay; };
   home.sessionVariables = {
-    EDITOR = "hx";
+    EDITOR = "nvim";
     PATH = builtins.concatStringsSep ":" [
       # Default Nix profile binaries
       "${config.home.homeDirectory}/.nix-profile/bin"

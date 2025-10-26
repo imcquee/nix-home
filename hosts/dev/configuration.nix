@@ -7,7 +7,7 @@
 }:
 
 {
-  environment.variables.EDITOR = "hx";
+  environment.variables.EDITOR = "nvim";
 
   nix = {
     # Allow Flakes
