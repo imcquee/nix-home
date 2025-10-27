@@ -12,6 +12,7 @@ let
     # these files are meant to be installed in all scenarios
 
     # Neovim
+    lua-language-server
     neovim-remote
     gcc
     gnumake

@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "conform.nvim": {
+      "rev": "9fd3d5e",
+      "src": "https://github.com/stevearc/conform.nvim.git"
+    },
     "copilot.vim": {
       "rev": "da369d9",
       "src": "https://github.com/github/copilot.vim.git"
@@ -9,7 +13,7 @@
       "src": "https://github.com/folke/flash.nvim.git"
     },
     "fzf-lua": {
-      "rev": "49ba118",
+      "rev": "6bb2a26",
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
     "kanagawa": {
@@ -24,20 +28,36 @@
       "rev": "2847986",
       "src": "https://github.com/nvim-mini/mini.icons.git"
     },
+    "multicursor.nvim": {
+      "rev": "0c6ceae",
+      "src": "https://github.com/jake-stewart/multicursor.nvim.git"
+    },
+    "nvim-cmp": {
+      "rev": "a7bcf1d",
+      "src": "https://github.com/hrsh7th/nvim-cmp.git"
+    },
     "nvim-lspconfig": {
       "rev": "a9b2fb5",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter.git"
+    },
+    "nvim-ts-autotag": {
+      "rev": "c4ca798",
+      "src": "https://github.com/windwp/nvim-ts-autotag.git"
     },
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim.git"
     },
     "snacks.nvim": {
-      "rev": "ecde81f",
+      "rev": "9eafe00",
       "src": "https://github.com/folke/snacks.nvim.git"
     },
     "tiny-inline-diagnostic.nvim": {
-      "rev": "47a5052",
+      "rev": "6e37efc",
       "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim.git"
     },
     "which-key.nvim": {
@@ -45,7 +65,7 @@
       "src": "https://github.com/folke/which-key.nvim.git"
     },
     "yazi.nvim": {
-      "rev": "dd90db1",
+      "rev": "f4c4e2d",
       "src": "https://github.com/mikavilpas/yazi.nvim.git"
     }
   }

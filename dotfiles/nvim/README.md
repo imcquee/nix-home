@@ -11,6 +11,9 @@
 - [x] Add lazygit
 - [x] Add diagnositics
 - [x] Setup LSPs
-- [ ] Setup Formatters
+- [ ] Case insensitive search fzf
+- [ ] Pairs
+- [x] Better looking code actions
+- [x] Setup Formatters
 - [x] Setup Copilot
 - [ ] Setup Copilot Chat

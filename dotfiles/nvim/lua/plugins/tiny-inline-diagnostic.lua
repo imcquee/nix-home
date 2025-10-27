@@ -3,5 +3,5 @@ vim.pack.add({
 })
 
 require("tiny-inline-diagnostic").setup({
-  preset = "classic",
+  preset = "modern",
 })

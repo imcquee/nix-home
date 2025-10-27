@@ -1,55 +1,66 @@
+local set = vim.keymap.set
+
 -- Clipboard
-vim.keymap.set({"n", "v"}, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
-vim.keymap.set({"n", "v"}, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+set({"n", "v"}, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+set({"n", "v"}, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
 
 -- Code
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
+set('n', '<leader>ca', function() require('fzf-lua').lsp_code_actions() end, { desc = 'Code action' })
+
+-- Mutli-cursor
+set({"v", "x"}, "<leader>s", function() require("multicursor-nvim").matchCursors() end, { desc = "[MULTC] All Search Matches" })
+set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc = "[MULTC] Clear Cursors" })
 
 -- Lazygit
-vim.keymap.set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
+set("n", "<M-g>", function() require("snacks").lazygit.open() end, { desc = "Lazygit" })
 
 -- Fzf-lua
-vim.keymap.set("n", "<leader>f", function() 
+set("n", "<leader>f", function() 
   require("fzf-lua").files()
 end, {
   desc = "Open File in cwd"
 })
-vim.keymap.set("n", "<leader>/", function()
+set("n", "<leader>/", function()
   require("fzf-lua").live_grep()
 end, {
-  desc = "Open File in cwd"
+  desc = "Live Grep in cwd"
+})
+set("n", "<leader>b", function()
+  require("fzf-lua").buffers()
+end, {
+  desc = "Open Buffers"
 })
 
 -- Flash
-vim.keymap.set({"n", "x", "o"}, "s", function() 
+set({"n", "x", "o"}, "s", function() 
   require("flash").jump() 
 end, { desc = "Flash" })
 
-vim.keymap.set({"n", "x", "o"}, "S", function() 
+set({"n", "x", "o"}, "S", function() 
   require("flash").treesitter() 
 end, { desc = "Flash Treesitter" })
 
-vim.keymap.set("o", "r", function() 
+set("o", "r", function() 
   require("flash").remote() 
 end, { desc = "Remote Flash" })
 
-vim.keymap.set({"o", "x"}, "R", function() 
+set({"o", "x"}, "R", function() 
   require("flash").treesitter_search() 
 end, { desc = "Treesitter Search" })
 
-vim.keymap.set("c", "<c-s>", function() 
+set("c", "<c-s>", function() 
   require("flash").toggle() 
 end, { desc = "Toggle Flash Search" })
 
 -- Yazi
-vim.keymap.set({"n", "v"}, "<M-y>", "<cmd>Yazi<cr>", {
+set({"n", "v"}, "<M-y>", "<cmd>Yazi<cr>", {
   desc = "Open yazi at the current file"
 })
 
-vim.keymap.set("n", "<leader>cw", "<cmd>Yazi cwd<cr>", {
+set("n", "<leader>cw", "<cmd>Yazi cwd<cr>", {
   desc = "Open the file manager in nvim's working directory"
 })
 
-vim.keymap.set("n", "<c-up>", "<cmd>Yazi toggle<cr>", {
+set("n", "<c-up>", "<cmd>Yazi toggle<cr>", {
   desc = "Resume the last yazi session"
 })
