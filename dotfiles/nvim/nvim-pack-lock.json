@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "copilot.vim": {
+      "rev": "da369d9",
+      "src": "https://github.com/github/copilot.vim.git"
+    },
     "flash.nvim": {
       "rev": "3be9bf7",
       "src": "https://github.com/folke/flash.nvim.git"
@@ -27,6 +31,10 @@
     "plenary.nvim": {
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim.git"
+    },
+    "snacks.nvim": {
+      "rev": "ecde81f",
+      "src": "https://github.com/folke/snacks.nvim.git"
     },
     "tiny-inline-diagnostic.nvim": {
       "rev": "47a5052",

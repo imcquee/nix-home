@@ -12,6 +12,7 @@ let
     # these files are meant to be installed in all scenarios
 
     # Neovim
+    neovim-remote
     gcc
     gnumake
     cargo
@@ -19,7 +20,7 @@ let
     wget
     unzip
     tree-sitter
-    nodejs_20
+    nodejs_22
 
     # Nerd Fonts
     nerd-fonts.jetbrains-mono

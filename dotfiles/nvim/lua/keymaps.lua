@@ -6,7 +6,7 @@ vim.keymap.set({"n", "v"}, "<leader>p", '"+p', { desc = "Paste from system clipb
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
 
 -- Lazygit
-vim.keymap.set("n", "<M-g>", "<cmd>LazyGit<cr>", { desc = "Lazygit" })
+vim.keymap.set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
 -- Fzf-lua
 vim.keymap.set("n", "<leader>f", function() 

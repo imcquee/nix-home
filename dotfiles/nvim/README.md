@@ -10,4 +10,7 @@
 - [x] Add line numbers
 - [x] Add lazygit
 - [x] Add diagnositics
-- [ ] Setup typescript (prettier, eslint)
+- [x] Setup LSPs
+- [ ] Setup Formatters
+- [x] Setup Copilot
+- [ ] Setup Copilot Chat
