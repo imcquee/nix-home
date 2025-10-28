@@ -16,3 +16,4 @@
 - [x] Setup Formatters
 - [x] Setup Copilot
 - [x] Setup Copilot Chat
+- [x] Fix competing keybinds (big slowdown)

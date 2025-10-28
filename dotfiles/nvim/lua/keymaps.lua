@@ -41,7 +41,7 @@ set("n", "<leader>gr", function() require('fzf-lua').lsp_references() end, { des
 set("n", "<leader>gd", function() require('fzf-lua').lsp_definitions() end, { desc = 'Find Definitions' })
 
 -- Flash
-set({ "n", "x", "o" }, "s", function()
+set({ "n", "x", "o" }, "gw", function()
   require("flash").jump()
 end, { desc = "Flash" })
 
