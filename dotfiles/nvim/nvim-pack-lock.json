@@ -1,5 +1,38 @@
 {
   "plugins": {
+    "LuaSnip": {
+      "rev": "ccf25a5",
+      "src": "https://github.com/L3MON4D3/LuaSnip.git"
+    },
+    "blink.cmp": {
+      "rev": "327fff9",
+      "src": "https://github.com/Saghen/blink.cmp",
+      "version": ">=0.0.0"
+    },
+    "blink.nvim": {
+      "rev": "d1e7c7c",
+      "src": "https://github.com/Saghen/blink.nvim.git"
+    },
+    "cmp-buffer": {
+      "rev": "b74fab3",
+      "src": "https://github.com/hrsh7th/cmp-buffer.git"
+    },
+    "cmp-cmdline": {
+      "rev": "d126061",
+      "src": "https://github.com/hrsh7th/cmp-cmdline.git"
+    },
+    "cmp-nvim-lsp": {
+      "rev": "bd5a7d6",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp.git"
+    },
+    "cmp-path": {
+      "rev": "c642487",
+      "src": "https://github.com/hrsh7th/cmp-path.git"
+    },
+    "cmp_luasnip": {
+      "rev": "98d9cb5",
+      "src": "https://github.com/saadparwaiz1/cmp_luasnip.git"
+    },
     "conform.nvim": {
       "rev": "9fd3d5e",
       "src": "https://github.com/stevearc/conform.nvim.git"
@@ -27,6 +60,10 @@
     "mini.icons": {
       "rev": "2847986",
       "src": "https://github.com/nvim-mini/mini.icons.git"
+    },
+    "mini.pairs": {
+      "rev": "b9aada8",
+      "src": "https://github.com/nvim-mini/mini.pairs.git"
     },
     "multicursor.nvim": {
       "rev": "0c6ceae",
