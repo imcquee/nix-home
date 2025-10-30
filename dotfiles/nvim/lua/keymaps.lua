@@ -5,12 +5,13 @@ set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
 
 -- Code
-set('n', '<leader>ca', function() require('fzf-lua').lsp_code_actions() end, { desc = 'Code action' })
 set('n', '<leader>aa', function() require("sidekick.cli").toggle() end,
   { desc = "sidekick toggle cli" })
 
 set('n', '<leader>as', function() require("sidekick.cli").select({ filter = { installed = true } }) end,
   { desc = "Select CLI" })
+
+set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
 
 
 -- Mutli-cursor
@@ -19,26 +20,17 @@ set({ "v", "x" }, "<leader>s", function() require("multicursor-nvim").matchCurso
 set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc = "[MULTC] Clear Cursors" })
 
 -- Lazygit
-set("n", "<M-g>", function() require("snacks").lazygit.open() end, { desc = "Lazygit" })
+set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
--- Fzf-lua
-set("n", "<leader>f", function()
-  require("fzf-lua").files()
-end, {
-  desc = "Open File in cwd"
-})
-set("n", "<leader>/", function()
-  require("fzf-lua").live_grep()
-end, {
-  desc = "Live Grep in cwd"
-})
-set("n", "<leader>b", function()
-  require("fzf-lua").buffers()
-end, {
-  desc = "Open Buffers"
-})
-set("n", "<leader>gr", function() require('fzf-lua').lsp_references() end, { desc = 'Find References' })
-set("n", "<leader>gd", function() require('fzf-lua').lsp_definitions() end, { desc = 'Find Definitions' })
+
+
+-- Snacks
+vim.keymap.set("n", "<leader>f", function() Snacks.picker.files() end, { desc = "Find Files" })
+vim.keymap.set("n", "<leader>/", function() Snacks.picker.grep() end, { desc = "Live Grep" })
+vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Go to Definition" })
+vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, { desc = "Go to Definition" })
+vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, { desc = "Go to Definition" })
+vim.keymap.set("n", "gI", function() Snacks.picker.lsp_implementations() end, { desc = "Go to Definition" })
 
 -- Flash
 set({ "n", "x", "o" }, "gw", function()

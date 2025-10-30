@@ -1,8 +1,8 @@
-{ pkgs
-, withGUI
-, helix
-, neovim-nightly-overlay
-,
+{
+  pkgs,
+  withGUI,
+  helix,
+  neovim-nightly-overlay,
 }:
 
 with pkgs;
