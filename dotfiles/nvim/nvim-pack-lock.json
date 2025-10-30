@@ -16,6 +16,10 @@
       "rev": "aef7f5c",
       "src": "https://github.com/rebelot/kanagawa.nvim.git"
     },
+    "lazydev.nvim": {
+      "rev": "c2dfe35",
+      "src": "https://github.com/folke/lazydev.nvim.git"
+    },
     "lazygit.nvim": {
       "rev": "2305dee",
       "src": "https://github.com/kdheepak/lazygit.nvim.git"

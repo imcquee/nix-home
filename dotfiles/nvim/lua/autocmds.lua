@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
     if client and client:supports_method('textDocument/completion') then
       vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
-      vim.keymap.set("i", "<tab>", function()
+      vim.keymap.set({ "n", "i" }, "<tab>", function()
         local completion = vim.lsp.inline_completion.get()
         if completion then
           vim.lsp.inline_completion.select()
@@ -32,6 +32,15 @@ vim.lsp.config("eslint", {
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = bufnr,
       command = "LspEslintFixAll",
+    })
+  end,
+})
+
+-- Yazi
+vim.api.nvim_create_autocmd("UIEnter", {
+  callback = function()
+    require("yazi").setup({
+      open_for_directories = true,
     })
   end,
 })
