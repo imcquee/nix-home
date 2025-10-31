@@ -22,11 +22,10 @@ set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc 
 -- Lazygit
 set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
-
-
 -- Snacks
 vim.keymap.set("n", "<leader>f", function() Snacks.picker.files() end, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>/", function() Snacks.picker.grep() end, { desc = "Live Grep" })
+vim.keymap.set("n", "<leader>b", function() Snacks.picker.buffers() end, { desc = "Live Grep" })
 vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Go to Definition" })
 vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, { desc = "Go to Definition" })
 vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, { desc = "Go to Definition" })

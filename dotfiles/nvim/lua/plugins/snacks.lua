@@ -3,5 +3,6 @@ vim.pack.add({
 })
 
 require("snacks").setup({
-  picker = { enabled = true }
+  picker = { enabled = true },
+  indent = { enabled = true }
 })
