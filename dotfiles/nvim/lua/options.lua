@@ -17,7 +17,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.confirm = true
 vim.o.list = true
-vim.o.autocomplete = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.o.foldmethod = 'expr'

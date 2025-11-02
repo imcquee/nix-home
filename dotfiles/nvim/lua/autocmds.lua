@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         else
           return "<tab>"
         end
-      end, { buffer = args.buf, expr = true, desc = "Accept Copilot Suggestion" })
+      end, { buffer = args.buf, expr = true, desc = "Accept Suggestion" })
     end
   end,
 })
