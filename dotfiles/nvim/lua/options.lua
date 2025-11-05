@@ -1,7 +1,7 @@
 -- Options
+vim.o.autoread = true
 vim.g.mapleader = " "
-vim.g.localleader = " "
-vim.g.maplocalleader = ' '
+vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 vim.o.number = true
 vim.o.undofile = true
@@ -13,7 +13,6 @@ vim.o.expandtab = true
 vim.o.scrolloff = 999
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.incsearch = true
-vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.confirm = true
 vim.o.list = true
@@ -21,5 +20,5 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.o.foldmethod = 'expr'
 vim.o.foldtext = ""
-vim.o.foldlevelstart = 1
+vim.o.foldlevelstart = 2
 vim.o.foldnestmax = 3

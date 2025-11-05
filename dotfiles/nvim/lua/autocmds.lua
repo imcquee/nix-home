@@ -9,7 +9,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
       vim.lsp.inline_completion.enable(true)
     end
     if client and client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, args.buf, { autotrigger = true })
       vim.keymap.set({ "n", "i" }, "<tab>", function()
         local completion = vim.lsp.inline_completion.get()
         if completion then
