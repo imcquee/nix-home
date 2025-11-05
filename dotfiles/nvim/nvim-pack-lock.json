@@ -13,10 +13,6 @@
       "rev": "3be9bf7",
       "src": "https://github.com/folke/flash.nvim.git"
     },
-    "fzf-lua": {
-      "rev": "6bb2a26",
-      "src": "https://github.com/ibhagwan/fzf-lua.git"
-    },
     "kanagawa": {
       "rev": "aef7f5c",
       "src": "https://github.com/rebelot/kanagawa.nvim.git"
