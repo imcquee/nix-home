@@ -8,16 +8,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client and client.name == "copilot" then
       vim.lsp.inline_completion.enable(true)
     end
-    if client and client:supports_method('textDocument/completion') then
-      vim.keymap.set({ "n", "i" }, "<tab>", function()
-        local completion = vim.lsp.inline_completion.get()
-        if completion then
-          vim.lsp.inline_completion.select()
-        else
-          return "<tab>"
-        end
-      end, { buffer = args.buf, expr = true, desc = "Accept Suggestion" })
-    end
   end,
 })
 
@@ -31,15 +21,6 @@ vim.lsp.config("eslint", {
     vim.api.nvim_create_autocmd("BufWritePre", {
       buffer = bufnr,
       command = "LspEslintFixAll",
-    })
-  end,
-})
-
--- Yazi
-vim.api.nvim_create_autocmd("UIEnter", {
-  callback = function()
-    require("yazi").setup({
-      open_for_directories = true,
     })
   end,
 })
