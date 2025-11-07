@@ -4,5 +4,6 @@ vim.pack.add({
 
 require("snacks").setup({
   picker = { enabled = true },
-  indent = { enabled = true }
+  indent = { enabled = true },
+  image = { enabled = true },
 })

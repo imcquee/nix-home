@@ -17,3 +17,6 @@
 - [x] Setup Copilot
 - [x] Setup Copilot Chat
 - [x] Fix competing keybinds (big slowdown)
+- [ ] Add flash jump for t/f
+- [ ] Setup dap
+- [ ] Setup testing (NeoTest)
