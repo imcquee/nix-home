@@ -20,3 +20,4 @@
 - [ ] Add flash jump for t/f
 - [ ] Setup dap
 - [ ] Setup testing (NeoTest)
+- [x] Setup transparency

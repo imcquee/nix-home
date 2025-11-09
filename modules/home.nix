@@ -1,7 +1,8 @@
-{ pkgs
-, config
-, specialArgs
-, ...
+{
+  pkgs,
+  config,
+  specialArgs,
+  ...
 }:
 
 let
@@ -75,6 +76,10 @@ in
   # Copy symlink for Niri
   home.file.".config/niri".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/niri";
+
+  # Copy symlinks for lazycommit
+  home.file.".config/.lazycommit.prompts.yaml".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazycommit/.lazycommit.prompts.yaml";
 
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =

@@ -8,6 +8,21 @@
 with pkgs;
 
 let
+
+  lazycommit = pkgs.buildGoModule {
+    pname = "lazycommit";
+    version = "latest";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "m7medvision";
+      repo = "lazycommit";
+      rev = "main";
+      sha256 = "sha256-duR0Z2JRDeTuB0s6iD2LNbt+q/FkRXKUQKyrRyET43U";
+    };
+
+    vendorHash = "sha256-4OPCUWXxsAnzxsqZPHhjvhxQQf5Knm7nGqrdjH4I4YY=";
+    doCheck = false;
+  };
   basePackages = [
     # these files are meant to be installed in all scenarios
 
@@ -38,6 +53,7 @@ let
     lazygit
     gh
     jujutsu
+    lazycommit
 
     # CL tools
     fzf
