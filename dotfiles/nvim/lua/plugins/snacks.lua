@@ -3,7 +3,16 @@ vim.pack.add({
 })
 
 require("snacks").setup({
-  picker = { enabled = true },
+  picker = {
+    enabled = true,
+    win = {
+      input = {
+        keys = {
+          ["<c-z>"] = { "toggle_live", mode = { "i", "n" } },
+        }
+      }
+    }
+  },
   indent = { enabled = true },
   image = { enabled = true },
 })

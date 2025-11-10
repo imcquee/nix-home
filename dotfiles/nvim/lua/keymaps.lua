@@ -23,6 +23,8 @@ set({ "n", "i", "v" }, "<tab>", function()
   return "<tab>"
 end, { expr = true, desc = "Goto/Apply Next Edit Suggestion" })
 
+set("n", "g?", function() vim.diagnostic.open_float() end, { desc = "Show Diagnostic" })
+
 
 -- Mutli-cursor
 set({ "v", "x" }, "<leader>s", function() require("multicursor-nvim").matchCursors() end,
