@@ -17,7 +17,7 @@ let
       owner = "m7medvision";
       repo = "lazycommit";
       rev = "main";
-      sha256 = "sha256-duR0Z2JRDeTuB0s6iD2LNbt+q/FkRXKUQKyrRyET43U";
+      sha256 = "sha256-RlAcufMI8Y0LUCjxcYyJnLOWdv2zMbQzhDZRKaVAiN4=";
     };
 
     vendorHash = "sha256-4OPCUWXxsAnzxsqZPHhjvhxQQf5Knm7nGqrdjH4I4YY=";
