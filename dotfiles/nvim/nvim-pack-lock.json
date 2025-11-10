@@ -13,6 +13,10 @@
       "rev": "3be9bf7",
       "src": "https://github.com/folke/flash.nvim.git"
     },
+    "grug-far.nvim": {
+      "rev": "b58b2d6",
+      "src": "https://github.com/MagicDuck/grug-far.nvim.git"
+    },
     "kanagawa": {
       "rev": "aef7f5c",
       "src": "https://github.com/rebelot/kanagawa.nvim.git"

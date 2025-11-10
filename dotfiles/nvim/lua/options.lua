@@ -13,6 +13,7 @@ vim.o.expandtab = true
 vim.o.scrolloff = 999
 vim.o.completeopt = "menuone,noinsert,noselect"
 vim.o.incsearch = true
+vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.confirm = true
 vim.o.list = true
