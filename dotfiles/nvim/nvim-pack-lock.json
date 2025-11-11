@@ -17,6 +17,10 @@
       "rev": "b58b2d6",
       "src": "https://github.com/MagicDuck/grug-far.nvim.git"
     },
+    "inspect.lua": {
+      "rev": "22a22ce",
+      "src": "https://github.com/kikito/inspect.lua.git"
+    },
     "kanagawa": {
       "rev": "aef7f5c",
       "src": "https://github.com/rebelot/kanagawa.nvim.git"
@@ -45,9 +49,21 @@
       "rev": "0c6ceae",
       "src": "https://github.com/jake-stewart/multicursor.nvim.git"
     },
+    "neotest": {
+      "rev": "deadfb1",
+      "src": "https://github.com/nvim-neotest/neotest.git"
+    },
+    "neotest-bun": {
+      "rev": "4537590",
+      "src": "https://github.com/arthur944/neotest-bun.git"
+    },
     "nvim-lspconfig": {
       "rev": "a9b2fb5",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
+    },
+    "nvim-nio": {
+      "rev": "21f5324",
+      "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
       "rev": "42fc28ba",

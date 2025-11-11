@@ -151,3 +151,4 @@ Reverses this
 - [ ] Add Stylix config
 - [ ] Build custom bootstrap script for Non-Nixos environments
 - [ ] Fix systemd services
+- [ ] Refactor, maybe using flake parts & [Dendritic](https://github.com/mightyiam/dendritic)

@@ -17,7 +17,12 @@
 - [x] Setup Copilot
 - [x] Setup Copilot Chat
 - [x] Fix competing keybinds (big slowdown)
-- [ ] Add flash jump for t/f
+- [x] Add flash jump for t/f
 - [ ] Setup dap
-- [ ] Setup testing (NeoTest)
+- [x] Setup testing (NeoTest)
+- [ ] Find out solution for Bun Neotest monerepos
 - [x] Setup transparency
+- [x] Add grug-far
+- [x] Add helix % (better to do leader + %)
+- [x] Smooth scrolling
+- [x] Add blink for cmdline

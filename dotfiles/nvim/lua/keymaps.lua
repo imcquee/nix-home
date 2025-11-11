@@ -4,9 +4,18 @@ local set = vim.keymap.set
 set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
 
+-- Grug far
+set("n", "<leader>g", "<CMD>GrugFar<CR>", { desc = "Open GrugFar" })
+
+-- Testing
+set("n", "<leader>tr", function()
+  require("neotest").run.run()
+end, { desc = "Run nearest test" })
+
 -- Code
 set('n', '<leader>aa', function() require("sidekick.cli").toggle() end,
   { desc = "sidekick toggle cli" })
+set("n", "<leader>%", "ggVG", { desc = "Select Entire File" })
 
 set('n', '<leader>as', function() require("sidekick.cli").select({ filter = { installed = true } }) end,
   { desc = "Select CLI" })
