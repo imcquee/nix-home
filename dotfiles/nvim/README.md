@@ -23,6 +23,5 @@
 - [ ] Find out solution for Bun Neotest monerepos
 - [x] Setup transparency
 - [x] Add grug-far
-- [x] Add helix % (better to do leader + %)
 - [x] Smooth scrolling
 - [x] Add blink for cmdline

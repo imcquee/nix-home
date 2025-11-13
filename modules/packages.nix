@@ -38,6 +38,11 @@ let
     tree-sitter
     nodejs_22
 
+    # AI nonsense
+    copilot-language-server
+    github-copilot-cli
+    claude-code
+
     # Nerd Fonts
     nerd-fonts.jetbrains-mono
 

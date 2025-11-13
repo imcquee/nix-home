@@ -29,12 +29,13 @@
   };
 
   outputs =
-    { nixpkgs
-    , home-manager
-    , nix-darwin
-    , nix-homebrew
-    , nur
-    , ...
+    {
+      nixpkgs,
+      home-manager,
+      nix-darwin,
+      nix-homebrew,
+      nur,
+      ...
     }@inputs:
     let
       # User Information
@@ -176,7 +177,8 @@
           homeDir = defaults.homeDir;
           helix = inputs.helix;
           neovim-nightly-overlay = inputs.neovim-nightly-overlay;
-        } // userInfo;
+        }
+        // userInfo;
         modules = [ ./modules/home.nix ];
       };
 

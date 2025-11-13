@@ -15,7 +15,6 @@ end, { desc = "Run nearest test" })
 -- Code
 set('n', '<leader>aa', function() require("sidekick.cli").toggle() end,
   { desc = "sidekick toggle cli" })
-set("n", "<leader>%", "ggVG", { desc = "Select Entire File" })
 
 set('n', '<leader>as', function() require("sidekick.cli").select({ filter = { installed = true } }) end,
   { desc = "Select CLI" })
@@ -34,6 +33,10 @@ end, { expr = true, desc = "Goto/Apply Next Edit Suggestion" })
 
 set("n", "g?", function() vim.diagnostic.open_float() end, { desc = "Show Diagnostic" })
 
+-- Get file name
+set('n', '<leader>cf', ":let @+=expand('%:.')<cr>", { desc = 'Copy relative path' })
+set('n', '<leader>cF', ':let @+=@%<cr>', { desc = 'Copy absolute path' })
+
 
 -- Mutli-cursor
 set({ "v", "x" }, "<leader>s", function() require("multicursor-nvim").matchCursors() end,
@@ -44,18 +47,20 @@ set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc 
 set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
 -- Snacks
-vim.keymap.set("n", "<leader>f", function() Snacks.picker.files() end, { desc = "Find Files" })
-vim.keymap.set("n", "<leader>/", function() Snacks.picker.grep() end, { desc = "Live Grep" })
-vim.keymap.set("n", "<leader>b", function()
+set("n", "<leader>f", function() Snacks.picker.files() end, { desc = "Find Files" })
+set("n", "<leader>/", function() Snacks.picker.grep() end, { desc = "Live Grep" })
+set("n", "<leader>b", function()
   Snacks.picker.buffers({
     current = false,
     sort_lastused = true,
   })
 end, { desc = "Live Grep" })
-vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Go to Definition" })
-vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, { desc = "Go to Declaration" })
-vim.keymap.set("n", "gR", function() Snacks.picker.lsp_references() end, { desc = "Go to References" })
-vim.keymap.set("n", "gI", function() Snacks.picker.lsp_implementations() end, { desc = "Go to Implementations" })
+set("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Go to Definition" })
+set("n", "gD", function() Snacks.picker.lsp_declarations() end, { desc = "Go to Declaration" })
+set("n", "gR", function() Snacks.picker.lsp_references() end, { desc = "Go to References" })
+set("n", "gI", function() Snacks.picker.lsp_implementations() end, { desc = "Go to Implementations" })
+set("n", "<leader>.", function() Snacks.scratch() end, { desc = "Toggle Scratch Buffer" })
+set("n", "<leader>S", function() Snacks.scratch.select() end, { desc = "Select Scratch Buffer" })
 
 -- Flash
 set({ "n", "x", "o" }, "gw", function()

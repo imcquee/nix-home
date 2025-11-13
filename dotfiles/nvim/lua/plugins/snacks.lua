@@ -8,10 +8,13 @@ require("snacks").setup({
     win = {
       input = {
         keys = {
-          ["<c-z>"] = { "toggle_live", mode = { "i", "n" } },
+          ["<c-y>"] = { "toggle_live", mode = { "i", "n" } },
         }
       }
     }
+  },
+  scratch = {
+    enabled = true,
   },
   indent = { enabled = true },
   image = { enabled = true },
