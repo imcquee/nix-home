@@ -1,3 +1,10 @@
+-- Filetype detection
+vim.filetype.add({
+  extension = {
+    djot = "djot",
+  },
+})
+
 -- Inlay hints and Copilot suggestions
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)

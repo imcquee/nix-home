@@ -5,5 +5,5 @@ require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
   },
-  ensure_installed = { "tsx", "prisma", "html", "javascript", "typescript", "gleam", "graphql", "go" },
+  ensure_installed = { "tsx", "prisma", "html", "javascript", "typescript", "gleam", "graphql", "go", "djot" },
 })

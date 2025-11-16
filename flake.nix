@@ -42,7 +42,7 @@
       userInfo = {
         userName = "imcquee";
         fullName = "Isaac McQueen";
-        userEmail = "imcqueen@truehomesusa.com";
+        userEmail = "imcqueendev@gmail.com";
       };
 
       # Common Configurations

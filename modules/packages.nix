@@ -49,6 +49,7 @@ let
     # Language Servers for nix (where else would I put these?)
     nixd
     nil
+    codebook
 
     # Fish (needed for home manager standalone)
     fish
