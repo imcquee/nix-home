@@ -63,7 +63,7 @@
     },
     "nvim-nio": {
       "rev": "21f5324",
-      "src": "https://github.com/nvim-neotest/nvim-nio"
+      "src": "https://github.com/nvim-neotest/nvim-nio.git"
     },
     "nvim-treesitter": {
       "rev": "42fc28ba",

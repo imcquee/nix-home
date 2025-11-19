@@ -1,6 +1,7 @@
-{ pkgs
-, zen-browser
-, ...
+{
+  pkgs,
+  zen-browser,
+  ...
 }:
 with pkgs;
 [
@@ -23,7 +24,7 @@ with pkgs;
   mangohud
 
   # Proton
-  protonup
+  protonup-ng
 
   # Wayland
   wl-clipboard
