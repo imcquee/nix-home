@@ -16,9 +16,14 @@ _:
   "raycast"
   "obsidian"
   "scroll-reverser"
+  "screen-studio"
+
+  #vpn
+  "protonvpn"
 
   # Graphic
   "gimp"
+  "vlc"
 
   # Music
   "spotify"
@@ -31,7 +36,7 @@ _:
   "beekeeper-studio"
 
   # Games
-  "epic-games"
+  "heroic"
 
   "android-studio"
   "zulu@17"

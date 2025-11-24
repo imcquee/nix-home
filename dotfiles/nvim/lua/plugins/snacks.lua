@@ -9,6 +9,8 @@ require("snacks").setup({
       input = {
         keys = {
           ["<c-y>"] = { "toggle_live", mode = { "i", "n" } },
+          ["<C-o>"] = { "history_back", mode = { "i", "n" } },
+          ["<C-i>"] = { "history_forward", mode = { "i", "n" } },
         }
       }
     }
