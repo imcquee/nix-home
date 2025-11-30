@@ -9,6 +9,7 @@ _:
 
   # Productivity
   "raycast"
+  "devcleaner"
 
   # Work
   "orbstack"

@@ -17,6 +17,9 @@ _:
   "obsidian"
   "scroll-reverser"
   "screen-studio"
+  "cap"
+  "balenaetcher"
+  "devcleaner"
 
   #vpn
   "protonvpn"
