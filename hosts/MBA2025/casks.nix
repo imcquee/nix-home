@@ -39,7 +39,7 @@ _:
   "beekeeper-studio"
 
   # Games
-  "heroic"
+  "steam"
 
   "android-studio"
   "zulu@17"
