@@ -1,8 +1,8 @@
-{
-  pkgs,
-  withGUI,
-  helix,
-  neovim-nightly-overlay,
+{ pkgs
+, withGUI
+, helix
+, neovim-nightly-overlay
+,
 }:
 
 with pkgs;
@@ -17,7 +17,7 @@ let
       owner = "m7medvision";
       repo = "lazycommit";
       rev = "main";
-      sha256 = "sha256-RlAcufMI8Y0LUCjxcYyJnLOWdv2zMbQzhDZRKaVAiN4=";
+      sha256 = "sha256-A3nRbdIC/VYtt1eJ0VlyF6NU0tjZ0dKA84MM20P9d7E=";
     };
 
     vendorHash = "sha256-4OPCUWXxsAnzxsqZPHhjvhxQQf5Knm7nGqrdjH4I4YY=";
