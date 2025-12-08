@@ -8,7 +8,7 @@
 settings.tabsThreshold = 9;
 
 // Disable for Gmail
-api.unmapAllExcept(['E','R','T'], /mail.google.com/);
+api.unmapAllExcept(['E','R','T'], /mail.google.com|drive.google.com/);
 
 // Remap history navigation
 api.map('H', 'S');
