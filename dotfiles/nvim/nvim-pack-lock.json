@@ -5,6 +5,30 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": ">=0.0.0"
     },
+    "blink.nvim": {
+      "rev": "d1e7c7c45d45c6b6a25427bf62db4db73b03ff3d",
+      "src": "https://github.com/Saghen/blink.nvim.git"
+    },
+    "cmp-buffer": {
+      "rev": "b74fab3656eea9de20a9b8116afa3cfc4ec09657",
+      "src": "https://github.com/hrsh7th/cmp-buffer.git"
+    },
+    "cmp-cmdline": {
+      "rev": "d126061b624e0af6c3a556428712dd4d4194ec6d",
+      "src": "https://github.com/hrsh7th/cmp-cmdline.git"
+    },
+    "cmp-nvim-lsp": {
+      "rev": "bd5a7d6db125d4654b50eeae9f5217f24bb22fd3",
+      "src": "https://github.com/hrsh7th/cmp-nvim-lsp.git"
+    },
+    "cmp-path": {
+      "rev": "c642487086dbd9a93160e1679a1327be111cbc25",
+      "src": "https://github.com/hrsh7th/cmp-path.git"
+    },
+    "cmp_luasnip": {
+      "rev": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90",
+      "src": "https://github.com/saadparwaiz1/cmp_luasnip.git"
+    },
     "conform.nvim": {
       "rev": "9fd3d5e",
       "src": "https://github.com/stevearc/conform.nvim.git"
