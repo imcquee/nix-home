@@ -16,7 +16,6 @@ _:
   "raycast"
   "obsidian"
   "scroll-reverser"
-  "screen-studio"
   "cap"
   "balenaetcher"
   "devcleaner"
