@@ -21,6 +21,8 @@
 - [ ] Setup dap
 - [x] Setup testing (NeoTest)
 - [ ] Find out solution for Bun Neotest monerepos
+- [ ] Fix prisma format
+- [ ] Setup diff tool like vimdiff
 - [x] Setup transparency
 - [x] Add grug-far
 - [x] Smooth scrolling

@@ -10,7 +10,7 @@ _:
   "visual-studio-code"
 
   # Terminal
-  "ghostty"
+  "ghostty@tip"
 
   # Productivity
   "raycast"
