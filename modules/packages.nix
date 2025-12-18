@@ -1,8 +1,8 @@
-{ pkgs
-, withGUI
-, helix
-, neovim-nightly-overlay
-,
+{
+  pkgs,
+  withGUI,
+  helix,
+  neovim-nightly-overlay,
 }:
 
 with pkgs;
@@ -86,6 +86,9 @@ let
     # Formatters
     nixfmt-rfc-style
     nixpkgs-fmt
+
+    # DB
+    pspg
 
     # Use Helix from the flake input instead of pkgs.helix
     helix.packages.${pkgs.system}.default

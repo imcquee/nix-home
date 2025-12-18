@@ -3,6 +3,7 @@ vim.o.autoread = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
+vim.g.db_ui_use_nerd_fonts = 1
 vim.o.number = true
 vim.o.undofile = true
 vim.o.tabstop = 2

@@ -22,6 +22,7 @@ in
   home.stateVersion = "24.05";
   home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix neovim-nightly-overlay; };
   home.sessionVariables = {
+    PSQL_PAGER = "pspg";
     EDITOR = "nvim";
     PATH = builtins.concatStringsSep ":" [
       # Default Nix profile binaries
@@ -80,6 +81,10 @@ in
   # Copy symlinks for lazycommit
   home.file.".config/.lazycommit.prompts.yaml".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/lazycommit/.lazycommit.prompts.yaml";
+
+  # Copy symlinks for pspg
+  home.file.".config/.pspgconf".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/pspg/.pspgconf";
 
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
