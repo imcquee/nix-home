@@ -1,7 +1,8 @@
-{ pkgs
-, homeDir
-, userName
-, ...
+{
+  pkgs,
+  homeDir,
+  userName,
+  ...
 }:
 
 let
@@ -113,6 +114,7 @@ in
       NSGlobalDomain = {
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
+        _HIHideMenuBar = true;
       };
       dock = {
         autohide = true;

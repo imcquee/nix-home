@@ -91,10 +91,10 @@ let
     pspg
 
     # Use Helix from the flake input instead of pkgs.helix
-    helix.packages.${pkgs.system}.default
+    helix.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     # Neovim nightly
-    neovim-nightly-overlay.packages.${pkgs.system}.default
+    neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 in
 basePackages

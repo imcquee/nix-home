@@ -11,6 +11,8 @@ require("snacks").setup({
           ["<c-y>"] = { "toggle_live", mode = { "i", "n" } },
           ["<C-o>"] = { "history_back", mode = { "i", "n" } },
           ["<C-i>"] = { "history_forward", mode = { "i", "n" } },
+          ["<a-.>"] = { "toggle_hidden", mode = { "i", "n" } },
+          ["<a-z>"] = { "toggle_ignored", mode = { "i", "n" } },
         }
       }
     }
