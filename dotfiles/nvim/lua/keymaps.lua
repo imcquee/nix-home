@@ -8,9 +8,25 @@ set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
 set("n", "<leader>g", "<CMD>GrugFar<CR>", { desc = "Open GrugFar" })
 
 -- Testing
+local neotest_setup_done = false
+local function ensure_neotest()
+  if not neotest_setup_done then
+    require("neotest").setup({
+      adapters = {
+        require("neotest-bun")
+      }
+    })
+    neotest_setup_done = true
+  end
+end
+
 set("n", "<leader>tr", function()
+  ensure_neotest()
   require("neotest").run.run()
 end, { desc = "Run nearest test" })
+
+-- DBUI
+set("n", "<leader>du", "<CMD>DBUI<CR>", { desc = "Open DBUI" })
 
 -- Code
 set('n', '<leader>aa', function() require("sidekick.cli").toggle() end,
@@ -54,7 +70,10 @@ set("n", "<leader>b", function()
     current = false,
     sort_lastused = true,
   })
-end, { desc = "Live Grep" })
+end, { desc = "Open Buffers" })
+set("n", "<leader>G", function()
+  Snacks.picker.git_status()
+end, { desc = "Open Git Files" })
 set("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Go to Definition" })
 set("n", "gD", function() Snacks.picker.lsp_declarations() end, { desc = "Go to Declaration" })
 set("n", "gR", function() Snacks.picker.lsp_references() end, { desc = "Go to References" })
@@ -95,3 +114,13 @@ set("n", "<leader>cw", "<cmd>Yazi cwd<cr>", {
 set("n", "<c-up>", "<cmd>Yazi toggle<cr>", {
   desc = "Resume the last yazi session"
 })
+
+-- Neotest
+vim.keymap.set("n", "ts", function()
+  ensure_neotest()
+  require("neotest").summary.toggle()
+end, { desc = "Toggle test summary" })
+vim.keymap.set("n", "ta", function()
+  ensure_neotest()
+  require("neotest").run.run(vim.fn.expand("%"))
+end, { desc = "Run all tests in file" })

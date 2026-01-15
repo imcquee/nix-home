@@ -17,6 +17,8 @@ require("conform").setup({
       command = "bunx",
       args = { "prisma", "format", "--schema", "$FILENAME" },
       stdin = false,
+      exit_codes = { 0 },
+      require_cwd = false,
     },
   },
 })

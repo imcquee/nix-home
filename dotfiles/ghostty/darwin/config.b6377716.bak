@@ -1,0 +1,28 @@
+# Window
+theme = kanagawabones
+background-opacity = 0.5
+background-blur-radius = 20
+# window-decoration = false
+window-padding-x = 10
+window-padding-y = 10
+background = #080808
+macos-titlebar-style = hidden
+fullscreen = true
+
+# Font
+font-family = "JetBrainsMono Nerd Font Mono"
+font-size = 12
+
+# Behavior
+mouse-hide-while-typing = true
+confirm-close-surface = false
+quit-after-last-window-closed = true
+
+# Mac Specific
+macos-option-as-alt = true
+macos-non-native-fullscreen = true
+macos-window-shadow = false
+
+# OSC52
+clipboard-read = allow
+clipboard-write = allow

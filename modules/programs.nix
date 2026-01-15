@@ -18,11 +18,19 @@ in
           name = fullName;
           email = userEmail;
         };
+        diff = {
+          tool = "nvimdiff2";
+        };
+        mergetool = {
+          keepBackup = false;
+        };
       };
       enable = true;
       ignores = [
         ".envrc"
         ".direnv/"
+        ".claude"
+        ".DS_Store"
       ];
     };
 
