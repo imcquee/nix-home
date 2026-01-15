@@ -1,6 +1,6 @@
 # Window
 theme = kanagawabones
-background-opacity = 0.7
+background-opacity = 0.5
 background-blur-radius = 20
 # window-decoration = false
 window-padding-x = 10
@@ -26,3 +26,4 @@ macos-window-shadow = false
 # OSC52
 clipboard-read = allow
 clipboard-write = allow
+keybind = shift+enter=text:\x1b\r
