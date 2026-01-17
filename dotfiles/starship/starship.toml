@@ -131,3 +131,14 @@ format = 'via [$symbol]($style)'
 
 [zig]
 format = 'via [$symbol]($style)'
+
+[git_branch]
+disabled = true
+
+[git_status]
+disabled = true
+
+[custom.jj]
+when = "jj-starship detect"
+shell = ["jj-starship"]
+format = "$output "

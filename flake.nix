@@ -8,6 +8,7 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     helix.url = "github:helix-editor/helix/master";
+    jj-starship.url = "github:dmmulroy/jj-starship";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
@@ -30,6 +31,7 @@
 
   outputs =
     {
+      jj-starship,
       nixpkgs,
       home-manager,
       nix-darwin,
@@ -155,6 +157,7 @@
             homeDir = "/Users/${userInfo.userName}";
           };
         modules = [
+          { nixpkgs.overlays = [ jj-starship.overlays.default ]; }
           ./hosts/MBA2025/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           ./hosts/MBA2025/homebrew.nix

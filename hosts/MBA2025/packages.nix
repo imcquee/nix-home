@@ -1,6 +1,7 @@
 { pkgs, ... }:
 with pkgs;
 [
+  jj-starship
   which
   watchman
   android-tools

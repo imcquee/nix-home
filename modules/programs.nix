@@ -34,6 +34,10 @@ in
           email = userEmail;
         };
         aliases = {
+          push = [
+            "git"
+            "push"
+          ];
           sync = [
             "git"
             "fetch"
