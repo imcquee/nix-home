@@ -26,6 +26,44 @@ in
       ];
     };
 
+    jujutsu = {
+      enable = true;
+      settings = {
+        user = {
+          name = fullName;
+          email = userEmail;
+        };
+        aliases = {
+          sync = [
+            "git"
+            "fetch"
+          ];
+          desc = [
+            "util"
+            "exec"
+            "--"
+            "sh"
+            "-c"
+            "jj describe -m \"$(lazycommit pr \"$1\" | sed -n '1p')\""
+            ""
+          ];
+          sb = [
+            "bookmark"
+            "set"
+          ];
+          fn = [
+            "util"
+            "exec"
+            "--"
+            "sh"
+            "-c"
+            "git fetch && jj new \"$1\""
+            ""
+          ];
+        };
+      };
+    };
+
     firefox =
       if withGUI then
         {

@@ -44,7 +44,8 @@ set({ "v", "x" }, "<leader>s", function() require("multicursor-nvim").matchCurso
 set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc = "[MULTC] Clear Cursors" })
 
 -- Lazygit
-set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
+-- Using JJ for now
+-- set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
 -- Snacks
 set("n", "<leader>f", function() Snacks.picker.files() end, { desc = "Find Files" })

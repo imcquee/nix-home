@@ -10,6 +10,10 @@
     '';
     shellAbbrs = {
       ls = "nu -c 'ls'";
+      lazypr = {
+        expansion = "lazycommit pr '%' | sed -n '1p'";
+        setCursor = "%";
+      };
       cat = "bat -p";
       lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
       zj = "zellij -l welcome";

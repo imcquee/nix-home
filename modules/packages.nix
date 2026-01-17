@@ -58,7 +58,6 @@ let
     # Git
     lazygit
     gh
-    jujutsu
     lazycommit
 
     # CL tools
