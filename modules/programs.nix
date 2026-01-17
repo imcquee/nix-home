@@ -21,6 +21,7 @@ in
       };
       enable = true;
       ignores = [
+        ".claude/"
         ".envrc"
         ".direnv/"
       ];
@@ -34,6 +35,7 @@ in
           email = userEmail;
         };
         ui = {
+          default-command = "log";
           merge-editor = "vimdiff";
         };
         aliases = {
