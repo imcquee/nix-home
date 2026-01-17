@@ -33,6 +33,9 @@ in
           name = fullName;
           email = userEmail;
         };
+        ui = {
+          merge-editor = "vimdiff";
+        };
         aliases = {
           push = [
             "git"
