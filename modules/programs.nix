@@ -34,6 +34,9 @@ in
           name = fullName;
           email = userEmail;
         };
+        snapshot = {
+          max-new-file-size = "15M";
+        };
         ui = {
           default-command = "log";
           merge-editor = "vimdiff";
@@ -60,13 +63,15 @@ in
             "bookmark"
             "set"
           ];
-          fn = [
+          # - jj sn <revision> - sync and create new change
+          # - jj sn <revision> <bookmark-name> - sync, create new change, and set bookmark
+          sn = [
             "util"
             "exec"
             "--"
             "sh"
             "-c"
-            "git fetch && jj new \"$1\""
+            "git fetch && jj new \"$1\" && if [ -n \"$2\" ]; then jj bookmark set \"$2\"; fi"
             ""
           ];
         };
