@@ -45,6 +45,10 @@
       "rev": "22a22ce",
       "src": "https://github.com/kikito/inspect.lua.git"
     },
+    "jj.nvim": {
+      "rev": "9a20b2484909dc50122ace28fe2f5e0d49959fb8",
+      "src": "https://github.com/NicolasGB/jj.nvim.git"
+    },
     "kanagawa": {
       "rev": "aef7f5c",
       "src": "https://github.com/rebelot/kanagawa.nvim.git"

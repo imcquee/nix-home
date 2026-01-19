@@ -45,10 +45,20 @@ in
           push = [
             "git"
             "push"
+            "--allow-new"
           ];
           sync = [
             "git"
             "fetch"
+          ];
+          rb = [
+            "util"
+            "exec"
+            "--"
+            "sh"
+            "-c"
+            "jj rebase -r @ -d \"$1\""
+            ""
           ];
           desc = [
             "util"

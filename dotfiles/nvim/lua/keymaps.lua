@@ -48,6 +48,9 @@ set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc 
 -- set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
 -- Snacks
+set("n", "<leader>sd", function() Snacks.picker.diagnostics() end, { desc = "Diagnostics" })
+set("n", "<leader>j", function() require("jj.picker").status() end, { desc = "Jujutsu status" })
+set("n", "<leader>h", function() require("jj.picker").file_history() end, { desc = "Jujutsu file history" })
 set("n", "<leader>f", function() Snacks.picker.files() end, { desc = "Find Files" })
 set("n", "<leader>/", function() Snacks.picker.grep() end, { desc = "Live Grep" })
 set("n", "<leader>b", function()

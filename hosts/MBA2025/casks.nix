@@ -34,7 +34,6 @@ _:
   "slack"
   "figma"
   "postman"
-  "tower"
   "beekeeper-studio"
 
   # Games
