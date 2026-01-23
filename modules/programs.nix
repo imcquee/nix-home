@@ -40,12 +40,23 @@ in
         ui = {
           default-command = "log";
           merge-editor = "vimdiff";
+          conflict-marker-style = "snapshot";
+        };
+        merge-tools = {
+          vimdiff = {
+            program = "nvim";
+          };
         };
         aliases = {
           push = [
             "git"
             "push"
             "--allow-new"
+          ];
+          res = [
+            "resolve"
+            "--tool"
+            "vimdiff"
           ];
           sync = [
             "git"
