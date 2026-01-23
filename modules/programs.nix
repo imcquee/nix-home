@@ -53,11 +53,6 @@ in
             "push"
             "--allow-new"
           ];
-          res = [
-            "resolve"
-            "--tool"
-            "vimdiff"
-          ];
           sync = [
             "git"
             "fetch"
