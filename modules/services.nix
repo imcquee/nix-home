@@ -1,7 +1,8 @@
-{ pkgs
-, userName
-, homeDir
-, ...
+{
+  pkgs,
+  userName,
+  homeDir,
+  ...
 }:
 
 {
@@ -14,8 +15,11 @@
   # Enable Ollama
   services.ollama = {
     enable = true;
-    loadModels = [ "deepseek-r1:32b" ];
-    acceleration = "cuda";
+    loadModels = [
+      "llama3.3:70b-instruct-q2_K"
+      "qwen2.5:32b"
+    ];
+    package = pkgs.ollama-cuda;
   };
 
   # Enable OpenWebUI

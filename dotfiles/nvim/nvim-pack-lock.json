@@ -37,6 +37,10 @@
       "rev": "3be9bf7",
       "src": "https://github.com/folke/flash.nvim.git"
     },
+    "fzf-lua": {
+      "rev": "49ba1184b357b97cf3d6690cd5acffdb9ddeceba",
+      "src": "https://github.com/ibhagwan/fzf-lua.git"
+    },
     "gitsigns.nvim": {
       "rev": "abf82a65f185bd54adc0679f74b7d6e1ada690c9",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
@@ -60,6 +64,10 @@
     "lazydev.nvim": {
       "rev": "c2dfe35",
       "src": "https://github.com/folke/lazydev.nvim.git"
+    },
+    "lazygit.nvim": {
+      "rev": "2305deed25bc61b866d5d39189e9105a45cf1cfb",
+      "src": "https://github.com/kdheepak/lazygit.nvim.git"
     },
     "mini.icons": {
       "rev": "2847986",
@@ -112,6 +120,10 @@
     "snacks.nvim": {
       "rev": "9eafe00",
       "src": "https://github.com/folke/snacks.nvim.git"
+    },
+    "tiny-inline-diagnostic.nvim": {
+      "rev": "47a50525c251fe1195fc59443504f11fba2d5d3c",
+      "src": "https://github.com/rachartier/tiny-inline-diagnostic.nvim.git"
     },
     "vim-dadbod": {
       "rev": "e95afed23712f969f83b4857a24cf9d59114c2e6",
