@@ -7,7 +7,6 @@ with pkgs;
   android-tools
   zed-editor
   prettierd
-  firebase-tools
   google-cloud-sdk
   macpm
 ]

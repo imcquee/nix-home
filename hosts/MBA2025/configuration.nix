@@ -12,7 +12,7 @@ let
   };
 
   pinnedPkgs = import pinnedNixpkgs {
-    system = pkgs.system;
+    system = pkgs.stdenv.hostPlatform.system;
     config = { };
   };
 in
