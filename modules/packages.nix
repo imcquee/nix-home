@@ -77,6 +77,7 @@ let
     serpl
     ffmpeg
     pandoc
+    jjui
     # zenith-nvidia
 
     # Docker tools

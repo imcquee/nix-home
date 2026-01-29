@@ -72,7 +72,7 @@ in
             "--"
             "sh"
             "-c"
-            "jj describe -m \"$(lazycommit pr \"$1\" | sed -n '1p')\""
+            "jj describe -m \"$(lazycommit pr @ | sed -n '1p')\""
             ""
           ];
           sb = [

@@ -1,0 +1,7 @@
+[custom_commands.commit_desc]
+key = ["ctrl+d"]
+lua = '''
+jj("desc")
+revisions.refresh()
+flash("Commit description updated.")
+'''

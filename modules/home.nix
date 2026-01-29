@@ -86,6 +86,10 @@ in
   home.file.".config/.pspgconf".source =
     config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/pspg/.pspgconf";
 
+  # JJUI
+  home.file.".config/jjui".source =
+    config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/jjui";
+
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
     if pkgs.stdenv.isDarwin then

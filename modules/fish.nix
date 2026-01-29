@@ -15,7 +15,7 @@
         setCursor = "%";
       };
       cat = "bat -p";
-      lg = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- lazygit";
+      lj = "zellij run -cf --width 80% --height 80% --x 10% --y 10% -- jjui";
       zj = "zellij -l welcome";
       ff = "fastfetch";
       cd = "z";
@@ -68,6 +68,8 @@
 
         bind "alt-g" -M insert 'commandline -r lazygit; commandline -f execute'
         bind "alt-g" 'commandline -r lazygit; commandline -f execute'
+        bind "alt-j" -M insert 'commandline -r jjui; commandline -f execute'
+        bind "alt-j" 'commandline -r jjui; commandline -f execute'
       '';
       original_cd = ''
         builtin cd $argv

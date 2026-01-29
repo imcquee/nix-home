@@ -47,6 +47,15 @@ set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc 
 -- Using JJ for now
 -- set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
+-- Jujutsu UI
+set("n", "<leader>jj", function()
+  Snacks.terminal("jjui", {
+    win = {
+      style = "lazygit",
+    },
+  })
+end, { desc = "Jujutsu UI" })
+
 -- Snacks
 set("n", "<leader>sd", function() Snacks.picker.diagnostics() end, { desc = "Diagnostics" })
 set("n", "<leader>j", function() require("jj.picker").status() end, { desc = "Jujutsu status" })
