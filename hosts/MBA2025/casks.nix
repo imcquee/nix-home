@@ -42,4 +42,5 @@ _:
   "android-studio"
   "zulu@17"
   "utm"
+  "microsoft-remote-desktop"
 ]
