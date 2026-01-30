@@ -66,10 +66,8 @@
         bind "alt-y" -M insert 'yy; commandline -f execute'
         bind "alt-y" 'yy; commandline -f execute'
 
-        bind "alt-g" -M insert 'commandline -r lazygit; commandline -f execute'
-        bind "alt-g" 'commandline -r lazygit; commandline -f execute'
-        bind "alt-j" -M insert 'commandline -r jjui; commandline -f execute'
-        bind "alt-j" 'commandline -r jjui; commandline -f execute'
+        bind "alt-g" -M insert 'commandline -r jjui; commandline -f execute'
+        bind "alt-g" 'commandline -r jjui; commandline -f execute'
       '';
       original_cd = ''
         builtin cd $argv

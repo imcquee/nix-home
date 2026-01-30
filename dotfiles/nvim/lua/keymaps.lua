@@ -48,7 +48,7 @@ set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc 
 -- set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
 -- Jujutsu UI
-set("n", "<leader>jj", function()
+set("n", "<M-g>", function()
   Snacks.terminal("jjui", {
     win = {
       style = "lazygit",
