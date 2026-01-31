@@ -61,10 +61,6 @@
       "rev": "c2dfe35",
       "src": "https://github.com/folke/lazydev.nvim.git"
     },
-    "lazygit.nvim": {
-      "rev": "2305dee",
-      "src": "https://github.com/kdheepak/lazygit.nvim.git"
-    },
     "mini.icons": {
       "rev": "2847986",
       "src": "https://github.com/nvim-mini/mini.icons.git"
