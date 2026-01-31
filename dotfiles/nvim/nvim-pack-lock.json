@@ -37,6 +37,10 @@
       "rev": "3be9bf7",
       "src": "https://github.com/folke/flash.nvim.git"
     },
+    "gitsigns.nvim": {
+      "rev": "abf82a65f185bd54adc0679f74b7d6e1ada690c9",
+      "src": "https://github.com/lewis6991/gitsigns.nvim.git"
+    },
     "grug-far.nvim": {
       "rev": "b58b2d6",
       "src": "https://github.com/MagicDuck/grug-far.nvim.git"

@@ -31,3 +31,5 @@ keybind = shift+enter=text:\x1b\r
 # Shaders
 custom-shader = shaders/ripple_cursor.glsl
 custom-shader = shaders/cursor_warp.glsl
+custom-shader = shaders/blaze.glsl
+
