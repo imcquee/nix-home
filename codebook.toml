@@ -1,0 +1,1 @@
+ignore_paths = ["dotfiles/nvim/README.md"]
