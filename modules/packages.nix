@@ -37,6 +37,7 @@ let
     unzip
     tree-sitter
     nodejs_22
+    dwt1-shell-color-scripts
 
     # AI nonsense
     copilot-language-server
