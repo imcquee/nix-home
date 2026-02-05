@@ -9,7 +9,7 @@ require("conform").setup({
     rust = { "rustfmt" },
   },
   format_on_save = {
-    timeout_ms = 500,
+    timeout_ms = 1000,
     lsp_format = "fallback",
   },
   formatters = {

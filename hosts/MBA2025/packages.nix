@@ -9,4 +9,8 @@ with pkgs;
   prettierd
   google-cloud-sdk
   macpm
+  colima
+  docker
+  docker-credential-helpers
+  postgresql
 ]
