@@ -98,6 +98,7 @@ let
     neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     spotifyd
+    opencode
   ];
 in
 basePackages
