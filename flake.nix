@@ -2,6 +2,7 @@
   description = "NixOS + Portable Linux + Darwin configuration";
 
   inputs = {
+    hdrvulkan.url = "github:TheTallestJJ/vulkan-hdr-layer-flake/8a003118967530c6da2eba76aa1d89a7161cf9f3";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";

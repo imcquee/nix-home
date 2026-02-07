@@ -1,6 +1,7 @@
 {
   pkgs,
   zen-browser,
+  inputs,
   ...
 }:
 with pkgs;
@@ -40,4 +41,6 @@ with pkgs;
 
   # Spotify
   spotify
+
+  inputs.hdrvulkan.packages.${pkgs.system}.default
 ]
