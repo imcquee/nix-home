@@ -11,6 +11,7 @@
     helix.url = "github:helix-editor/helix/master";
     jj-starship.url = "github:dmmulroy/jj-starship";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    jovian-nixos.url = "github:jovian-experiments/jovian-nixos";
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
@@ -37,6 +38,7 @@
       home-manager,
       nix-darwin,
       nix-homebrew,
+      jovian-nixos,
       nur,
       ...
     }@inputs:
@@ -69,6 +71,7 @@
           // {
             withGUI = true;
             homeDir = defaults.homeDir;
+            inputs = inputs;
           };
         modules = [
           ./hosts/dev/configuration.nix
@@ -93,6 +96,7 @@
           // {
             withGUI = true;
             homeDir = defaults.homeDir;
+            inputs = inputs;
           };
         modules = [
           ./hosts/dev/configuration.nix
@@ -101,6 +105,7 @@
           ./modules/nvidia.nix
           ./modules/elevated-packages.nix
           ./modules/gaming.nix
+          jovian-nixos.nixosModules.default
           { nixpkgs.overlays = [ nur.overlays.default ]; }
           home-manager.nixosModules.home-manager
           ./modules/home-manager.nix

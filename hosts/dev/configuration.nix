@@ -1,9 +1,11 @@
-{ pkgs
-, lib
-, userName
-, fullName
-, zen-browser
-, ...
+{
+  pkgs,
+  lib,
+  inputs,
+  userName,
+  fullName,
+  zen-browser,
+  ...
 }:
 
 {
@@ -83,6 +85,7 @@
 
   # Timezone and locale
   time.timeZone = "America/New_York";
+  time.hardwareClockInLocalTime = true;
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
@@ -109,7 +112,7 @@
   hardware.keyboard.qmk.enable = true;
 
   # Add device specific packages
-  environment.systemPackages = pkgs.callPackage ./packages.nix { inherit zen-browser; };
+  environment.systemPackages = pkgs.callPackage ./packages.nix { zen-browser = zen-browser; inputs = inputs; };
 
   system.stateVersion = "24.05";
 }
