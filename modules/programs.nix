@@ -35,7 +35,7 @@ in
           email = userEmail;
         };
         snapshot = {
-          max-new-file-size = "15M";
+          max-new-file-size = "150M";
         };
         ui = {
           default-command = "log";

@@ -85,6 +85,10 @@
       "rev": "4537590",
       "src": "https://github.com/arthur944/neotest-bun.git"
     },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim-lspconfig": {
       "rev": "a9b2fb5",
       "src": "https://github.com/neovim/nvim-lspconfig.git"
@@ -100,6 +104,10 @@
     "nvim-ts-autotag": {
       "rev": "c4ca798",
       "src": "https://github.com/windwp/nvim-ts-autotag.git"
+    },
+    "package-info.nvim": {
+      "rev": "52e407af634cd5d3add0dc916c517865850113a4",
+      "src": "https://github.com/vuki656/package-info.nvim"
     },
     "plenary.nvim": {
       "rev": "b9fd522",

@@ -96,6 +96,12 @@ set("c", "<c-s>", function()
   require("flash").toggle()
 end, { desc = "Toggle Flash Search" })
 
+-- Package Info Typescript
+set("n", "<leader>ns", "<cmd>lua require('package-info').show()<cr>",
+  { silent = true, noremap = true }, { desc = "Show Package Info" })
+set("n", "<leader>np", "<cmd>lua require('package-info').change_version()<cr>",
+  { silent = true, noremap = true }, { desc = "Change Package Version" })
+
 -- Yazi
 set({ "n", "v" }, "<M-y>", "<cmd>Yazi<cr>", {
   desc = "Open yazi at the current file"

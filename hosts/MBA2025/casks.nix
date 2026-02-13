@@ -38,9 +38,11 @@ _:
 
   # Games
   "steam"
+  "moonlight"
 
   "android-studio"
   "zulu@17"
   "utm"
   "microsoft-remote-desktop"
+  "claude"
 ]
