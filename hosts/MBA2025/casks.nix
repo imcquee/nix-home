@@ -45,4 +45,7 @@ _:
   "utm"
   "microsoft-remote-desktop"
   "claude"
+  "notion"
+  "topnotch"
+  "superset"
 ]

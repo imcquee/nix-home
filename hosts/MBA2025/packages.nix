@@ -13,4 +13,6 @@ with pkgs;
   docker
   docker-credential-helpers
   postgresql
+  bun
+  yt-dlp
 ]
