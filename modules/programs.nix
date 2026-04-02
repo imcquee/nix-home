@@ -47,6 +47,11 @@ in
             program = "nvim";
           };
         };
+        signing = {
+          backend = "ssh";
+          behavior = "own";
+          key = "/Users/imcquee/.ssh/id_ed25519.pub";
+        };
         aliases = {
           push = [
             "git"

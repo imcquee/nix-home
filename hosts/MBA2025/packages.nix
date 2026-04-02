@@ -1,6 +1,7 @@
 { pkgs, ... }:
 with pkgs;
 [
+  imagemagick
   jj-starship
   which
   watchman
@@ -15,4 +16,5 @@ with pkgs;
   postgresql
   bun
   yt-dlp
+  ghostscript
 ]
