@@ -24,30 +24,6 @@ let
     doCheck = false;
   };
 
-  maestro-runner-unwrapped = pkgs.buildGoModule {
-    pname = "maestro-runner";
-    version = "latest";
-
-    src = pkgs.fetchFromGitHub {
-      owner = "devicelab-dev";
-      repo = "maestro-runner";
-      rev = "main";
-      sha256 = "sha256-5BJwtUy/jVFuhpdfCMTzE3qXF8TVREAOVbhyMwKWKig";
-    };
-
-    vendorHash = "sha256-lcaVLKqF0p2xsSOfyRGSvrYHT5RnZ7/YghadFJ1wFiw=";
-    doCheck = false;
-  };
-
-  maestro-runner = pkgs.symlinkJoin {
-    name = "maestro-runner";
-    paths = [ maestro-runner-unwrapped ];
-    buildInputs = [ pkgs.makeWrapper ];
-    postBuild = ''
-      wrapProgram $out/bin/maestro-runner \
-        --run 'export MAESTRO_RUNNER_HOME="$HOME/.local/share/maestro-runner"'
-    '';
-  };
   basePackages = [
     # these files are meant to be installed in all scenarios
 
@@ -85,9 +61,6 @@ let
     lazygit
     gh
     lazycommit
-
-    # Mobile testing
-    maestro-runner
 
     # CL tools
     fzf
