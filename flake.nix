@@ -29,6 +29,7 @@
     };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nur.url = "github:nix-community/NUR";
+    claude-code.url = "github:sadjow/claude-code-nix";
   };
 
   outputs =
@@ -40,6 +41,7 @@
       nix-homebrew,
       jovian-nixos,
       nur,
+      claude-code,
       ...
     }@inputs:
     let
@@ -81,7 +83,7 @@
           ./modules/services.nix
           ./modules/elevated-packages.nix
           ./modules/niri.nix
-          { nixpkgs.overlays = [ nur.overlays.default ]; }
+          { nixpkgs.overlays = [ nur.overlays.default claude-code.overlays.default ]; }
           home-manager.nixosModules.home-manager
           ./modules/home-manager.nix
         ];
@@ -106,7 +108,7 @@
           ./modules/elevated-packages.nix
           ./modules/gaming.nix
           jovian-nixos.nixosModules.default
-          { nixpkgs.overlays = [ nur.overlays.default ]; }
+          { nixpkgs.overlays = [ nur.overlays.default claude-code.overlays.default ]; }
           home-manager.nixosModules.home-manager
           ./modules/home-manager.nix
         ];
@@ -123,6 +125,7 @@
             homeDir = "/Users/${userInfo.userName}";
           };
         modules = [
+          { nixpkgs.overlays = [ claude-code.overlays.default ]; }
           ./hosts/MBP2018/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           ./hosts/MBP2018/homebrew.nix
@@ -143,6 +146,7 @@
             homeDir = "/Users/${userInfo.userName}";
           };
         modules = [
+          { nixpkgs.overlays = [ claude-code.overlays.default ]; }
           ./hosts/mini/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           ./hosts/mini/homebrew.nix
@@ -163,7 +167,7 @@
             homeDir = "/Users/${userInfo.userName}";
           };
         modules = [
-          { nixpkgs.overlays = [ jj-starship.overlays.default ]; }
+          { nixpkgs.overlays = [ jj-starship.overlays.default claude-code.overlays.default ]; }
           ./hosts/MBA2025/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           ./hosts/MBA2025/homebrew.nix
@@ -180,6 +184,7 @@
           config = {
             allowUnfree = true;
           };
+          overlays = [ claude-code.overlays.default ];
         };
         extraSpecialArgs = {
           withGUI = defaults.withGUI;

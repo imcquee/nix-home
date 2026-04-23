@@ -133,7 +133,5 @@ in
       enable = true;
       enableFishIntegration = true;
     };
-
-    nushell.enable = true;
   };
 }

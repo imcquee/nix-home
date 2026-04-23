@@ -4,7 +4,6 @@ _:
   # Browsers
   "arc"
   "google-chrome"
-  "zen"
 
   # Text Editors
   "visual-studio-code"
@@ -47,5 +46,5 @@ _:
   "claude"
   "notion"
   "topnotch"
-  "superset"
+  "omnidisksweeper"
 ]

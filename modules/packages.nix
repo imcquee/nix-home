@@ -9,21 +9,6 @@ with pkgs;
 
 let
 
-  lazycommit = pkgs.buildGoModule {
-    pname = "lazycommit";
-    version = "latest";
-
-    src = pkgs.fetchFromGitHub {
-      owner = "m7medvision";
-      repo = "lazycommit";
-      rev = "main";
-      sha256 = "sha256-FPtkdIEXwNNC86ZfAakND9SJb+bSQyle6kviLTzqXuM=";
-    };
-
-    vendorHash = "sha256-4OPCUWXxsAnzxsqZPHhjvhxQQf5Knm7nGqrdjH4I4YY=";
-    doCheck = false;
-  };
-
   basePackages = [
     # these files are meant to be installed in all scenarios
 

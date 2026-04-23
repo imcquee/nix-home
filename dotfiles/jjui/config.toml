@@ -1,7 +1,13 @@
-[custom_commands.commit_desc]
-key = ["ctrl+d"]
+[[actions]]
+name = "commit_desc"
 lua = '''
 jj("desc")
 revisions.refresh()
 flash("Commit description updated.")
 '''
+
+[[bindings]]
+key = "ctrl+d"
+action = "commit_desc"
+scope = "revisions"
+desc = "commit desc via lazycommit"
