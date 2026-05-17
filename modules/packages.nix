@@ -71,7 +71,6 @@ let
     lazydocker
 
     # Formatters
-    nixfmt-rfc-style
     nixpkgs-fmt
 
     # DB
@@ -80,8 +79,9 @@ let
     # Use Helix from the flake input instead of pkgs.helix
     helix.packages.${pkgs.stdenv.hostPlatform.system}.default
 
+    neovim
     # Neovim nightly
-    neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default
+    # neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default
 
     spotifyd
     opencode

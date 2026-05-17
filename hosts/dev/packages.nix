@@ -42,5 +42,5 @@ with pkgs;
   # Spotify
   spotify
 
-  inputs.hdrvulkan.packages.${pkgs.system}.default
+  inputs.hdrvulkan.packages.${pkgs.stdenv.hostPlatform.system}.default
 ]

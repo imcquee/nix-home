@@ -6,6 +6,7 @@ let
     fullName
     userEmail
     withGUI
+    homeDir
     ;
 in
 {
@@ -18,6 +19,9 @@ in
           name = fullName;
           email = userEmail;
         };
+      };
+      signing = {
+        format = "ssh";
       };
       enable = true;
       ignores = [
@@ -50,7 +54,7 @@ in
         signing = {
           backend = "ssh";
           behavior = "own";
-          key = "/Users/imcquee/.ssh/id_ed25519.pub";
+          key = "${homeDir}/.ssh/id_ed25519.pub";
         };
         aliases = {
           push = [

@@ -98,8 +98,9 @@
       "src": "https://github.com/nvim-neotest/nvim-nio.git"
     },
     "nvim-treesitter": {
-      "rev": "42fc28ba",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter.git"
+      "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter.git",
+      "version": "'main'"
     },
     "nvim-ts-autotag": {
       "rev": "c4ca798",
