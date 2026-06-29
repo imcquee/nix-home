@@ -3,11 +3,6 @@ _:
 [
   # Browsers
   "arc"
-  "google-chrome"
-
-  # Text Editors
-  "visual-studio-code"
-
   # Terminal
   "ghostty@tip"
 
@@ -16,11 +11,7 @@ _:
   "obsidian"
   "scroll-reverser"
   "cap"
-  "balenaetcher"
   "devcleaner"
-
-  #vpn
-  "protonvpn"
 
   # Graphic
   "gimp"
@@ -28,12 +19,6 @@ _:
 
   # Music
   "spotify"
-
-  # Work
-  "slack"
-  "figma"
-  "postman"
-  "beekeeper-studio"
 
   # Games
   "steam"
@@ -44,7 +29,6 @@ _:
   "utm"
   "microsoft-remote-desktop"
   "claude"
-  "notion"
   "topnotch"
   "omnidisksweeper"
 ]
