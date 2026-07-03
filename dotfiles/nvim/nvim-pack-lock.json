@@ -50,7 +50,7 @@
       "src": "https://github.com/kikito/inspect.lua.git"
     },
     "jj.nvim": {
-      "rev": "680d864e1165ac5d334eef6d69e301f2094ff4c3",
+      "rev": "c7242901418a05dc1d97ef1739585779bd326702",
       "src": "https://github.com/NicolasGB/jj.nvim.git"
     },
     "kanagawa": {
