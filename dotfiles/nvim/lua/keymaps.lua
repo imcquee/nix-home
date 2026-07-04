@@ -45,7 +45,6 @@ set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc 
 
 -- Lazygit
 -- Using JJ for now
--- set("n", "<M-g>", function() Snacks.lazygit.open() end, { desc = "Lazygit" })
 
 -- Jujutsu UI
 set("n", "<M-g>", function()
@@ -58,8 +57,9 @@ end, { desc = "Jujutsu UI" })
 
 -- Snacks
 set("n", "<leader>sd", function() Snacks.picker.diagnostics() end, { desc = "Diagnostics" })
-set("n", "<leader>j", function() require("jj.picker").status() end, { desc = "Jujutsu status" })
-set("n", "<leader>h", function() require("jj.picker").file_history() end, { desc = "Jujutsu file history" })
+set("n", "<leader>jc", function() require("jj.picker").conflict_sections() end, { desc = "JJ conflict sections" })
+set("n", "<leader>jj", function() require("jj.picker").status() end, { desc = "Jujutsu status" })
+set("n", "<leader>jh", function() require("jj.picker").file_history() end, { desc = "Jujutsu file history" })
 set("n", "<leader>f", function() Snacks.picker.files() end, { desc = "Find Files" })
 set("n", "<leader>/", function() Snacks.picker.grep() end, { desc = "Live Grep" })
 set("n", "<leader>b", function()
