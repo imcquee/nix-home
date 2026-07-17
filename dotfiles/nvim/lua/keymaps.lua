@@ -48,11 +48,22 @@ set("n", ",", function() require("multicursor-nvim").clearCursors() end, { desc 
 
 -- Jujutsu UI
 set("n", "<M-g>", function()
-  Snacks.terminal("jjui", {
-    win = {
-      style = "lazygit",
-    },
-  })
+  if vim.env.ZELLIJ then
+    vim.system({
+      "zellij", "run",
+      "--floating", "--close-on-exit",
+      "--width", "90%", "--height", "90%",
+      "--name", "jjui",
+      "--cwd", vim.fn.getcwd(),
+      "--", "jjui",
+    })
+  else
+    Snacks.terminal("jjui", {
+      win = {
+        style = "lazygit",
+      },
+    })
+  end
 end, { desc = "Jujutsu UI" })
 
 -- Snacks
