@@ -2,6 +2,7 @@
 vim.filetype.add({
   extension = {
     djot = "djot",
+    apns = "apns",
   },
 })
 

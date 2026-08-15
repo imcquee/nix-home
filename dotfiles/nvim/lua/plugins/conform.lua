@@ -7,6 +7,9 @@ require("conform").setup({
     gleam = { "gleam" },
     prisma = { "prisma" },
     rust = { "rustfmt" },
+    json = { "prettier" },
+    jsonc = { "prettier" },
+    apns = { "prettier" },
   },
   format_on_save = {
     timeout_ms = 1000,
@@ -17,6 +20,14 @@ require("conform").setup({
       command = "bunx",
       args = { "prisma", "format", "--schema", "$FILENAME" },
       stdin = false,
+    },
+    prettier = {
+      prepend_args = function(_, ctx)
+        if ctx.filename and ctx.filename:match("%.apns$") then
+          return { "--parser", "json" }
+        end
+        return {}
+      end,
     },
   },
 })

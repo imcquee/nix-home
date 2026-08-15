@@ -16,6 +16,9 @@ end, { desc = "Run nearest test" })
 set('n', '<leader>aa', function() require("sidekick.cli").toggle() end,
   { desc = "sidekick toggle cli" })
 
+set('n', '<leader>ac', function() require("sidekick.cli").toggle({ name = "claude" }) end,
+  { desc = "sidekick claude" })
+
 set('n', '<leader>as', function() require("sidekick.cli").select({ filter = { installed = true } }) end,
   { desc = "Select CLI" })
 

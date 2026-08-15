@@ -22,5 +22,5 @@ require("snacks").setup({
   },
   indent = { enabled = true },
   image = { enabled = true },
-  scroll = { enabled = true },
+  scroll = { enabled = false },
 })
