@@ -4,13 +4,13 @@ vim.pack.add({
 
 require('nvim-treesitter').install({
   "tsx", "prisma", "html", "javascript", "typescript",
-  "gleam", "graphql", "go", "djot", "nix",
+  "gleam", "graphql", "go", "djot", "nix", "kotlin",
 })
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {
     "typescriptreact", "typescript", "javascript",
-    "html", "prisma", "gleam", "graphql", "go", "djot", "nix",
+    "html", "prisma", "gleam", "graphql", "go", "djot", "nix", "kotlin",
   },
   callback = function()
     vim.treesitter.start()

@@ -15,6 +15,8 @@ with pkgs;
   docker-credential-helpers
   postgresql
   bun
+  terminal-notifier
   yt-dlp
   ghostscript
+  gradle
 ]

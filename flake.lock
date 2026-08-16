@@ -203,6 +203,22 @@
         "type": "github"
       }
     },
+    "homebrew-jetbrains-utils": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787254549,
+        "narHash": "sha256-YHgOCM05+K8irlcebhShkxzMjhF8F1Y+tPYo14Wah+0=",
+        "owner": "JetBrains",
+        "repo": "homebrew-utils",
+        "rev": "00b6d6f86e1a4cf150e0130fb19b37bcfc0e8d2f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JetBrains",
+        "repo": "homebrew-utils",
+        "type": "github"
+      }
+    },
     "jj-starship": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -238,6 +254,21 @@
       "original": {
         "owner": "jovian-experiments",
         "repo": "jovian-nixos",
+        "type": "github"
+      }
+    },
+    "multiverse": {
+      "locked": {
+        "lastModified": 1787086196,
+        "narHash": "sha256-3SgV3gdAiVwstEBKtvq2cvoburVHoDY9O2ZnYeSjoME=",
+        "owner": "fzakaria",
+        "repo": "nixpkgs-multiverse",
+        "rev": "40aed5abf8bf07cba4135e08d967d598c6accc53",
+        "type": "github"
+      },
+      "original": {
+        "owner": "fzakaria",
+        "repo": "nixpkgs-multiverse",
         "type": "github"
       }
     },
@@ -509,8 +540,10 @@
         "homebrew-bundle": "homebrew-bundle",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",
+        "homebrew-jetbrains-utils": "homebrew-jetbrains-utils",
         "jj-starship": "jj-starship",
         "jovian-nixos": "jovian-nixos",
+        "multiverse": "multiverse",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",

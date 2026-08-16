@@ -27,9 +27,14 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
+    homebrew-jetbrains-utils = {
+      url = "github:JetBrains/homebrew-utils";
+      flake = false;
+    };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     nur.url = "github:nix-community/NUR";
     claude-code.url = "github:sadjow/claude-code-nix";
+    multiverse.url = "github:fzakaria/nixpkgs-multiverse";
   };
 
   outputs =
@@ -167,7 +172,13 @@
             homeDir = "/Users/${userInfo.userName}";
           };
         modules = [
-          { nixpkgs.overlays = [ jj-starship.overlays.default claude-code.overlays.default ]; }
+          {
+            nixpkgs.overlays = [
+              jj-starship.overlays.default
+              claude-code.overlays.default
+              (inputs.multiverse.lib.pinOverlay { pins.yt-dlp = "2026.03.17"; })
+            ];
+          }
           ./hosts/MBA2025/configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           ./hosts/MBA2025/homebrew.nix
