@@ -76,6 +76,7 @@ let
 
     # DB
     pspg
+    jq
 
     # Use Helix from the flake input instead of pkgs.helix
     helix.packages.${pkgs.stdenv.hostPlatform.system}.default
