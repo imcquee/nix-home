@@ -4,7 +4,7 @@
   # remove nix-channel related tools & configs, we use flakes instead.
   # Use flake for nix_path https://nixos-and-flakes.thiscute.world/best-practices/nix-path-and-flake-registry
   nix =
-    if pkgs.stdenv.isDarwin then
+    if pkgs.stdenv.hostPlatform.isDarwin then
       {
         registry.nixpkgs.flake = nixpkgs;
         settings.nix-path = nixpkgs.lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";

@@ -1,7 +1,6 @@
 {
   pkgs,
   withGUI,
-  helix,
   neovim-nightly-overlay,
 }:
 
@@ -78,8 +77,7 @@ let
     pspg
     jq
 
-    # Use Helix from the flake input instead of pkgs.helix
-    helix.packages.${pkgs.stdenv.hostPlatform.system}.default
+    helix
 
     neovim
     # Neovim nightly

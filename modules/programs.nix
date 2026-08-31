@@ -107,6 +107,7 @@ in
       if withGUI then
         {
           enable = true;
+          configPath = ".mozilla/firefox";
           profiles.${userName} = {
             isDefault = true;
             name = userName;

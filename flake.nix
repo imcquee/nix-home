@@ -8,8 +8,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    helix.url = "github:helix-editor/helix/master";
-    jj-starship.url = "github:dmmulroy/jj-starship";
+jj-starship.url = "github:dmmulroy/jj-starship";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     jovian-nixos.url = "github:jovian-experiments/jovian-nixos";
     nix-homebrew = {
@@ -200,7 +199,6 @@
         extraSpecialArgs = {
           withGUI = defaults.withGUI;
           homeDir = defaults.homeDir;
-          helix = inputs.helix;
           neovim-nightly-overlay = inputs.neovim-nightly-overlay;
         }
         // userInfo;

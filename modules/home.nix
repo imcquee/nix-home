@@ -10,7 +10,6 @@ let
     withGUI
     homeDir
     userName
-    helix
     neovim-nightly-overlay
     ;
 in
@@ -20,7 +19,7 @@ in
   home.homeDirectory = homeDir;
   xdg.enable = true;
   home.stateVersion = "24.05";
-  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI helix neovim-nightly-overlay; };
+  home.packages = pkgs.callPackage ./packages.nix { inherit withGUI neovim-nightly-overlay; };
   home.sessionVariables = {
     PSQL_PAGER = "pspg";
     EDITOR = "nvim";
@@ -92,7 +91,7 @@ in
 
   # Copy symlink for Ghostty
   home.file.".config/ghostty".source =
-    if pkgs.stdenv.isDarwin then
+    if pkgs.stdenv.hostPlatform.isDarwin then
       config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/ghostty/darwin"
     else
       config.lib.file.mkOutOfStoreSymlink "${homeDir}/nix-home/dotfiles/ghostty/linux";

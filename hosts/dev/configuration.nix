@@ -38,6 +38,9 @@
   # Needs to be called near fish
   programs.starship.enable = true;
 
+  # Solaar
+  programs.solaar.enable = true;
+
   # Default user
   users.users.${userName} = {
     isNormalUser = true;
@@ -106,7 +109,6 @@
 
   # K400 keyboard receiver
   hardware.logitech.wireless.enable = true;
-  hardware.logitech.wireless.enableGraphical = true;
 
   # Add qmk support
   hardware.keyboard.qmk.enable = true;
