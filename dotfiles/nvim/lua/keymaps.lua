@@ -116,6 +116,9 @@ set("n", "<leader>ns", "<cmd>lua require('package-info').show()<cr>",
 set("n", "<leader>np", "<cmd>lua require('package-info').change_version()<cr>",
   { silent = true, noremap = true }, { desc = "Change Package Version" })
 
+-- Plugins
+set("n", "<leader>u", function() vim.pack.update() end, { desc = "Update Plugins" })
+
 -- Yazi
 set({ "n", "v" }, "<M-y>", "<cmd>Yazi<cr>", {
   desc = "Open yazi at the current file"
