@@ -3,6 +3,7 @@
 , homebrew-cask
 , homebrew-bundle
 , homebrew-jetbrains-utils
+, brew-src
 , userName
 , config
 , ...
@@ -20,10 +21,15 @@
     casks = pkgs.callPackage ./casks.nix { };
     brews = [
       "kotlin-lsp"
+      "zellij"
     ];
   };
 
   nix-homebrew = {
+    # nix-homebrew labels brew with the version from its own lock file; use ours.
+    package =
+      let version = (builtins.fromJSON (builtins.readFile ../../flake.lock)).nodes.brew-src.original.ref;
+      in brew-src // { name = "brew-${version}"; inherit version; };
     user = userName;
     enable = true;
     taps = {

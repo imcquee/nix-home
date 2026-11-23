@@ -135,4 +135,15 @@ in
       # remapCapsLockToEscape = true;
     };
   };
+
+  # Signed Zellij.app launcher for `zellij terminal` (zellij itself comes from Homebrew)
+  home-manager.users.${userName} = {
+    imports = [ ../../modules/zellij-app ];
+    programs.zellij-app = {
+      enable = true;
+      # "Apple Development: Isaac McQueen (SJ38TA4P2V)", expires 2027-11-02. Referenced by
+      # hash: two certs share that name and the other (C87162B9…) has been revoked by Apple.
+      signingIdentity = "07EC08ECD8B2BA532261DA7B65F07CC3D7096F9D";
+    };
+  };
 }

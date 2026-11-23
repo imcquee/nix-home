@@ -13,6 +13,13 @@ jj-starship.url = "github:dmmulroy/jj-starship";
     jovian-nixos.url = "github:jovian-experiments/jovian-nixos";
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
+      inputs.brew-src.follows = "brew-src";
+    };
+    # Pinned past nix-homebrew's default: homebrew-core needs manifest_sha256 (brew >= 7.0.16).
+    # hosts/MBA2025/homebrew.nix reads the version from this ref.
+    brew-src = {
+      url = "github:Homebrew/brew/7.0.16";
+      flake = false;
     };
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
